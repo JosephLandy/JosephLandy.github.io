@@ -101,7 +101,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteNav isHome />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
-                {props.data.logo ? (
+                {/* {props.data.logo ? (
                   <img
                     style={{ maxHeight: '55px' }}
                     src={props.data.logo.childImageSharp.fixed.src}
@@ -109,7 +109,8 @@ const IndexPage: React.FC<IndexProps> = props => {
                   />
                 ) : (
                   config.title
-                )}
+                )} */}
+                {config.title}
               </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
@@ -145,7 +146,8 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    # logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/logo_JosephLandy.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

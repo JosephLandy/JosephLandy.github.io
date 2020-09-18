@@ -2,6 +2,7 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 import React from 'react';
 import { css } from '@emotion/core';
 import { FixedObject } from 'gatsby-image';
+import {SiteTitle} from '../../styles/shared'
 
 import config from '../../website-config';
 
@@ -28,17 +29,23 @@ export const SiteNavLogo = () => (
     `}
     // tslint:disable-next-line:react-this-binding-issue
     render={(data: SiteNavLogoProps) => (
-      <Link className="site-nav-logo" css={SiteNavLogoStyles} to="/">
-        {data.logo ? (
+      <Link className="site-nav-logo" css={[SiteNavLogoStyles, SiteTitle]} to="/">
+        {/* {data.logo ? (
           <img src={data.logo.childImageSharp.fixed.src} alt={config.title} />
         ) : (
           config.title
-        )}
+        )} */}
+        Joseph Landy
       </Link>
     )}
   />
 );
 
+
+// color primary: "rgb(104, 136, 223)"
+const cp = '#6888df';
+// color secondary: "rgb(245, 85, 85)"
+const cs = '#f55555';
 const SiteNavLogoStyles = css`
   position: relative;
   z-index: 100;
@@ -62,5 +69,9 @@ const SiteNavLogoStyles = css`
     width: auto;
     height: 21px;
   }
+
+  background: linear-gradient(0.25turn, ${cp}, ${cs});
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 

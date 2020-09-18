@@ -34,7 +34,11 @@ export const SiteMain = css`
     background: ${colors.darkmode};
   }
 `;
-
+// gradient from elemental starter.
+// color primary: "rgb(104, 136, 223)"
+const cp = '#6888df';
+// color secondary: "rgb(245, 85, 85)"
+const cs = '#f55555';
 export const SiteTitle = styled.h1`
   z-index: 10;
   margin: 0 0 0 -2px;
@@ -43,6 +47,10 @@ export const SiteTitle = styled.h1`
   line-height: 1em;
   font-weight: 600;
 
+  background: linear-gradient(0.25turn, ${cp}, ${cs});
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
   @media (max-width: 500px) {
     font-size: 4.2rem;
   }

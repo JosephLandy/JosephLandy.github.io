@@ -12,6 +12,11 @@ import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
 import { AuthorList } from './AuthorList';
 
+import { MdWeb } from 'react-icons/md';
+import { GoMarkGithub } from 'react-icons/go';
+import { IconContext } from 'react-icons';
+import PostCardLinks from './PostCardLinks';
+
 export interface PostCardProps {
   post: PageContext;
   large?: boolean;
@@ -59,9 +64,10 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
           </PostCardExcerpt>
         </Link>
         <PostCardMeta className="post-card-meta">
-          <AuthorList authors={post.frontmatter.author} tooltip="small" />
+          {/* <AuthorList authors={post.frontmatter.author} tooltip="small" /> */}
+          <PostCardLinks github={post.frontmatter.github} website={post.frontmatter.website} />
           <PostCardBylineContent className="post-card-byline-content">
-            <span>
+            {/* <span>
               {post.frontmatter.author.map((author, index) => {
                 return (
                   <React.Fragment key={author.id}>
@@ -70,7 +76,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
                   </React.Fragment>
                 );
               })}
-            </span>
+            </span> */}
             <span className="post-card-byline-date">
               <time dateTime={datetime}>{displayDatetime}</time>{' '}
               <span className="bull">&bull;</span> {post.timeToRead} min read

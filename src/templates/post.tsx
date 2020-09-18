@@ -98,6 +98,8 @@ export interface PageContext {
     draft?: boolean;
     tags: string[];
     author: Author[];
+    github?: string;
+    website?: string;
   };
 }
 
@@ -196,6 +198,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                 <PostFullCustomExcerpt className="post-full-custom-excerpt">
                   {post.frontmatter.excerpt}
                 </PostFullCustomExcerpt>
+                
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
                     <AuthorList authors={post.frontmatter.author} tooltip="large" />

@@ -64,6 +64,8 @@ exports.createPages = async ({ graphql, actions }) => {
               date
               draft
               excerpt
+              website
+              github
               image {
                 childImageSharp {
                   fluid(maxWidth: 3720) {

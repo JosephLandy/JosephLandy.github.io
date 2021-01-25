@@ -7,6 +7,8 @@ import { lighten } from 'polished';
 // @ts-ignore
 import favicon from '../../src/favicon.ico';
 import { colors } from '../styles/colors';
+import { SidebarLayout } from './sidebar-layout';
+import ContentLayout from './ContentLayout';
 
 interface IndexProps {
   className?: string;
@@ -494,7 +496,10 @@ const IndexLayout: React.FC<IndexProps> = props => {
           }
         `}
       />
-      {props.children}
+      <SidebarLayout>
+        {props.children}
+        {/* <ContentLayout>{props.children}</ContentLayout> */}
+      </SidebarLayout>
     </div>
   );
 };

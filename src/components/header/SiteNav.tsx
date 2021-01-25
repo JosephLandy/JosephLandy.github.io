@@ -8,15 +8,23 @@ import styled from '@emotion/styled';
 import { colors } from '../../styles/colors';
 import { SocialLink, SocialLinkFb } from '../../styles/shared';
 import config from '../../website-config';
-import { Facebook } from '../icons/facebook';
-import { Twitter } from '../icons/twitter';
+
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
+
+import { Facebook } from '../icons/facebook';
+import { Twitter } from '../icons/twitter';
+
+import { GoMarkGithub } from 'react-icons/go';
+// import {FiFacebook} from 'react-icons/fi'
+import { FaLinkedin } from 'react-icons/fa';
+import { GoThreeBars } from 'react-icons/go';
 
 interface SiteNavProps {
   isHome?: boolean;
   isPost?: boolean;
   post?: any;
+  toggleOpen?: () => void
 }
 
 interface SiteNavState {
@@ -86,6 +94,11 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
         {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
         <nav css={SiteNavStyles}>
           <SiteNavLeft className="site-nav-left">
+            {this.props.toggleOpen && <GoThreeBars
+              size="2em"
+              style={{ cursor: 'pointer' }}
+              onClick={this.props.toggleOpen}
+            />}
             {!isHome && <SiteNavLogo />}
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
@@ -130,6 +143,22 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                   rel="noopener noreferrer"
                 >
                   <Twitter />
+                </a>
+              )}
+              {config.github && (
+                <a css={SocialLink} href={config.github} title="Github" target="_blank">
+                  <GoMarkGithub />
+                </a>
+              )}
+              {config.linkedin && (
+                <a
+                  css={SocialLink}
+                  href={config.linkedin}
+                  title="LinkedIn"
+                  target="_blank"
+                  // rel="noopener noreferrer"
+                >
+                  <FaLinkedin />
                 </a>
               )}
             </SocialLinks>

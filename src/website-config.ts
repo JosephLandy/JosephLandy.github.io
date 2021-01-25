@@ -20,6 +20,11 @@ export interface WebsiteConfig {
    * full url, no username
    */
   twitter?: string;
+
+  github?: string;
+  linkedin?: string;
+  email?: string;
+
   /**
    * hide or show all email subscribe boxes
    */
@@ -58,6 +63,10 @@ const config: WebsiteConfig = {
   siteUrl: 'https://gatsby-casper.netlify.com',
   facebook: 'https://www.facebook.com/ghost',
   twitter: 'https://twitter.com/tryghost',
+
+  github: 'https://github.com/JosephLandy',
+  linkedin: 'not a url',
+
   showSubscribe: false,
   mailchimpAction:
     'https://twitter.us19.list-manage.com/subscribe/post?u=a89b6987ac248c81b0b7f3a0f&amp;id=7d777b7d75',

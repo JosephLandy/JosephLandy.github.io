@@ -10,7 +10,7 @@ import styled from '@emotion/styled';
 
 import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
-import { AuthorList } from './AuthorList';
+// import { AuthorList } from './AuthorList';
 
 // import { MdWeb } from 'react-icons/md';
 // import { GoMarkGithub } from 'react-icons/go';

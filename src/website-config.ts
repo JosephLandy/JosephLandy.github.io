@@ -61,7 +61,7 @@ const config: WebsiteConfig = {
   logo: 'img/logo_JosephLandy.png',
   lang: 'en',
   siteUrl: 'https://gatsby-casper.netlify.com',
-  facebook: 'https://www.facebook.com/ghost',
+  // facebook: 'https://www.facebook.com/ghost',
   twitter: 'https://twitter.com/tryghost',
 
   github: 'https://github.com/JosephLandy',

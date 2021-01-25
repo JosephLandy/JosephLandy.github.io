@@ -1,6 +1,6 @@
 ---
 title: Assorted 3d Renders
-author: [Joseph]
+# author: [Joseph]
 tags: []
 image: images/snowrender.jpg
 layout: post

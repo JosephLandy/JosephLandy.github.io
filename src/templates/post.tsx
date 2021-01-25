@@ -19,7 +19,7 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
-import { AuthorList } from '../components/AuthorList';
+// import { AuthorList } from '../components/AuthorList';
 
 export interface Author {
   id: string;
@@ -201,15 +201,15 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                 
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
-                    <AuthorList authors={post.frontmatter.author} tooltip="large" />
+                    {/* <AuthorList authors={post.frontmatter.author} tooltip="large" /> */}
                     <section className="post-full-byline-meta">
-                      <h4 className="author-name">
+                      {/* <h4 className="author-name">
                         {post.frontmatter.author.map(author => (
                           <Link key={author.id} to={`/author/${_.kebabCase(author.id)}/`}>
                             {author.id}
                           </Link>
                         ))}
-                      </h4>
+                      </h4> */}
                       <div className="byline-meta-content">
                         <time className="byline-meta-date" dateTime={datetime}>
                           {displayDatetime}
@@ -463,19 +463,6 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 3720) {
               ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        author {
-          id
-          bio
-          avatar {
-            children {
-              ... on ImageSharp {
-                fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
             }
           }
         }

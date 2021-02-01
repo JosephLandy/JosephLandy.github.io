@@ -20,30 +20,30 @@ export const AuthorListUl = styled.ul`
 `;
 
 export const PostCardLinks: React.FC<Props> = props => (
-   <AuthorListUl className="author-list">
-     <IconContext.Provider
-        value={{
-          size: '2em',
-          style: {
-            margin: '5px',
-          },
-        }}
-      >
-        <div>
-          {props.github && (
-            <a href={props.github}>
-              <GoMarkGithub />
-            </a>
-          )}
-          {props.website && (
-            <a href={props.website}>
-              <MdWeb />
-            </a>
-          )}
-        </div>
-      </IconContext.Provider>
-   </AuthorListUl>
-);
+         <AuthorListUl className="author-list">
+           <IconContext.Provider
+             value={{
+               size: '2em',
+               style: {
+                 margin: '5px',
+               },
+             }}
+           >
+             <div>
+               {props.github && (
+                 <a href={props.github} target="_blank" rel="noopener noreferrer">
+                   <GoMarkGithub />
+                 </a>
+               )}
+               {props.website && (
+                 <a href={props.website} target="_blank" rel="noopener noreferrer">
+                   <MdWeb />
+                 </a>
+               )}
+             </div>
+           </IconContext.Provider>
+         </AuthorListUl>
+       );
 
 // export const LinkItem: React.FC<{}> = props => (
 

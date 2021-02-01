@@ -13,10 +13,9 @@ import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 
 import { Facebook } from '../icons/facebook';
-import { Twitter } from '../icons/twitter';
-
+// import { Twitter } from '../icons/twitter';
+import {IconContext} from 'react-icons';
 import { GoMarkGithub } from 'react-icons/go';
-// import {FiFacebook} from 'react-icons/fi'
 import { FaLinkedin } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
 
@@ -121,47 +120,39 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             </SiteNavContent>
           </SiteNavLeft>
           <SiteNavRight>
-            <SocialLinks>
-              {config.facebook && (
-                <a
-                  className="social-link-fb"
-                  css={[SocialLink, SocialLinkFb]}
-                  href={config.facebook}
-                  target="_blank"
-                  title="Facebook"
-                  rel="noopener noreferrer"
-                >
-                  <Facebook />
-                </a>
-              )}
-              {config.twitter && (
-                <a
-                  css={SocialLink}
-                  href={config.twitter}
-                  title="Twitter"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter />
-                </a>
-              )}
-              {config.github && (
-                <a css={SocialLink} href={config.github} title="Github" target="_blank">
-                  <GoMarkGithub />
-                </a>
-              )}
-              {config.linkedin && (
-                <a
-                  css={SocialLink}
-                  href={config.linkedin}
-                  title="LinkedIn"
-                  target="_blank"
-                  // rel="noopener noreferrer"
-                >
-                  <FaLinkedin />
-                </a>
-              )}
-            </SocialLinks>
+
+            <IconContext.Provider value={{size: '2em'}}>
+              <SocialLinks>
+                {config.facebook && (
+                  <a
+                    className="social-link-fb"
+                    css={[SocialLink, SocialLinkFb]}
+                    href={config.facebook}
+                    target="_blank"
+                    title="Facebook"
+                    rel="noopener noreferrer"
+                  >
+                    <Facebook />
+                  </a>
+                )}
+                {config.github && (
+                  <a css={SocialLink} href={config.github} title="Github" target="_blank">
+                    <GoMarkGithub />
+                  </a>
+                )}
+                {config.linkedin && (
+                  <a
+                    css={SocialLink}
+                    href={config.linkedin}
+                    title="LinkedIn"
+                    target="_blank"
+                    // rel="noopener noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
+                )}
+              </SocialLinks>
+            </IconContext.Provider>
             {config.showSubscribe && (
               <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
             )}

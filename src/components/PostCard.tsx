@@ -8,6 +8,9 @@ import React from 'react';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
+import { AiFillStar } from 'react-icons/ai';
+import { IconContext } from 'react-icons';
+
 import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
 // import { AuthorList } from './AuthorList';
@@ -54,10 +57,17 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
           <PostCardHeader className="post-card-header">
             {post.frontmatter.tags && (
               <PostCardPrimaryTag className="post-card-primary-tag">
-                {post.frontmatter.tags[0]}
+                {/* {post.frontmatter.tags[0]} */}
+                {post.frontmatter.tags.join(' ')}
               </PostCardPrimaryTag>
             )}
-            <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
+
+            <IconContext.Provider value={{color: 'gold', size: '0.75em'}}>
+              <PostCardTitle className="post-card-title">
+                {post.frontmatter.featured && <AiFillStar/>} &nbsp;
+                {post.frontmatter.title}
+              </PostCardTitle>
+            </IconContext.Provider>
           </PostCardHeader>
           <PostCardExcerpt className="post-card-excerpt">
             <p>{post.frontmatter.excerpt || post.excerpt}</p>

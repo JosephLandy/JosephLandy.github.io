@@ -19,17 +19,7 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
-// import { AuthorList } from '../components/AuthorList';
 
-export interface Author {
-  id: string;
-  bio: string;
-  avatar: {
-    children: Array<{
-      fluid: FluidObject;
-    }>;
-  };
-}
 
 interface PageTemplateProps {
   location: Location;
@@ -99,6 +89,7 @@ export interface PageContext {
     tags: string[];
     github?: string;
     website?: string;
+    featured?: boolean
   };
 }
 

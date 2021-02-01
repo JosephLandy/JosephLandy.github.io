@@ -496,10 +496,10 @@ const IndexLayout: React.FC<IndexProps> = props => {
           }
         `}
       />
-      <SidebarLayout>
+      {/* <SidebarLayout>
         {props.children}
-        {/* <ContentLayout>{props.children}</ContentLayout> */}
-      </SidebarLayout>
+      </SidebarLayout> */}
+      {props.children}
     </div>
   );
 };

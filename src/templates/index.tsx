@@ -53,6 +53,15 @@ export interface IndexProps {
 const IndexPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
 
+  // filter out draft posts.
+  const edges = props.data.allMarkdownRemark.edges.filter(
+    post => post.node.frontmatter.draft !== true || process.env.NODE_ENV !== 'production',
+  );
+  // put featured posts first, then the rest of the posts. 
+  const posts = edges
+    .filter(post => post.node.frontmatter.featured === true)
+    .concat(edges.filter(post => post.node.frontmatter.featured !== true));
+
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
@@ -97,8 +106,12 @@ const IndexPage: React.FC<IndexProps> = props => {
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
           }}
         >
+          <SiteNav isHome/>
           <div css={inner}>
+            {/* inner results in SiteNav combined to the inner area of the page. I think it looks better
+            Spread out.  */}
             {/* <SiteNav isHome /> */}
+
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
                 {/* {props.data.logo ? (
@@ -112,22 +125,18 @@ const IndexPage: React.FC<IndexProps> = props => {
                 )} */}
                 {config.title}
               </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
+              {/* <SiteDescription>{config.description}</SiteDescription> */}
             </SiteHeaderContent>
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) => {
-                // filter out drafts in production
-                return (
-                  (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                  )
-                );
-              })}
+
+              {posts.map((post, index) => (
+                <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
+              ))}
+
             </div>
           </div>
         </main>
@@ -182,6 +191,7 @@ export const pageQuery = graphql`
             excerpt
             website
             github
+            featured
             image {
               childImageSharp {
                 fluid(maxWidth: 3720) {

@@ -63,12 +63,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
     'gatsby-plugin-feed',
-    {
-      resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-postcss',
+    //   options: {
+    //     postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

@@ -93,11 +93,13 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
         {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
         <nav css={SiteNavStyles}>
           <SiteNavLeft className="site-nav-left">
-            {this.props.toggleOpen && <GoThreeBars
-              size="2em"
-              style={{ cursor: 'pointer' }}
-              onClick={this.props.toggleOpen}
-            />}
+            {this.props.toggleOpen && (
+              <GoThreeBars
+                size="2em"
+                style={{ cursor: 'pointer' }}
+                onClick={this.props.toggleOpen}
+              />
+            )}
             {!isHome && <SiteNavLogo />}
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
@@ -120,7 +122,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             </SiteNavContent>
           </SiteNavLeft>
           <SiteNavRight>
-
             <IconContext.Provider value={{ size: '2em' }}>
               <SocialLinks>
                 {config.facebook && (

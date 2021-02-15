@@ -37,10 +37,8 @@ const PageTemplate = css`
     padding-bottom: 4vw;
     background: #fff;
   }
-
   @media (prefers-color-scheme: dark) {
     .site-main {
-      /* background: var(--darkmode); */
       background: ${colors.darkmode};
     }
   }
@@ -75,7 +73,6 @@ const LinkIcons: React.FC = () => {
           font-size: 4em;
 
           a {
-            
           }
         `}
       >
@@ -101,8 +98,18 @@ const LinkIcons: React.FC = () => {
   );
 };
 
+const AboutParagraph = styled.p`
+  width: 100%;
+
+  @media only screen and (min-width: 1041px) {
+    width: 10px;
+  }
+`;
+
 const About: React.FC<AboutProps> = props => {
   const resized = props.data.file.childImageSharp.resize.src;
+
+  // ok, so for whatever reason, the page switches layouts at 1040 px width.
 
   return (
     <IndexLayout>
@@ -156,17 +163,25 @@ const About: React.FC<AboutProps> = props => {
                     `}
                   >
                     <img src={resized} height="256" width="256" />
-                    <p className="evil-paragraph" style={{ width: '10px' }}>
-                      Hey there! I graduated with a degree in computer science from Queen's
+                    <AboutParagraph style={{ backgroundColor: 'green' }}>
+                      <h6>Hey there!</h6> I graduated with a degree in computer science from Queen's
                       University in 2019, and I'm currently looking to enter the workforce after a
-                      brief gap. I have a long interest in graphics, game development and visual
-                      effects. I first became interested in computer science in highschool when I
-                      experimented with vfx software such as autodesk maya. Since then I've studied
-                      graphics and 3d extensively in school and backed it up with experience working
-                      with labs at Queen's with VR, eye tracking and other technologies for
-                      psychology experiments. I also enjoy web development!
-                    </p>
+                      brief gap.{' '}
+                    </AboutParagraph>
                   </div>
+                  <p>
+                    <h6>
+                      <i>I love graphics, VFX, and game dev</i>
+                    </h6>{' '}
+                    I first became interested in computer science in highschool when I experimented
+                    with vfx software such as autodesk maya. Since then I've studied graphics and 3d
+                    extensively in school and backed it up with experience working with labs at
+                    Queen's with VR, eye tracking and other technologies for psychology experiments.
+                    <h6>
+                      <i>But I also do web stuff</i>
+                    </h6>
+                    I'm also proficient with frontend web development, primarily using ReactJS.
+                  </p>
                   <p>
                     <b>
                       Feel free to checkout my Github, connect with me on LinkedIn or send me an

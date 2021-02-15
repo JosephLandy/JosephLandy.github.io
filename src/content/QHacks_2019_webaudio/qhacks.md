@@ -10,5 +10,5 @@ tags: []
 QHacks 2019 Web Audio Project
 ===
 
-My team and I worked on this projects for [QHacks](https://qhacks.io/), Queen's University's annual hackathon in 2019. 
+My team and I worked on this project for [QHacks](https://qhacks.io/), Queen's University's annual hackathon in 2019. 
 

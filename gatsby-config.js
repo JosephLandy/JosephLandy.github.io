@@ -87,6 +87,6 @@ module.exports = {
         siteSpeedSampleRate: 10,
       },
     },
-    `gatsby-plugin-catch-links`,
+    'gatsby-plugin-catch-links',
   ],
 };

@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import Sidebar, { SidebarProps } from 'react-sidebar';
 
-import SiteNav from '../components/header/SiteNav'
+import SiteNav from '../components/header/SiteNav';
 
 import SidebarContent from '../components/SidebarContent';
 
@@ -32,7 +32,6 @@ export const SidebarLayout: React.FC<Props> = props => {
   const docked = false;
   const [open, setOpen] = useState(false);
 
-
   useEffect(() => {
     // window.onkeydown = (ev: KeyboardEvent) => {
     //   console.log(ev.key);
@@ -49,6 +48,7 @@ export const SidebarLayout: React.FC<Props> = props => {
         setOpen(false);
       }
     };
+
     return () => {
       window.onresize = null;
       // window.onkeydown = null;

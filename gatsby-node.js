@@ -41,12 +41,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         value: primaryTag || '',
       });
 
-      // make sure the featured field exists. 
+      // make sure the featured field exists.
       createNodeField({
         node,
         name: 'featured',
         value: featured || false,
-      })
+      });
     }
   }
 };
@@ -192,16 +192,16 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Create author pages
-  // const authorTemplate = path.resolve('./src/templates/author.tsx');
-  // result.data.allAuthorYaml.edges.forEach(edge => {
-  //   createPage({
-  //     path: `/author/${_.kebabCase(edge.node.id)}/`,
-  //     component: authorTemplate,
-  //     context: {
-  //       author: edge.node.id,
-  //     },
-  //   });
-  // });
+  const authorTemplate = path.resolve('./src/templates/author.tsx');
+  result.data.allAuthorYaml.edges.forEach(edge => {
+    createPage({
+      path: `/author/${_.kebabCase(edge.node.id)}/`,
+      component: authorTemplate,
+      context: {
+        author: edge.node.id,
+      },
+    });
+  });
 };
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {

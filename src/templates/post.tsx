@@ -20,7 +20,6 @@ import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
 
-
 interface PageTemplateProps {
   location: Location;
   data: {
@@ -89,7 +88,7 @@ export interface PageContext {
     tags: string[];
     github?: string;
     website?: string;
-    featured?: boolean
+    featured?: boolean;
   };
 }
 
@@ -188,7 +187,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                 <PostFullCustomExcerpt className="post-full-custom-excerpt">
                   {post.frontmatter.excerpt}
                 </PostFullCustomExcerpt>
-                
+
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
                     {/* <AuthorList authors={post.frontmatter.author} tooltip="large" /> */}

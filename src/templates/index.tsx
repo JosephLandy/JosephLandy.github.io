@@ -26,6 +26,8 @@ import {
 import config from '../website-config';
 import { PageContext } from './post';
 
+import MonsterFooter from '../components/MonsterFooter';
+
 export interface IndexProps {
   pageContext: {
     currentPage: number;
@@ -57,7 +59,7 @@ const IndexPage: React.FC<IndexProps> = props => {
   const edges = props.data.allMarkdownRemark.edges.filter(
     post => post.node.frontmatter.draft !== true || process.env.NODE_ENV !== 'production',
   );
-  // put featured posts first, then the rest of the posts. 
+  // put featured posts first, then the rest of the posts.
   const posts = edges
     .filter(post => post.node.frontmatter.featured === true)
     .concat(edges.filter(post => post.node.frontmatter.featured !== true));
@@ -106,7 +108,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
           }}
         >
-          <SiteNav isHome/>
+          <SiteNav isHome />
           <div css={inner}>
             {/* inner results in SiteNav combined to the inner area of the page. I think it looks better
             Spread out.  */}
@@ -131,12 +133,11 @@ const IndexPage: React.FC<IndexProps> = props => {
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
+            <h3>Projects and Posts</h3>
             <div css={[PostFeed]}>
-
               {posts.map((post, index) => (
                 <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
               ))}
-
             </div>
           </div>
         </main>
@@ -148,6 +149,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           />
         )}
         <Footer />
+        <MonsterFooter/>
       </Wrapper>
     </IndexLayout>
   );

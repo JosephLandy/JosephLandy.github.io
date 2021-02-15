@@ -14,7 +14,7 @@ import { SiteNavLogo } from './SiteNavLogo';
 
 import { Facebook } from '../icons/facebook';
 // import { Twitter } from '../icons/twitter';
-import {IconContext} from 'react-icons';
+import { IconContext } from 'react-icons';
 import { GoMarkGithub } from 'react-icons/go';
 import { FaLinkedin } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
@@ -23,7 +23,7 @@ interface SiteNavProps {
   isHome?: boolean;
   isPost?: boolean;
   post?: any;
-  toggleOpen?: () => void
+  toggleOpen?: () => void;
 }
 
 interface SiteNavState {
@@ -102,15 +102,15 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
                 {/* TODO: mark current nav item - add class nav-current */}
-                <li role="menuitem">
+                {/* <li role="menuitem">
                   <Link to="/">Home</Link>
-                </li>
+                </li> */}
                 <li role="menuitem">
                   <Link to="/about">About</Link>
                 </li>
-                <li role="menuitem">
+                {/* <li role="menuitem">
                   <Link to="/tags/getting-started/">Getting Started</Link>
-                </li>
+                </li> */}
               </ul>
               {isPost && (
                 <NavPostTitle ref={this.titleRef} className="nav-post-title">
@@ -121,7 +121,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
           </SiteNavLeft>
           <SiteNavRight>
 
-            <IconContext.Provider value={{size: '2em'}}>
+            <IconContext.Provider value={{ size: '2em' }}>
               <SocialLinks>
                 {config.facebook && (
                   <a

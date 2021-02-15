@@ -1,9 +1,17 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import { graphql, Link } from 'gatsby';
 
-import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+
+import { IconContext } from 'react-icons';
+import { GoMarkGithub } from 'react-icons/go';
+// import { FaLinkedin } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi';
+import { GoThreeBars } from 'react-icons/go';
+import { FaLinkedin, FaInstagram, FaEnvelope, FaGithubSquare } from 'react-icons/fa';
 
 import config from '../website-config';
 
@@ -22,11 +30,6 @@ import {
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
-import { IconContext } from 'react-icons/lib';
-import { GoMarkGithub } from 'react-icons/go';
-import { FaLinkedin } from 'react-icons/fa';
-import { GoThreeBars } from 'react-icons/go';
-import { FiMail } from 'react-icons/fi';
 
 const PageTemplate = css`
   .site-main {
@@ -43,43 +46,63 @@ const PageTemplate = css`
   }
 `;
 
-const ContactButtons: React.FC = () => (
-  <IconContext.Provider value={{ size: '6em' }}>
-    <div
-      css={css`
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        
-        .no-underline
-      `}
-    >
-      <a href={config.github} className="no-underline">
-        <GoMarkGithub />
-      </a>
-      <a href={config.linkedin}>
-        <FaLinkedin />
-      </a>
-      <a href={`mailto:${config.email}`}>
-        <FiMail />
-      </a>
-    </div>
-  </IconContext.Provider>
-);
-
-type AboutProps = {
-  file: {
-    childImageSharp: {
-      resize: {
-        src: string;
+interface AboutProps {
+  data: {
+    site: {
+      siteMetadata: {
+        description: string;
+      };
+    };
+    file: {
+      dir: string;
+      childImageSharp: {
+        resize: {
+          src: string;
+        };
       };
     };
   };
+}
+
+const LinkIcons: React.FC = () => {
+  return (
+    <IconContext.Provider value={{}}>
+      <div
+        css={css`
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          font-size: 4em;
+
+          a {
+            
+          }
+        `}
+      >
+        {config.github && (
+          <a href={config.github} title="Github" target="_blank" rel="noopener noreferrer">
+            {/* <GoMarkGithub /> */}
+            <FaGithubSquare />
+          </a>
+        )}
+        {config.linkedin && (
+          <a href={config.linkedin} title="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+        )}
+        {config.email && (
+          <a href={`mailto:${config.email}`} title="Email">
+            {/* <FiMail /> */}
+            <FaEnvelope />
+          </a>
+        )}
+      </div>
+    </IconContext.Provider>
+  );
 };
 
 const About: React.FC<AboutProps> = props => {
-  
-  const resized = props.file.childImageSharp.resize.src;
+  const resized = props.data.file.childImageSharp.resize.src;
 
   return (
     <IndexLayout>
@@ -104,29 +127,54 @@ const About: React.FC<AboutProps> = props => {
               <PostFullContent className="post-full-content">
                 <div className="post-content">
                   {/* <h5>
-                  About Me
-                </h5> */}
-                  <p>
-                    I graduated with a degree in computer science from Queen's Unviersity in 2019,
-                    and I'm currently looking for work in. I have a long interest in computer
-                    graphics, game development and visual effects. I also enjoy web development!
-                  </p>
-                  <img src={resized} alt="" />
-                  <p>
-                    Vestibulum semper pretium ipsum nec congue. Ut ac eros nisi. Donec leo sem,
-                    aliquam mollis sapien ultrices, dapibus congue diam. Proin viverra dapibus
-                    blandit. Ut mauris tellus, tristique id felis vel, venenatis vestibulum nunc.
-                    Nam molestie pulvinar nibh, eget egestas augue. Maecenas tellus arcu, mattis ut
-                    ipsum non, sollicitudin convallis nunc. Donec nec neque tristique, aliquet lacus
-                    id, laoreet nunc. Cras dapibus nisi nulla, ullamcorper faucibus neque suscipit
-                    ac. Donec eget orci venenatis justo lobortis volutpat. Proin vel placerat nisl.
-                    Integer arcu nunc, sodales eu fringilla non, aliquam non diam. Cras placerat,
-                    massa et faucibus pretium, ante elit tincidunt tellus, tristique ultricies velit
-                    quam et massa.
-                  </p>
-                </div>
+                    A starter template for Gatsby <br /> GitHub:{' '}
+                    <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a>
+                  </h5> */}
+                  <div
+                    css={css`
+                      display: flex;
+                      flex-direction: row;
+                      flex-wrap: wrap;
+                      align-items: center;
+                      justify-content: space-evenly;
+                      /* padding: 0px; */
+                      /* margin: 0px; */
+                      margin-bottom: 20px;
 
-                <ContactButtons />
+                      & > p {
+                        margin: 0px;
+                        padding: 0px;
+                        min-width: 50%;
+                      }
+
+                      & > img {
+                        margin: 0px;
+                        padding: 0px;
+                        border-radius: 50%;
+                        /* flex-basis: 50%; */
+                      }
+                    `}
+                  >
+                    <img src={resized} height="256" width="256" />
+                    <p className="evil-paragraph" style={{ width: '10px' }}>
+                      Hey there! I graduated with a degree in computer science from Queen's
+                      University in 2019, and I'm currently looking to enter the workforce after a
+                      brief gap. I have a long interest in graphics, game development and visual
+                      effects. I first became interested in computer science in highschool when I
+                      experimented with vfx software such as autodesk maya. Since then I've studied
+                      graphics and 3d extensively in school and backed it up with experience working
+                      with labs at Queen's with VR, eye tracking and other technologies for
+                      psychology experiments. I also enjoy web development!
+                    </p>
+                  </div>
+                  <p>
+                    <b>
+                      Feel free to checkout my Github, connect with me on LinkedIn or send me an
+                      email.
+                    </b>
+                  </p>
+                  <LinkIcons />
+                </div>
               </PostFullContent>
             </article>
           </div>
@@ -137,39 +185,15 @@ const About: React.FC<AboutProps> = props => {
   );
 };
 
-
-// const ProfileImage: React.FC<{w: number, h: number}> = (w, h) => {
-//   // const data: AboutProps = useStaticQuery(graphql`
-//   //   {
-//   //     # image is square, and 2048 per side.
-//   //     # quality is integer between 1 and 100. Since I had already reduced the quality,
-//   //     # I think having the quality below 100 was causing artefacts. Default is 50.
-//   //     file(relativePath: { eq: "img/portrait_current_reduced.jpg" }) {
-//   //       childImageSharp {
-//   //         resize(height: 256, width: 256, quality: 100) {
-//   //           src
-//   //         }
-//   //       }
-//   //     }
-//   //   }
-//   // `);
-//   const resized = data.file.childImageSharp.resize.src;
-//   return (
-//     <img
-//       style={{ borderRadius: '50%', marginBottom: '10%' }}
-//       src={resized}
-//       height="256"
-//       width="256"
-//     />
-//   );
-// }
-
-export const pageQuery = graphql`
-  {
-    # image is square, and 2048 per side.
-    # quality is integer between 1 and 100. Since I had already reduced the quality,
-    # I think having the quality below 100 was causing artefacts. Default is 50.
+export const aboutQuery = graphql`
+  query AboutQuery {
+    site {
+      siteMetadata {
+        description
+      }
+    }
     file(relativePath: { eq: "img/portrait_current_reduced.jpg" }) {
+      dir
       childImageSharp {
         resize(height: 256, width: 256, quality: 100) {
           src

@@ -27,10 +27,8 @@ export interface PostCardProps {
 
 export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
   const date = new Date(post.frontmatter.date);
-  // 2018-08-20
-  const datetime = format(date, 'yyyy-MM-dd');
-  // 20 AUG 2018
-  const displayDatetime = format(date, 'dd LLL yyyy');
+  // const datetime = format(date, 'yyyy-MM-dd');
+  // const displayDatetime = format(date, 'dd LLL yyyy');
 
   return (
     <article
@@ -62,7 +60,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
               </PostCardPrimaryTag>
             )}
 
-            <IconContext.Provider value={{color: 'gold', size: '0.75em'}}>
+            <IconContext.Provider value={{ color: 'gold', size: '0.75em' }}>
               <PostCardTitle className="post-card-title">
                 {post.frontmatter.featured && <AiFillStar/>} &nbsp;
                 {post.frontmatter.title}
@@ -88,7 +86,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
               })}
             </span> */}
             <span className="post-card-byline-date">
-              <time dateTime={datetime}>{displayDatetime}</time>{' '}
+              {/* <time dateTime={datetime}>{displayDatetime}</time>{' '} */}
               <span className="bull">&bull;</span> {post.timeToRead} min read
             </span>
           </PostCardBylineContent>

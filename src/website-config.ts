@@ -65,8 +65,8 @@ const config: WebsiteConfig = {
   // twitter: 'https://twitter.com/tryghost',
 
   github: 'https://github.com/JosephLandy',
-  linkedin: 'not a url',
-
+  linkedin: 'https://www.linkedin.com/in/joseph-landy-65813b15b/',
+  email: 'joseph.landy.email@gmail.com',
   showSubscribe: false,
   mailchimpAction:
     'https://twitter.us19.list-manage.com/subscribe/post?u=a89b6987ac248c81b0b7f3a0f&amp;id=7d777b7d75',

@@ -2,7 +2,7 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 import React from 'react';
 import { css } from '@emotion/core';
 import { FixedObject } from 'gatsby-image';
-import {SiteTitle} from '../../styles/shared'
+import { SiteTitle } from '../../styles/shared';
 
 import config from '../../website-config';
 
@@ -27,7 +27,6 @@ export const SiteNavLogo = () => (
         }
       }
     `}
-    // tslint:disable-next-line:react-this-binding-issue
     render={(data: SiteNavLogoProps) => (
       <Link className="site-nav-logo" css={[SiteNavLogoStyles, SiteTitle]} to="/">
         {/* {data.logo ? (
@@ -40,7 +39,6 @@ export const SiteNavLogo = () => (
     )}
   />
 );
-
 
 // color primary: "rgb(104, 136, 223)"
 const cp = '#6888df';

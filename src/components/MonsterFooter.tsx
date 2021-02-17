@@ -26,7 +26,6 @@ const bob = keyframes`
     bottom -10vh;
   }
 `;
-
 const transitionIn = keyframes`
   0% {
     bottom: -100vh;
@@ -35,32 +34,17 @@ const transitionIn = keyframes`
     bottom: -10vh;
   }
 `;
+
 const imgwidth = 1200;
-
-const transitionInDelay = 0;
-const transitionInDuration = 5;
-const bobDuration = 5;
-
 
 const MonsterWrapper = styled.div`
   position: fixed;
   /* bottom: -100vh; */
   z-index: 1000000;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const DownBtn = styled(BsChevronCompactDown)`
-  font-size: 7em;
-  &:hover {
-    color: lightgreen;
-  }
-  &:active {
-    color: green;
-  }
 `;
 
 const images = [forward, left, forward, right];
@@ -86,6 +70,9 @@ const DownButton: React.FC<{ isHidden: boolean; onClick: any }> = ({ isHidden, o
   );
 };
 
+const transitionInDelay = 7;
+const transitionInDuration = 15;
+const bobDuration = 5;
 
 const animationCSS = css`
   bottom: -100vh;
@@ -94,14 +81,13 @@ const animationCSS = css`
   animation-duration: ${bobDuration}s, ${transitionInDuration}s;
   animation-timing-function: linear;
   animation-iteration-count: infinite, 1;
-  animation-delay: ${transitionInDelay + transitionInDuration}s, 0s;
+  animation-delay: ${transitionInDelay + transitionInDuration}s, ${transitionInDelay}s;
 `;
-
 
 const MonsterFooter: React.FC<Props> = props => {
   const [srcindex, setSrcIndex] = useState(1);
   const [hidden, setHidden] = useState(false);
-  
+
   // flip through eye positions.
   useEffect(() => {
     let interval = setInterval(() => {
@@ -112,7 +98,15 @@ const MonsterFooter: React.FC<Props> = props => {
   }, []);
 
   return (
-    <MonsterWrapper css={hidden ? css`bottom: 0vh;` : animationCSS}>
+    <MonsterWrapper
+      css={
+        hidden
+          ? css`
+              bottom: 0vh;
+            `
+          : animationCSS
+      }
+    >
       <DownButton
         isHidden={hidden}
         onClick={() => {
@@ -124,6 +118,8 @@ const MonsterFooter: React.FC<Props> = props => {
         src={images[srcindex]}
         alt="Monster"
         css={css`
+          opacity: 90%; // for some reason, opacity was reduced on this in the css out of my control.
+          
           width: 100%;
           max-width: 1980px;
           display: ${hidden ? 'none' : 'initial'};

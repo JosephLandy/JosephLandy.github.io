@@ -24,15 +24,8 @@ import {
   SiteMain,
   SiteNavMain,
 } from '../styles/shared';
-import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
+import { NoImage, PostFull, PostFullHeader, PostFullTitle, PostTemplate } from '../templates/post';
 import { colors } from '../styles/colors';
-
-const PageTemplate = css`
-  .site-main {
-    margin-top: 64px;
-    padding-bottom: 4vw;
-  }
-`;
 
 interface AboutProps {
   data: {
@@ -116,7 +109,7 @@ const About: React.FC<AboutProps> = props => {
       <Helmet>
         <title>About</title>
       </Helmet>
-      <Wrapper css={PageTemplate}>
+      <Wrapper css={PostTemplate}>
         <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>

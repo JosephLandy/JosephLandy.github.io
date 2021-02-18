@@ -3,7 +3,6 @@ title: Sleep Tracking Web App
 image: week-display-cropped.png
 github: https://github.com/JosephLandy/sleep-frontend
 website: https://sleep-tracker-josephlandy-crazybuild.azurewebsites.net/
-author: [Joseph]
 layout: post
 tags: []
 date: '1927-12-12T10:00:00.001Z'

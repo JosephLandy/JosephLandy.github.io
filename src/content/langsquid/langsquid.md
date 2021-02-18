@@ -1,6 +1,5 @@
 ---
 title: langsquid.com
-author: [Joseph]
 tags: []
 layout: post
 date: '1923-12-12T10:00:00.001Z'

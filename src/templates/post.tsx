@@ -47,7 +47,6 @@ interface PageTemplateProps {
         };
         excerpt: string;
         tags: string[];
-        // author: Author[];
       };
     };
     relatedPosts: {
@@ -196,13 +195,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                     {/* <AuthorList authors={post.frontmatter.author} tooltip="large" /> */}
                     <PostCardLinks github={post.frontmatter.github} website={post.frontmatter.website}/>
                     <section className="post-full-byline-meta">
-                      {/* <h4 className="author-name">
-                        {post.frontmatter.author.map(author => (
-                          <Link key={author.id} to={`/author/${_.kebabCase(author.id)}/`}>
-                            {author.id}
-                          </Link>
-                        ))}
-                      </h4> */}
                       <div className="byline-meta-content">
                         <time className="byline-meta-date" dateTime={datetime}>
                           {displayDatetime}

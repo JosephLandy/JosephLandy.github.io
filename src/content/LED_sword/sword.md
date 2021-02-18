@@ -1,7 +1,6 @@
 ---
 title: 3D Printed LED Sword
 image: images/sword_held_cropped.png
-author: [Joseph]
 layout: post
 tags: [Electronics, 3d Printing]
 date: '2019-12-12T10:00:00.001Z'

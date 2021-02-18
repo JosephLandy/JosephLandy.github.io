@@ -1,7 +1,6 @@
 ---
 title: Biomotion Motion Capture Marker Tool
 image: website_code_screenshot.png
-author: [Joseph]
 layout: post
 date: '2019-10-24'
 tags: ["Unity", "3d"]

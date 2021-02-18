@@ -1,6 +1,5 @@
 ---
 title: Todolist React App
-author: [Joseph]
 layout: post
 date: '1928-12-12T10:00:00.001Z'
 image: todolist-screenshot.png

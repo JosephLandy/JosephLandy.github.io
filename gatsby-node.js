@@ -84,35 +84,11 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
-              author {
-                id
-                bio
-                avatar {
-                  children {
-                    ... on ImageSharp {
-                      fluid(quality: 100) {
-                        aspectRatio
-                        base64
-                        sizes
-                        src
-                        srcSet
-                      }
-                    }
-                  }
-                }
-              }
             }
             fields {
               layout
               slug
             }
-          }
-        }
-      }
-      allAuthorYaml {
-        edges {
-          node {
-            id
           }
         }
       }

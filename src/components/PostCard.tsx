@@ -13,7 +13,6 @@ import { IconContext } from 'react-icons';
 
 import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
-// import { AuthorList } from './AuthorList';
 
 // import { MdWeb } from 'react-icons/md';
 // import { GoMarkGithub } from 'react-icons/go';
@@ -72,19 +71,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
           </PostCardExcerpt>
         </Link>
         <PostCardMeta className="post-card-meta">
-          {/* <AuthorList authors={post.frontmatter.author} tooltip="small" /> */}
           <PostCardLinks github={post.frontmatter.github} website={post.frontmatter.website} />
           <PostCardBylineContent className="post-card-byline-content">
-            {/* <span>
-              {post.frontmatter.author.map((author, index) => {
-                return (
-                  <React.Fragment key={author.id}>
-                    <Link to={`/author/${_.kebabCase(author.id)}/`}>{author.id}</Link>
-                    {post.frontmatter.author.length - 1 > index && ', '}
-                  </React.Fragment>
-                );
-              })}
-            </span> */}
             <span className="post-card-byline-date">
               {/* <time dateTime={datetime}>{displayDatetime}</time>{' '} */}
               <span className="bull">&bull;</span> {post.timeToRead} min read
@@ -237,7 +225,6 @@ const PostCardBylineContent = styled.div`
   display: flex;
   flex-direction: column;
   margin: 4px 0 0 10px;
-  /* color: color(var(--midgrey) l(+10%)); */
   color: ${lighten('0.1', colors.midgrey)};
   font-size: 1.2rem;
   line-height: 1.4em;
@@ -250,7 +237,6 @@ const PostCardBylineContent = styled.div`
   }
 
   a {
-    /* color: color(var(--darkgrey) l(+20%)); */
     color: ${lighten('0.2', colors.darkgrey)};
     font-weight: 600;
   }
@@ -264,33 +250,4 @@ const PostCardBylineContent = styled.div`
 
 const PostCardHeader = styled.header`
   margin: 15px 0 0;
-`;
-
-export const StaticAvatar = css`
-  display: block;
-  overflow: hidden;
-  margin: 0 0 0 -6px;
-  width: 34px;
-  height: 34px;
-  border: #fff 2px solid;
-  border-radius: 100%;
-
-  @media (prefers-color-scheme: dark) {
-    /* border-color: color(var(--darkgrey) l(+2%)); */
-    border-color: ${lighten('0.02', colors.darkgrey)};
-  }
-`;
-
-export const AuthorProfileImage = css`
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* background: color(var(--lightgrey) l(+10%)); */
-  background: ${lighten('0.1', colors.lightgrey)};
-  border-radius: 100%;
-  object-fit: cover;
-
-  @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
-  }
 `;

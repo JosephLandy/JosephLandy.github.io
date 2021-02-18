@@ -1,17 +1,15 @@
 import React from 'react';
-// import styled from '@emotion/styled';
 import styled from '@emotion/styled';
 import { MdWeb } from 'react-icons/md';
 import { GoMarkGithub } from 'react-icons/go';
 import { IconContext } from 'react-icons';
 
-// import {AuthorListUl} from './AuthorList'
 interface Props {
   github?: string;
   website?: string;
 }
 
-export const AuthorListUl = styled.ul`
+export const LinksUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 0 4px;
@@ -20,7 +18,7 @@ export const AuthorListUl = styled.ul`
 `;
 
 export const PostCardLinks: React.FC<Props> = props => (
-  <AuthorListUl className="author-list">
+  <LinksUl className="links-icon-list">
     <IconContext.Provider
       value={{
         size: '2em',
@@ -42,7 +40,7 @@ export const PostCardLinks: React.FC<Props> = props => (
         )}
       </div>
     </IconContext.Provider>
-  </AuthorListUl>
+  </LinksUl>
 );
 
 // export const LinkItem: React.FC<{}> = props => (

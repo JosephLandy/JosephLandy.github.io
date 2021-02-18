@@ -19,6 +19,7 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
+import PostCardLinks from '../components/PostCardLinks';
 
 interface PageTemplateProps {
   location: Location;
@@ -37,6 +38,8 @@ interface PageTemplateProps {
         title: string;
         date: string;
         userDate: string;
+        github: string;
+        website: string;
         image: {
           childImageSharp: {
             fluid: any;
@@ -191,6 +194,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
                     {/* <AuthorList authors={post.frontmatter.author} tooltip="large" /> */}
+                    <PostCardLinks github={post.frontmatter.github} website={post.frontmatter.website}/>
                     <section className="post-full-byline-meta">
                       {/* <h4 className="author-name">
                         {post.frontmatter.author.map(author => (
@@ -339,7 +343,7 @@ const PostFullByline = styled.div`
     align-items: flex-start;
   }
 
-  .post-full-byline-content .author-list {
+  .post-full-byline-content .links-icon-list {
     justify-content: flex-start;
     padding: 0 12px 0 0;
   }
@@ -448,6 +452,8 @@ export const query = graphql`
         date
         tags
         excerpt
+        github
+        website
         image {
           childImageSharp {
             fluid(maxWidth: 3720) {

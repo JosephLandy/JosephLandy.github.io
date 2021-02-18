@@ -14,9 +14,6 @@ import { IconContext } from 'react-icons';
 import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
 
-// import { MdWeb } from 'react-icons/md';
-// import { GoMarkGithub } from 'react-icons/go';
-// import { IconContext } from 'react-icons';
 import PostCardLinks from './PostCardLinks';
 
 export interface PostCardProps {
@@ -93,12 +90,10 @@ const PostCardStyles = css`
   margin: 0 0 40px;
   padding: 0 20px 40px;
   min-height: 220px;
-  /* border-bottom: 1px solid color(var(--lightgrey) l(+12%)); */
   border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
   background-size: cover;
 
   @media (prefers-color-scheme: dark) {
-    /* border-bottom-color: color(var(--darkmode) l(+8%)); */
     border-bottom-color: ${lighten('0.08', colors.darkmode)};
   }
 `;

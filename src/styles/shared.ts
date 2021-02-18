@@ -279,52 +279,53 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
   `}
 `;
 
-export const NoImage = css`
-  .no-image {
-    padding-top: 0;
-    padding-bottom: 0;
-    /* color: var(--darkgrey); */
-    color: ${colors.darkgrey};
-    background: #fff;
-    opacity: 1;
-  }
 
-  .no-image .site-description {
-    /* color: var(--midgrey); */
-    color: ${colors.midgrey};
-    opacity: 1;
-  }
+// This is totally unused as far as I can tell. 
+// export const NoImage = css`
+//   .no-image {
+//     padding-top: 0;
+//     padding-bottom: 0;
+//     /* color: var(--darkgrey); */
+//     color: ${colors.darkgrey};
+//     background: #fff;
+//     opacity: 1;
+//   }
 
-  .no-image .site-header-content {
-    padding: 5vw 0 10px;
-    /* border-bottom: 1px solid color(var(--lightgrey) l(+12%)); */
-    border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
-  }
+//   .no-image .site-description {
+//     /* color: var(--midgrey); */
+//     color: ${colors.midgrey};
+//     opacity: 1;
+//   }
 
-  @media (max-width: 500px) {
-    .site-header-content {
-      flex-direction: column;
-      align-items: center;
-      min-height: unset;
-    }
+//   .no-image .site-header-content {
+//     padding: 5vw 0 10px;
+//     border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
+//   }
 
-    .site-title {
-      font-size: 4.2rem;
-      text-align: center;
-    }
+//   @media (max-width: 500px) {
+//     .site-header-content {
+//       flex-direction: column;
+//       align-items: center;
+//       min-height: unset;
+//     }
 
-    .no-image .site-header-content {
-      padding: 12vw 0 20px;
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    .no-image {
-      color: rgba(255, 255, 255, 0.9);
-      background: ${colors.darkmode};
-    }
+//     .site-title {
+//       font-size: 4.2rem;
+//       text-align: center;
+//     }
 
-    .no-image .site-header-content {
-      border-bottom-color: ${lighten('0.15', colors.darkmode)};
-    }
-  }
-`;
+//     .no-image .site-header-content {
+//       padding: 12vw 0 20px;
+//     }
+//   }
+//   @media (prefers-color-scheme: dark) {
+//     .no-image {
+//       color: rgba(255, 255, 255, 0.9);
+//       background: ${colors.darkmode};
+//     }
+
+//     .no-image .site-header-content {
+//       border-bottom-color: ${lighten('0.15', colors.darkmode)};
+//     }
+//   }
+// `;

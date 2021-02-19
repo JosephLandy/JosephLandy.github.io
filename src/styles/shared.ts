@@ -30,9 +30,9 @@ export const SiteNavMain = css`
 export const SiteMain = css`
   flex-grow: 1;
 
-  @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
-  }
+  /* @media (prefers-color-scheme: dark) { */
+  background: ${colors.darkmode};
+  /* } */
 `;
 // gradient from elemental starter.
 // color primary: "rgb(104, 136, 223)"
@@ -50,7 +50,7 @@ export const SiteTitle = styled.h1`
   background: linear-gradient(0.25turn, ${cp}, ${cs});
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   @media (max-width: 500px) {
     font-size: 4.2rem;
   }
@@ -80,16 +80,16 @@ export const PostFeed = css`
   flex-wrap: wrap;
   margin: 0 -20px;
   padding: 50px 0 0;
-  background: #fff;
+  /* background: #fff; */
 
   /* Special Template Styles */
   padding: 40px 0 5vw;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 
-  @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
-  }
+  /* @media (prefers-color-scheme: dark) { */
+  background: ${colors.darkmode};
+  /* } */
 `;
 
 export const SocialLink = css`
@@ -127,46 +127,45 @@ export const SiteHeaderContent = styled.div`
   max-height: 340px;
 `;
 
-export const SiteHeaderStyles = css`
-  position: relative;
-  /* margin-top: 64px; */
-  padding-bottom: 12px;
-  color: #fff;
-  /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
-  background: ${lighten('-0.05', colors.darkgrey)} no-repeat center center;
-  background-size: cover;
+// moved to index.tsx, since it's only used there.
+// export const SiteHeaderStyles = css`
+//   position: relative;
+//   /* margin-top: 64px; */
+//   padding-bottom: 12px;
+//   color: #fff;
+//   background: ${lighten('-0.05', colors.darkgrey)} no-repeat center center;
+//   background-size: cover;
 
-  :before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-    background: rgba(0, 0, 0, 0.18);
-  }
-  :after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    z-index: 10;
-    display: block;
-    height: 140px;
-    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-  }
+//   :before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     z-index: 10;
+//     display: block;
+//     background: rgba(0, 0, 0, 0.18);
+//   }
+//   :after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: auto;
+//     left: 0;
+//     z-index: 10;
+//     display: block;
+//     height: 140px;
+//     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+//   }
 
-  @media (prefers-color-scheme: dark) {
-    :before {
-      background: rgba(0, 0, 0, 0.6);
-    }
-  }
-`;
-
+//   /* @media (prefers-color-scheme: dark) { */
+//   :before {
+//     background: rgba(0, 0, 0, 0.6);
+//   }
+//   /* } */
+// `;
 
 // tag and author post lists
 export const SiteArchiveHeader = css`
@@ -205,7 +204,7 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
       left: 0;
       z-index: 10;
       display: block;
-      background: rgba(0, 0, 0, 0.18);
+      /* background: rgba(0, 0, 0, 0.18); */
     }
 
     :after {
@@ -221,11 +220,11 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
       background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
     }
 
-    @media (prefers-color-scheme: dark) {
+    /* @media (prefers-color-scheme: dark) { */
       &:before {
         background: rgba(0, 0, 0, 0.6);
       }
-    }
+    /* } */
   `}
 
   ${p =>
@@ -234,21 +233,18 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
 
     padding-top: 0;
     padding-bottom: 0;
-    /* color: var(--darkgrey); */
-    color: ${colors.darkgrey};
-    background: #fff;
+    // color: ${colors.darkgrey};
+    // background: #fff;
     opacity: 1;
 
 
   .site-description {
-    /* color: var(--midgrey); */
     color: ${colors.midgrey};
     opacity: 1;
   }
 
   .site-header-content {
     padding: 5vw 0 10px;
-    /* border-bottom: 1px solid color(var(--lightgrey) l(+12%)); */
     border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
   }
 
@@ -268,19 +264,19 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
       padding: 12vw 0 20px;
     }
   }
-  @media (prefers-color-scheme: dark) {
+  // I don't think this class does anything. 
+  // @media (prefers-color-scheme: dark) {
     color: rgba(255, 255, 255, 0.9);
     background: ${colors.darkmode};
 
     .site-header-content {
       border-bottom-color: ${lighten('0.15', colors.darkmode)};
     }
-  }
+  // }
   `}
 `;
 
-
-// This is totally unused as far as I can tell. 
+// This is totally unused as far as I can tell.
 // export const NoImage = css`
 //   .no-image {
 //     padding-top: 0;

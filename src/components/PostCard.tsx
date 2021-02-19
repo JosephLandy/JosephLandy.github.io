@@ -93,9 +93,9 @@ const PostCardStyles = css`
   border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
   background-size: cover;
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) { */
     border-bottom-color: ${lighten('0.08', colors.darkmode)};
-  }
+  /* } */
 `;
 
 const PostCardLarge = css`
@@ -182,7 +182,6 @@ const PostCardContentLink = css`
 
 const PostCardPrimaryTag = styled.div`
   margin: 0 0 0.2em;
-  /* color: var(--blue); */
   color: ${colors.blue};
   font-size: 1.2rem;
   font-weight: 500;
@@ -193,20 +192,21 @@ const PostCardPrimaryTag = styled.div`
 const PostCardTitle = styled.h2`
   margin: 0 0 0.4em;
   line-height: 1.15em;
+  // transition isn't working for some reason. 
   transition: color 0.2s ease-in-out;
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) { */
     color: rgba(255, 255, 255, 0.85);
-  }
+  /* } */
 `;
 
 const PostCardExcerpt = styled.section`
   font-family: Georgia, serif;
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) { */
     /* color: color(var(--midgrey) l(+10%)); */
     color: ${lighten('0.1', colors.midgrey)} !important;
-  }
+  /* } */
 `;
 
 const PostCardMeta = styled.footer`
@@ -232,15 +232,16 @@ const PostCardBylineContent = styled.div`
   }
 
   a {
-    color: ${lighten('0.2', colors.darkgrey)};
+    /* color: ${lighten('0.2', colors.darkgrey)}; */
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 600;
   }
 
-  @media (prefers-color-scheme: dark) {
-    a {
+  /* @media (prefers-color-scheme: dark) { */
+    /* a {
       color: rgba(255, 255, 255, 0.75);
-    }
-  }
+    } */
+  /* } */
 `;
 
 const PostCardHeader = styled.header`

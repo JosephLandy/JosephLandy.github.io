@@ -7,8 +7,8 @@ import { lighten } from 'polished';
 // @ts-ignore
 import favicon from '../../src/favicon.ico';
 import { colors } from '../styles/colors';
-import { SidebarLayout } from './sidebar-layout';
-import ContentLayout from './ContentLayout';
+// import { SidebarLayout } from './sidebar-layout';
+// import ContentLayout from './ContentLayout';
 
 interface IndexProps {
   className?: string;
@@ -22,6 +22,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
       </Helmet>
       <Global
         styles={css`
+        // it would be nice to know what css reset this is.
           html,
           body,
           div,
@@ -481,11 +482,12 @@ const IndexLayout: React.FC<IndexProps> = props => {
           }
 
           /* globals from screen.css */
-          body {
+          /* body {
             background: #fff;
-          }
-
-          @media (prefers-color-scheme: dark) {
+          } */
+          // setting body here only seems to end up applying it to the body in the PostContent.tsx component, everything else
+          // is specified somewhere else. 
+          /* @media (prefers-color-scheme: dark) { */
             body {
               color: rgba(255, 255, 255, 0.75);
               background: ${colors.darkmode};
@@ -493,7 +495,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
             img {
               opacity: 0.9;
             }
-          }
+          /* } */
         `}
       />
       {/* <SidebarLayout>

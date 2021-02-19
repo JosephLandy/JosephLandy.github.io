@@ -193,7 +193,10 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                 <PostFullByline className="post-full-byline">
                   <section className="post-full-byline-content">
                     {/* <AuthorList authors={post.frontmatter.author} tooltip="large" /> */}
-                    <PostCardLinks github={post.frontmatter.github} website={post.frontmatter.website}/>
+                    <PostCardLinks
+                      github={post.frontmatter.github}
+                      website={post.frontmatter.website}
+                    />
                     <section className="post-full-byline-meta">
                       <div className="byline-meta-content">
                         <time className="byline-meta-date" dateTime={datetime}>
@@ -241,16 +244,15 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 export const PostTemplate = css`
   .site-main {
     margin-top: 64px;
-    background: #fff;
     padding-bottom: 4vw;
   }
 
-  @media (prefers-color-scheme: dark) {
+  // supurfluous, duplicates setting in SiteMain in shared.ts
+  /* @media (prefers-color-scheme: dark) {
     .site-main {
-      /* background: var(--darkmode); */
       background: ${colors.darkmode};
     }
-  }
+  } */
 `;
 
 export const PostFull = css`
@@ -302,9 +304,10 @@ const PostFullTags = styled.section`
   text-transform: uppercase;
 `;
 
+// I don't think this actually does anything, why would you have the excerpt on the post page itself?
 const PostFullCustomExcerpt = styled.p`
   margin: 20px 0 0;
-  color: var(--midgrey);
+  /* color: var(--midgrey); */
   font-family: Georgia, serif;
   font-size: 2.3rem;
   line-height: 1.4em;
@@ -315,10 +318,9 @@ const PostFullCustomExcerpt = styled.p`
     line-height: 1.5em;
   }
 
-  @media (prefers-color-scheme: dark) {
-    /* color: color(var(--midgrey) l(+10%)); */
-    color: ${lighten('0.1', colors.midgrey)};
-  }
+  /* @media (prefers-color-scheme: dark) { */
+  color: ${lighten('0.1', colors.midgrey)};
+  /* } */
 `;
 
 const PostFullByline = styled.div`
@@ -326,7 +328,6 @@ const PostFullByline = styled.div`
   justify-content: space-between;
   margin: 35px 0 0;
   padding-top: 15px;
-  /* border-top: 1px solid color(var(--lightgrey) l(+10%)); */
   border-top: 1px solid ${lighten('0.1', colors.lightgrey)};
 
   .post-full-byline-content {
@@ -342,7 +343,6 @@ const PostFullByline = styled.div`
 
   .post-full-byline-meta {
     margin: 2px 0 0;
-    /* color: color(var(--midgrey) l(+10%)); */
     color: ${lighten('0.1', colors.midgrey)};
     font-size: 1.2rem;
     line-height: 1.2em;
@@ -356,16 +356,14 @@ const PostFullByline = styled.div`
     line-height: 1.4em;
     font-weight: 500;
   }
-
-  .post-full-byline-meta h4 a {
-    /* color: color(var(--darkgrey) l(+10%)); */
+ // set below.
+  /* .post-full-byline-meta h4 a {
     color: ${lighten('0.1', colors.darkgrey)};
-  }
+  } */
 
-  .post-full-byline-meta h4 a:hover {
-    /* color: var(--darkgrey); */
+  /* .post-full-byline-meta h4 a:hover {
     color: ${colors.darkgrey};
-  }
+  } */
 
   .post-full-byline-meta .bull {
     display: inline-block;
@@ -373,10 +371,10 @@ const PostFullByline = styled.div`
     opacity: 0.6;
   }
 
-  @media (prefers-color-scheme: dark) {
-    /* border-top-color: color(var(--darkmode) l(+15%)); */
+  /* @media (prefers-color-scheme: dark) { */
     border-top-color: ${lighten('0.15', colors.darkmode)};
 
+    // I don't know when this would ever come up. What h4s contain links?   
     .post-full-byline-meta h4 a {
       color: rgba(255, 255, 255, 0.75);
     }
@@ -384,20 +382,19 @@ const PostFullByline = styled.div`
     .post-full-byline-meta h4 a:hover {
       color: #fff;
     }
-  }
+  /* } */
 `;
 
 export const PostFullTitle = styled.h1`
   margin: 0 0 0.2em;
-  color: ${setLightness('0.05', colors.darkgrey)};
   @media (max-width: 500px) {
     margin-top: 0.2em;
     font-size: 3.3rem;
   }
 
-  @media (prefers-color-scheme: dark) {
+  // @media (prefers-color-scheme: dark) {
     color: rgba(255, 255, 255, 0.9);
-  }
+  // }
 `;
 
 const PostFullImage = styled.figure`

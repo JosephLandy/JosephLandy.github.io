@@ -102,8 +102,8 @@ const AboutParagraph = styled.div`
 const About: React.FC<AboutProps> = props => {
   const resized = props.data.file.childImageSharp.resize.src;
 
-  // ok, so for whatever reason, the flex layout switches at 1040 px width, so that's what
-  // were using for the breakpoint.
+  // ok, so for whatever reason, the flex layout switches at 1040 px width, so that's what were using for the breakpoint.
+  // This switches at 1040 px because that is what max-width is set to in the "outer" style in shared.ts
   return (
     <IndexLayout>
       <Helmet>

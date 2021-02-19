@@ -21,12 +21,54 @@ import {
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
-  SiteHeaderStyles,
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext } from './post';
 
 import MonsterFooter from '../components/MonsterFooter';
+import { lighten } from 'polished';
+import { colors } from '../styles/colors';
+
+// moved from shared.ts it's only used in index.
+const SiteHeaderStyles = css`
+  position: relative;
+  /* margin-top: 64px; */
+  padding-bottom: 12px;
+  color: #fff;
+  background: ${lighten('-0.05', colors.darkgrey)} no-repeat center center;
+  background-size: cover;
+
+  :before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  :after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    z-index: 10;
+    display: block;
+    height: 140px;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  }
+
+// this doesn't do anything as far as I can tell. 
+  /* @media (prefers-color-scheme: dark) { */
+    /* :before {
+      background: rgba(0, 0, 0, 0.6);
+    } */
+  /* } */
+`;
 
 export interface IndexProps {
   pageContext: {
@@ -149,7 +191,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           />
         )}
         <Footer />
-        <MonsterFooter/>
+        <MonsterFooter />
       </Wrapper>
     </IndexLayout>
   );

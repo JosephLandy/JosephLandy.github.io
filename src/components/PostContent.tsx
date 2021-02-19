@@ -37,7 +37,9 @@ export const PostFullContent = styled.section`
   font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 1.6em;
-  background: #fff;
+  
+  // commenting this just makes the higher up background styling take effect. 
+  /* background: #fff; */
 
   @media (max-width: 1170px) {
     padding: 0 11vw;
@@ -98,10 +100,8 @@ export const PostFullContent = styled.section`
   }
 
   a {
-    /* color: var(--darkgrey); */
     color: ${colors.darkgrey};
     word-break: break-word;
-    /* box-shadow: var(--darkgrey) 0 -1px 0 inset; */
     box-shadow: ${colors.darkgrey} 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
   }
@@ -241,7 +241,6 @@ export const PostFullContent = styled.section`
     margin-left: -10px;
     width: 1px;
     height: 30px;
-    /* background: color(var(--lightgrey) l(+10%)); */
     background: ${lighten('0.1', colors.lightgrey)};
     box-shadow: #fff 0 0 0 5px;
     transform: rotate(45deg);
@@ -257,7 +256,6 @@ export const PostFullContent = styled.section`
   h4,
   h5,
   h6 {
-    /* color: color(var(--darkgrey) l(-5%)); */
     color: ${lighten('-0.05', colors.darkgrey)};
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
@@ -337,7 +335,6 @@ export const PostFullContent = styled.section`
     margin: 0.5em 0;
     padding: 0.4em 1em 0.9em;
     border: 0;
-    /* color: var(--blue); */
     color: ${colors.blue};
     font-family: Georgia, serif;
     font-size: 3.2rem;
@@ -437,8 +434,7 @@ export const PostFullContent = styled.section`
     border: ${lighten('-0.01', colors.whitegrey)} 1px solid;
   }
 
-  @media (prefers-color-scheme: dark) {
-    /* background: var(--darkmode); */
+  /* @media (prefers-color-scheme: dark) { */
     background: ${colors.darkmode};
 
     h1,
@@ -511,7 +507,7 @@ export const PostFullContent = styled.section`
       color: rgba(255, 255, 255, 0.75);
       box-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
     }
-  }
+  /* } */
 
   /* Start Syntax Highlighting */
   /* Taken from overreacted https://github.com/gaearon/overreacted.io/blob/942b41555f5e5ccbb5f93f6c26142cd90b314236/src/utils/global.css#L68 */

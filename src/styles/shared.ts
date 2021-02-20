@@ -109,8 +109,6 @@ export const SocialLinkFb = css`
   }
 `;
 
-export const SiteHeader = css``;
-
 export const SiteHeaderContent = styled.div`
   z-index: 100;
   display: flex;
@@ -121,46 +119,6 @@ export const SiteHeaderContent = styled.div`
   min-height: 200px;
   max-height: 340px;
 `;
-
-// moved to index.tsx, since it's only used there.
-// export const SiteHeaderStyles = css`
-//   position: relative;
-//   /* margin-top: 64px; */
-//   padding-bottom: 12px;
-//   color: #fff;
-//   background: ${lighten('-0.05', colors.darkgrey)} no-repeat center center;
-//   background-size: cover;
-
-//   :before {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     z-index: 10;
-//     display: block;
-//     background: rgba(0, 0, 0, 0.18);
-//   }
-//   :after {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: auto;
-//     left: 0;
-//     z-index: 10;
-//     display: block;
-//     height: 140px;
-//     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-//   }
-
-//   /* @media (prefers-color-scheme: dark) { */
-//   :before {
-//     background: rgba(0, 0, 0, 0.6);
-//   }
-//   /* } */
-// `;
 
 // tag and author post lists
 export const SiteArchiveHeader = css`
@@ -186,7 +144,6 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
     padding-bottom: 12px;
     color: #fff;
     background-size: cover;
-    /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
     background: #090a0b no-repeat 50%;
     background-image: url(${p.backgroundImage});
 
@@ -270,53 +227,3 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
   // }
   `}
 `;
-
-// This is totally unused as far as I can tell.
-// export const NoImage = css`
-//   .no-image {
-//     padding-top: 0;
-//     padding-bottom: 0;
-//     /* color: var(--darkgrey); */
-//     color: ${colors.darkgrey};
-//     background: #fff;
-//     opacity: 1;
-//   }
-
-//   .no-image .site-description {
-//     /* color: var(--midgrey); */
-//     color: ${colors.midgrey};
-//     opacity: 1;
-//   }
-
-//   .no-image .site-header-content {
-//     padding: 5vw 0 10px;
-//     border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
-//   }
-
-//   @media (max-width: 500px) {
-//     .site-header-content {
-//       flex-direction: column;
-//       align-items: center;
-//       min-height: unset;
-//     }
-
-//     .site-title {
-//       font-size: 4.2rem;
-//       text-align: center;
-//     }
-
-//     .no-image .site-header-content {
-//       padding: 12vw 0 20px;
-//     }
-//   }
-//   @media (prefers-color-scheme: dark) {
-//     .no-image {
-//       color: rgba(255, 255, 255, 0.9);
-//       background: ${colors.darkmode};
-//     }
-
-//     .no-image .site-header-content {
-//       border-bottom-color: ${lighten('0.15', colors.darkmode)};
-//     }
-//   }
-// `;

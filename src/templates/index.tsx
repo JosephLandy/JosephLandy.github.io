@@ -61,13 +61,6 @@ const SiteHeaderStyles = css`
     height: 140px;
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
   }
-
-// this doesn't do anything as far as I can tell. 
-  /* @media (prefers-color-scheme: dark) { */
-    /* :before {
-      background: rgba(0, 0, 0, 0.6);
-    } */
-  /* } */
 `;
 
 export interface IndexProps {

@@ -100,25 +100,25 @@ export const PostFullContent = styled.section`
   }
 
   a {
-    color: ${colors.darkgrey};
+
+    // I feel like I should actually just make this a global link styling. 
     word-break: break-word;
-    box-shadow: ${colors.darkgrey} 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
+    
+    color: #fff;
+    box-shadow: inset 0 -1px 0 #fff;
   }
 
   a:hover {
-    /* color: var(--blue); */
     color: ${colors.blue};
     text-decoration: none;
-    /* box-shadow: var(--blue) 0 -1px 0 inset; */
     box-shadow: ${colors.blue} 0 -1px 0 inset;
   }
 
-  strong,
+  /* strong,
   em {
-    /* color: color(var(--darkgrey) l(-5%)); */
     color: ${lighten('-0.05', colors.darkgrey)};
-  }
+  } */
 
   small {
     display: inline-block;
@@ -183,7 +183,6 @@ export const PostFullContent = styled.section`
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400 !important;
-    /* background: var(--whitegrey); */
     background: ${colors.whitegrey};
     border-radius: 3px;
   }
@@ -197,19 +196,15 @@ export const PostFullContent = styled.section`
     /* margin: 1.5em 0 3em; */
     padding: 20px;
     max-width: 100%;
-    /* border: color(var(--darkgrey) l(-10%)) 1px solid; */
     /* border: ${lighten('-0.1', colors.darkgrey)} 1px solid; */
-    /* color: var(--whitegrey); */
     color: ${colors.whitegrey};
     font-size: 1.4rem;
     line-height: 1.5em;
-    /* background: color(var(--darkgrey) l(-3%)); */
     /* background: ${lighten('-0.03', colors.darkgrey)}; */
     border-radius: 5px;
   }
 
   pre ::selection {
-    /* color: color(var(--midgrey) l(-25%)); */
     color: ${lighten('-0.25', colors.midgrey)};
   }
 
@@ -229,6 +224,7 @@ export const PostFullContent = styled.section`
   }
 
   hr {
+    border-top-color: ${lighten('0.08', colors.darkmode)};
     margin: 2em 0;
   }
 
@@ -256,7 +252,7 @@ export const PostFullContent = styled.section`
   h4,
   h5,
   h6 {
-    color: ${lighten('-0.05', colors.darkgrey)};
+    color: rgba(255, 255, 255, 0.9);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
   }
@@ -395,11 +391,12 @@ export const PostFullContent = styled.section`
   }
 
   table td:first-of-type {
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
       to right,
       rgba(255, 255, 255, 1) 50%,
       rgba(255, 255, 255, 0) 100%
-    );
+    ); */
+    background-image: linear-gradient(to right, ${colors.darkmode} 50%, ${colors.darkmode} 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;
   }
@@ -416,26 +413,23 @@ export const PostFullContent = styled.section`
   }
 
   table th {
-    /* color: var(--darkgrey); */
     color: ${colors.darkgrey};
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
-    /* background-color: color(var(--whitegrey) l(+4%)); */
     background-color: ${lighten('0.04', colors.whitegrey)};
   }
 
   table th,
   table td {
     padding: 6px 12px;
-    /* border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid; */
     border: ${lighten('-0.01', colors.whitegrey)} 1px solid;
   }
 
   /* @media (prefers-color-scheme: dark) { */
-    background: ${colors.darkmode};
+    /* background: ${colors.darkmode}; */
 
     h1,
     h2,
@@ -445,60 +439,42 @@ export const PostFullContent = styled.section`
       color: rgba(255, 255, 255, 0.9);
     }
 
-    a {
-      color: #fff;
-      box-shadow: inset 0 -1px 0 #fff;
-    }
-
-    strong {
+    strong, em {
       color: #fff;
     }
 
-    em {
+    /* em {
       color: #fff;
-    }
+    } */
 
     code {
       color: #fff;
       background: #000;
     }
 
-    hr {
-      /* border-top-color: color(var(--darkmode) l(+8%)); */
+    /* hr {
       border-top-color: ${lighten('0.08', colors.darkmode)};
-    }
+    } */
 
     figcaption {
       color: rgba(255, 255, 255, 0.6);
     }
 
-    table td:first-of-type {
-      /* background-image: linear-gradient(
-        to right,
-        var(--darkmode) 50%,
-        color(var(--darkmode) a(0%)) 100%
-      ); */
+    /* table td:first-of-type {
       background-image: linear-gradient(to right, ${colors.darkmode} 50%, ${colors.darkmode} 100%);
-    }
+    } */
 
     table td:last-child {
-      /* background-image: linear-gradient(
-        to left,
-        var(--darkmode) 50%,
-        color(var(--darkmode) a(0%)) 100%
-      ); */
       background-image: linear-gradient(270deg, #191b1f 50%, rgba(25, 27, 31, 0));
     }
 
     table th {
       color: rgba(255, 255, 255, 0.85);
-      /* background-color: color(var(--darkmode) l(+8%)); */
       background-color: ${lighten('0.08', colors.darkmode)};
     }
 
     table th,
     table td {
-      /* border: color(var(--darkmode) l(+8%)) 1px solid; */
       border: ${lighten('0.08', colors.darkmode)} 1px solid;
     }
 

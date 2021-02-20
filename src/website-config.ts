@@ -20,11 +20,9 @@ export interface WebsiteConfig {
    * full url, no username
    */
   twitter?: string;
-
   github?: string;
   linkedin?: string;
   email?: string;
-
   /**
    * hide or show all email subscribe boxes
    */

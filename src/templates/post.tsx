@@ -103,11 +103,8 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
     height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
   }
 
-  const date = new Date(post.frontmatter.date);
-  // 2018-08-20
-  const datetime = format(date, 'yyyy-MM-dd');
-  // 20 AUG 2018
-  const displayDatetime = format(date, 'dd LLL yyyy');
+  // const date = new Date(post.frontmatter.date);
+  // const displayDatetime = format(date, 'dd LLL yyyy');
 
   return (
     <IndexLayout className="post-template">
@@ -199,9 +196,9 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                     />
                     <section className="post-full-byline-meta">
                       <div className="byline-meta-content">
-                        <time className="byline-meta-date" dateTime={datetime}>
+                        {/* <time className="byline-meta-date" dateTime={datetime}>
                           {displayDatetime}
-                        </time>
+                        </time> */}
                         <span className="byline-reading-time">
                           <span className="bull">&bull;</span> {post.timeToRead} min read
                         </span>
@@ -223,7 +220,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               <PostContent htmlAst={post.htmlAst} />
 
               {/* The big email subscribe modal content */}
-              {config.showSubscribe && <Subscribe title={config.title} />}
+              {/* {config.showSubscribe && <Subscribe title={config.title} />} */}
             </article>
           </div>
         </main>
@@ -397,6 +394,8 @@ export const PostFullTitle = styled.h1`
   // }
 `;
 
+
+// this should change. I don't like this. 
 const PostFullImage = styled.figure`
   margin: 25px 0 50px;
   height: 800px;

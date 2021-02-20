@@ -1,9 +1,9 @@
 {
   "name": "website-casper",
-  "description": "personal website based on ",
+  "description": "Personal website based on the gatsby-casper template.",
   "version": "0.0.0",
   "private": true,
-  "author": "Scott Cooper <scttcper@gmail.com>",
+  "author": "Joseph Landy",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

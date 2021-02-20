@@ -9,6 +9,9 @@ import { mq } from '../styles/constants';
 
 interface Props {}
 
+
+const baselinePosition = 100;
+
 const bob = keyframes`
   0% {
     bottom: -10vh;
@@ -35,11 +38,9 @@ const transitionIn = keyframes`
   }
 `;
 
-const imgwidth = 1200;
-
+// holds the monster image and the control to get rid of it.
 const MonsterWrapper = styled.div`
   position: fixed;
-  /* bottom: -100vh; */
   z-index: 1000000;
   width: 100%;
   display: flex;
@@ -76,7 +77,6 @@ const bobDuration = 5;
 
 const animationCSS = css`
   bottom: -100vh;
-
   animation-name: ${bob}, ${transitionIn};
   animation-duration: ${bobDuration}s, ${transitionInDuration}s;
   animation-timing-function: linear;
@@ -110,7 +110,6 @@ const MonsterFooter: React.FC<Props> = props => {
       <DownButton
         isHidden={hidden}
         onClick={() => {
-          console.log('toggle hidden.  monster');
           setHidden(!hidden);
         }}
       />
@@ -118,10 +117,11 @@ const MonsterFooter: React.FC<Props> = props => {
         src={images[srcindex]}
         alt="Monster"
         css={css`
-          opacity: 90%; // for some reason, opacity was reduced on this in the css out of my control.
-          
+          opacity: 90%; // for some reason, opacity was reduced on this by default in some other css. 
+          // set the opacity to something I want. 
           width: 100%;
-          max-width: 1980px;
+          /* max-width: 1980px; */
+          max-width: 1000px;
           display: ${hidden ? 'none' : 'initial'};
         `}
       />

@@ -91,6 +91,8 @@ const PointHeading = styled.h6`
 //   }
 // `;
 const AboutParagraph = styled.div`
+  margin: 0px;
+  padding: 0px;
   width: 100%;
   @media only screen and (min-width: 1041px) {
     width: 50%;
@@ -125,7 +127,11 @@ const About: React.FC<AboutProps> = props => {
               </PostFullHeader>
 
               <PostFullContent className="post-full-content">
-                <div className="post-content">
+                <div className="post-content" css={css`
+                p {
+                  text-indent: 2em;
+                }
+                `}>
                   <div
                     css={css`
                       display: flex;
@@ -136,27 +142,34 @@ const About: React.FC<AboutProps> = props => {
                       /* padding: 0px; */
                       margin-bottom: 40px;
 
-                      & > p {
+                      /* & > p {
                         margin: 0px;
                         padding: 0px;
                         min-width: 50%;
-                      }
+                      } */
 
                       & > img {
                         margin: 0px;
                         padding: 0px;
                         border-radius: 50%;
-                        /* flex-basis: 50%; */
                       }
                     `}
                   >
-                    <img src={resized} height="256" width="256" />
+                    <img
+                      src={resized}
+                      height="256"
+                      width="256"
+                      css={css`
+                        /* margin: 0px;
+                        padding: 0px;
+                        border-radius: 50%; */
+                      `}
+                    />
                     <AboutParagraph>
                       <PointHeading>Hey there!</PointHeading>
                       I'm a programmer with eclectic skills in computer graphics, visual effects,
-                      game development, and web development, looking to apply my abilities to
-                      support and solve the technical problems that face teams working in creative
-                      fields.
+                      game development, and web development, looking to apply my abilities to help
+                      solve the technical problems faced by teams working in creative fields.
                     </AboutParagraph>
                   </div>
                   <div>
@@ -179,11 +192,11 @@ const About: React.FC<AboutProps> = props => {
                     <p>
                       I've studied graphics and game development extensively in school and backed it
                       up with experience working with labs at Queen's where I applied my skills to
-                      help develop psychology experiments using virtual reality, eye tracking and
+                      help develop psychology experiments in Unity using virtual reality, eye tracking and
                       other technologies.
                     </p>
                     <PointHeading>
-                      <i>But I also do web stuff</i>
+                      <i>...And I also do web stuff</i>
                     </PointHeading>
                     <p>
                       I'm also proficient with frontend web development, primarily using ReactJS.

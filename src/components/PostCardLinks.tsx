@@ -43,8 +43,4 @@ export const PostCardLinks: React.FC<Props> = props => (
   </LinksUl>
 );
 
-// export const LinkItem: React.FC<{}> = props => (
-
-// )
-
 export default PostCardLinks;

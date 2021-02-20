@@ -12,7 +12,7 @@ import {
   outer,
   PostFeed,
   SiteDescription,
-  SiteHeader,
+  // SiteHeader,
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
@@ -86,7 +86,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
       <Wrapper>
         <header
           className="site-archive-header"
-          css={[SiteHeader, SiteArchiveHeader]}
+          css={[SiteArchiveHeader]}
         >
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>

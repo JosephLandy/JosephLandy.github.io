@@ -80,16 +80,11 @@ export const PostFeed = css`
   flex-wrap: wrap;
   margin: 0 -20px;
   padding: 50px 0 0;
-  /* background: #fff; */
-
+  background: ${colors.darkmode};
   /* Special Template Styles */
   padding: 40px 0 5vw;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-
-  /* @media (prefers-color-scheme: dark) { */
-  background: ${colors.darkmode};
-  /* } */
 `;
 
 export const SocialLink = css`

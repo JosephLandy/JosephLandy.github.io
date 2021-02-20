@@ -37,9 +37,6 @@ export const PostFullContent = styled.section`
   font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 1.6em;
-  
-  // commenting this just makes the higher up background styling take effect. 
-  /* background: #fff; */
 
   @media (max-width: 1170px) {
     padding: 0 11vw;

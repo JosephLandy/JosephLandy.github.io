@@ -172,7 +172,6 @@ const PostCardContent = styled.div`
 const PostCardContentLink = css`
   position: relative;
   display: block;
-  /* color: var(--darkgrey); */
   color: ${colors.darkgrey};
 
   :hover {
@@ -204,7 +203,6 @@ const PostCardExcerpt = styled.section`
   font-family: Georgia, serif;
 
   /* @media (prefers-color-scheme: dark) { */
-    /* color: color(var(--midgrey) l(+10%)); */
     color: ${lighten('0.1', colors.midgrey)} !important;
   /* } */
 `;

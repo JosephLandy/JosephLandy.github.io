@@ -82,10 +82,6 @@ const ReadNextCardArticle = styled.article`
   overflow: hidden;
   margin: 0 25px 50px;
   padding: 25px;
-  /* background: linear-gradient(
-    color(var(--darkgrey) l(+2%)),
-    color(var(--darkgrey) l(-5%))
-  ); */
   background: linear-gradient(
     ${lighten('0.02', colors.darkgrey)},
     ${lighten('-0.05', colors.darkgrey)}
@@ -203,7 +199,6 @@ const ReadNextCardFooter = styled.footer`
   }
 
   a:hover {
-    /* border-color: var(--yellow); */
     border-color: ${colors.yellow};
     color: ${colors.yellow};
     text-decoration: none;

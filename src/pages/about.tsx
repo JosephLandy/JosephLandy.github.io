@@ -20,7 +20,7 @@ import {
   inner,
   outer,
   SiteArchiveHeader,
-  SiteHeader,
+  // SiteHeader, // doesn't exist. 
   SiteMain,
   SiteNavMain,
 } from '../styles/shared';
@@ -112,7 +112,7 @@ const About: React.FC<AboutProps> = props => {
         <title>About</title>
       </Helmet>
       <Wrapper css={PostTemplate}>
-        <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
+        <header className="site-archive-header no-image" css={[SiteArchiveHeader]}>
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>
               <SiteNav isHome={false} />

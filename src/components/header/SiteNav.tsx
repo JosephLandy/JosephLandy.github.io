@@ -13,13 +13,12 @@ import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 
 import { Facebook } from '../icons/facebook';
-// import { Twitter } from '../icons/twitter';
 import { IconContext } from 'react-icons';
 import { GoMarkGithub } from 'react-icons/go';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
 
-interface SiteNavProps {
+export interface SiteNavProps {
   isHome?: boolean;
   isPost?: boolean;
   post?: any;

@@ -16,9 +16,10 @@ import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import { inner, outer, SiteArchiveHeader, SiteMain, SiteNavMain } from '../styles/shared';
+import { inner, outer, SiteMain, SiteNavMain } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle, PostTemplate } from '../templates/post';
 import { colors } from '../styles/colors';
+import { JLNav } from './about';
 
 interface Props {}
 
@@ -48,6 +49,8 @@ const Contact: React.FC<Props> = props => {
     <IndexLayout>
       <Wrapper>
         {/* <MailForm /> */}
+        <JLNav />
+        <Footer />
       </Wrapper>
     </IndexLayout>
   );

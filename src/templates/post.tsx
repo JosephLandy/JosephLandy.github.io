@@ -13,13 +13,14 @@ import { Footer } from '../components/Footer';
 import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import PostContent from '../components/PostContent';
 import { ReadNext } from '../components/ReadNext';
-import { Subscribe } from '../components/subscribe/Subscribe';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
 import PostCardLinks from '../components/PostCardLinks';
+
+import { JLNav } from '../pages/about';
 
 interface PageTemplateProps {
   location: Location;
@@ -163,13 +164,10 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         {height && <meta property="og:image:height" content={height} />}
       </Helmet>
       <Wrapper css={PostTemplate}>
-        <header className="site-header">
-          <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
+        {/* <div css={[outer, SiteNavMain]}>
               <SiteNav isPost post={post.frontmatter} />
-            </div>
-          </div>
-        </header>
+          </div> */}
+        <JLNav isPost post={post.frontmatter} />
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             {/* TODO: no-image css tag? */}
@@ -293,7 +291,6 @@ const PostFullTags = styled.section`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* color: var(--midgrey); */
   color: ${colors.midgrey};
   font-size: 1.3rem;
   line-height: 1.4em;
@@ -304,7 +301,6 @@ const PostFullTags = styled.section`
 // I don't think this actually does anything, why would you have the excerpt on the post page itself?
 const PostFullCustomExcerpt = styled.p`
   margin: 20px 0 0;
-  /* color: var(--midgrey); */
   font-family: Georgia, serif;
   font-size: 2.3rem;
   line-height: 1.4em;
@@ -353,14 +349,6 @@ const PostFullByline = styled.div`
     line-height: 1.4em;
     font-weight: 500;
   }
- // set below.
-  /* .post-full-byline-meta h4 a {
-    color: ${lighten('0.1', colors.darkgrey)};
-  } */
-
-  /* .post-full-byline-meta h4 a:hover {
-    color: ${colors.darkgrey};
-  } */
 
   .post-full-byline-meta .bull {
     display: inline-block;
@@ -369,16 +357,16 @@ const PostFullByline = styled.div`
   }
 
   /* @media (prefers-color-scheme: dark) { */
-    border-top-color: ${lighten('0.15', colors.darkmode)};
+  border-top-color: ${lighten('0.15', colors.darkmode)};
 
-    // I don't know when this would ever come up. What h4s contain links?   
-    .post-full-byline-meta h4 a {
-      color: rgba(255, 255, 255, 0.75);
-    }
+  // I don't know when this would ever come up. What h4s contain links?
+  .post-full-byline-meta h4 a {
+    color: rgba(255, 255, 255, 0.75);
+  }
 
-    .post-full-byline-meta h4 a:hover {
-      color: #fff;
-    }
+  .post-full-byline-meta h4 a:hover {
+    color: #fff;
+  }
   /* } */
 `;
 
@@ -390,12 +378,11 @@ export const PostFullTitle = styled.h1`
   }
 
   // @media (prefers-color-scheme: dark) {
-    color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
   // }
 `;
 
-
-// this should change. I don't like this. 
+// this should change. I don't like this.
 const PostFullImage = styled.figure`
   margin: 25px 0 50px;
   height: 800px;

@@ -12,17 +12,11 @@ import { FaLinkedin, FaInstagram, FaEnvelope, FaGithubSquare } from 'react-icons
 import config from '../website-config';
 
 import { Footer } from '../components/Footer';
-import SiteNav from '../components/header/SiteNav';
+import SiteNav, { SiteNavProps } from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import {
-  inner,
-  outer,
-  SiteArchiveHeader,
-  SiteMain,
-  SiteNavMain,
-} from '../styles/shared';
+import { inner, outer, SiteMain, SiteNavMain } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle, PostTemplate } from '../templates/post';
 import { colors } from '../styles/colors';
 
@@ -77,7 +71,6 @@ const LinkIcons: React.FC = () => {
     </IconContext.Provider>
   );
 };
-
 const PointHeading = styled.h6`
   color: ${colors.blue} !important;
   font-family: Georgia, serif !important;
@@ -96,13 +89,19 @@ const AboutParagraph = styled.div`
   @media only screen and (min-width: 1041px) {
     width: 50%;
   }
-
   font-weight: bold;
 `;
 
+export const JLNav: React.FC<SiteNavProps> = props => {
+  return (
+    <div css={[outer, SiteNavMain]}>
+        <SiteNav {...props} />
+    </div>
+  );
+};
+
 const About: React.FC<AboutProps> = props => {
   const resized = props.data.file.childImageSharp.resize.src;
-
   // ok, so for whatever reason, the flex layout switches at 1040 px width, so that's what were using for the breakpoint.
   // This switches at 1040 px because that is what max-width is set to in the "outer" style in shared.ts
   return (
@@ -111,13 +110,14 @@ const About: React.FC<AboutProps> = props => {
         <title>About</title>
       </Helmet>
       <Wrapper css={PostTemplate}>
-        <header className="site-archive-header no-image" css={[SiteArchiveHeader]}>
+        {/* <header className="site-archive-header no-image" css={[SiteArchiveHeader]}>
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>
               <SiteNav isHome={false} />
             </div>
           </div>
-        </header>
+        </header> */}
+        <JLNav isHome={false} />
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <article className="post page" css={[PostFull, NoImage]}>
@@ -126,11 +126,14 @@ const About: React.FC<AboutProps> = props => {
               </PostFullHeader>
 
               <PostFullContent className="post-full-content">
-                <div className="post-content" css={css`
-                p {
-                  text-indent: 2em;
-                }
-                `}>
+                <div
+                  className="post-content"
+                  css={css`
+                    p {
+                      text-indent: 2em;
+                    }
+                  `}
+                >
                   <div
                     css={css`
                       display: flex;
@@ -147,11 +150,7 @@ const About: React.FC<AboutProps> = props => {
                       }
                     `}
                   >
-                    <img
-                      src={resized}
-                      height="256"
-                      width="256"
-                    />
+                    <img src={resized} height="256" width="256" />
                     <AboutParagraph>
                       <PointHeading>Hey there!</PointHeading>
                       I'm a programmer with eclectic skills in computer graphics, visual effects,
@@ -179,8 +178,8 @@ const About: React.FC<AboutProps> = props => {
                     <p>
                       I've studied graphics and game development extensively in school and backed it
                       up with experience working with labs at Queen's where I applied my skills to
-                      help develop psychology experiments in Unity using virtual reality, eye tracking and
-                      other technologies.
+                      help develop psychology experiments in Unity using virtual reality, eye
+                      tracking and other technologies.
                     </p>
                     <PointHeading>
                       <i>...And I also do web stuff</i>

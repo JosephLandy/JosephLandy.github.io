@@ -119,22 +119,13 @@ export const SiteHeaderContent = styled.div`
   max-height: 340px;
 `;
 
-// tag and author post lists
-export const SiteArchiveHeader = css`
-  .site-header-content {
-    position: relative;
-    align-items: stretch;
-    padding: 12vw 0 20px;
-    min-height: 200px;
-    max-height: 600px;
-  }
-`;
-// SiteHeaderBackground and ResponsiveHeaderBackground can probably be merged. 
-// only applied on the tags page. 
+
+// SiteHeaderBackground and ResponsiveHeaderBackground can probably be merged.
+// only applied on the tags page.
 export const SiteHeaderBackground = css`
   margin-top: 64px;
 `;
-// only applied on the tags page. 
+// only applied on the tags page.
 export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string }>`
   ${p =>
     p.backgroundImage &&
@@ -182,14 +173,11 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
   ${p =>
     !p.backgroundImage &&
     `
-
     padding-top: 0;
     padding-bottom: 0;
     // color: ${colors.darkgrey};
     // background: #fff;
     opacity: 1;
-
-
   .site-description {
     color: ${colors.midgrey};
     opacity: 1;

@@ -12,18 +12,17 @@ import {
   outer,
   PostFeed,
   SiteDescription,
-  // SiteHeader,
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
   SiteNavMain,
-  SiteArchiveHeader,
   ResponsiveHeaderBackground,
   SiteHeaderBackground,
 } from '../styles/shared';
 import { PageContext } from './post';
 import { Helmet } from 'react-helmet';
 import config from '../website-config';
+import { css } from '@emotion/core';
 
 interface TagTemplateProps {
   location: Location;
@@ -52,6 +51,17 @@ interface TagTemplateProps {
     };
   };
 }
+
+// tag and author post lists
+const SiteArchiveHeader = css`
+  .site-header-content {
+    position: relative;
+    align-items: stretch;
+    padding: 12vw 0 20px;
+    min-height: 200px;
+    max-height: 600px;
+  }
+`;
 
 const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
   const tag = pageContext.tag ? pageContext.tag : '';
@@ -85,7 +95,6 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
       </Helmet>
       <Wrapper>
         <header
-          className="site-archive-header"
           css={[SiteArchiveHeader]}
         >
           <div css={[outer, SiteNavMain]}>

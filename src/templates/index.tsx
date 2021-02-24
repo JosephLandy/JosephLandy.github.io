@@ -166,7 +166,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
-        <main id="site-main" css={[SiteMain, outer]}>
+        <main css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <h3>Projects and Posts</h3>
             <div css={[PostFeed]}>

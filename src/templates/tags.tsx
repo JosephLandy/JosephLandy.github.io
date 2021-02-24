@@ -123,7 +123,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
             </SiteHeaderContent>
           </ResponsiveHeaderBackground>
         </header>
-        <main id="site-main" css={[SiteMain, outer]}>
+        <main css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={[PostFeed]}>
               {edges.map(({ node }) => (

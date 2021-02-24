@@ -118,7 +118,7 @@ const About: React.FC<AboutProps> = props => {
           </div>
         </header> */}
         <JLNav isHome={false} />
-        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+        <main className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <article className="post page" css={[PostFull, NoImage]}>
               <PostFullHeader className="post-full-header">

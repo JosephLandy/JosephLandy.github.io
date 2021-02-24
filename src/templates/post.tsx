@@ -168,7 +168,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               <SiteNav isPost post={post.frontmatter} />
           </div> */}
         <JLNav isPost post={post.frontmatter} />
-        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+        <main className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             {/* TODO: no-image css tag? */}
             <article css={[PostFull, !post.frontmatter.image && NoImage]}>

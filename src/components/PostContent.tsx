@@ -388,11 +388,6 @@ export const PostFullContent = styled.section`
   }
 
   table td:first-of-type {
-    /* background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0) 100%
-    ); */
     background-image: linear-gradient(to right, ${colors.darkmode} 50%, ${colors.darkmode} 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;

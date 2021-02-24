@@ -117,8 +117,7 @@ const MonsterFooter: React.FC<Props> = props => {
         src={images[srcindex]}
         alt="Monster"
         css={css`
-          opacity: 90%; // for some reason, opacity was reduced on this by default in some other css. 
-          // set the opacity to something I want. 
+          /* opacity: 90%; // for some reason, opacity was reduced on images in IndexLayout */
           width: 100%;
           /* max-width: 1980px; */
           max-width: 1000px;

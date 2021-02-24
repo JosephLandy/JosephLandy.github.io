@@ -22,7 +22,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
       </Helmet>
       <Global
         styles={css`
-        // it would be nice to know what css reset this is.
+          // it would be nice to know what css reset this is.
           html,
           body,
           div,
@@ -107,9 +107,9 @@ const IndexLayout: React.FC<IndexProps> = props => {
             font-size: 100%;
             vertical-align: baseline;
           }
-          body {
+          /* body {
             line-height: 1;
-          }
+          } */
           ol,
           ul {
             list-style: none;
@@ -277,9 +277,10 @@ const IndexLayout: React.FC<IndexProps> = props => {
 
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
           }
+          // this only appears in PostContent I think, nothing else actually has a body tag.
           body {
             overflow-x: hidden;
-            color: ${lighten('-0.3', colors.midgrey)};
+            /* color: ${lighten('-0.3', colors.midgrey)}; */
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
               Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 1.6rem;
@@ -288,11 +289,15 @@ const IndexLayout: React.FC<IndexProps> = props => {
             font-style: normal;
             letter-spacing: 0;
             text-rendering: optimizeLegibility;
-            background: #fff;
+            /* background: #fff; */
 
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             -moz-font-feature-settings: 'liga' on;
+
+
+            color: rgba(255, 255, 255, 0.75);
+            background: ${colors.darkmode};
           }
 
           ::selection {
@@ -468,7 +473,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
             font-size: 1.6rem;
             font-weight: 500;
           }
-
+          // why are h5 and h6 same weight?
           h5 {
             margin: 1.5em 0 0.5em 0;
             font-size: 1.4rem;
@@ -486,21 +491,18 @@ const IndexLayout: React.FC<IndexProps> = props => {
             background: #fff;
           } */
           // setting body here only seems to end up applying it to the body in the PostContent.tsx component, everything else
-          // is specified somewhere else. 
+          // is specified somewhere else. Actually, nothing else seems to have a body tag at all. 
           /* @media (prefers-color-scheme: dark) { */
-            body {
-              color: rgba(255, 255, 255, 0.75);
-              background: ${colors.darkmode};
-            }
-            img {
-              opacity: 0.9;
-            }
+          /* body {
+            color: rgba(255, 255, 255, 0.75);
+            background: ${colors.darkmode};
+          } */
+          img {
+            opacity: 0.9;
+          }
           /* } */
         `}
       />
-      {/* <SidebarLayout>
-        {props.children}
-      </SidebarLayout> */}
       {props.children}
     </div>
   );

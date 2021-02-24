@@ -16,7 +16,7 @@ import {
   outer,
   PostFeed,
   Posts,
-  SiteDescription,
+  // SiteDescription,
   // SiteHeader,
   SiteHeaderContent,
   SiteMain,

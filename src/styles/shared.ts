@@ -23,15 +23,14 @@ export const SiteNavMain = css`
   right: 0;
   left: 0;
   z-index: 1000;
-  /* background: color(var(--darkgrey) l(-5%)); */
   background: ${lighten('-0.05', colors.darkgrey)};
 `;
 
 export const SiteMain = css`
   flex-grow: 1;
-
   /* @media (prefers-color-scheme: dark) { */
-  background: ${colors.darkmode};
+  // this doesn't do anything, so I'm commenting it out. background color is set in index layout.
+  /* background: ${colors.darkmode}; */
   /* } */
 `;
 // gradient from elemental starter.
@@ -130,11 +129,12 @@ export const SiteArchiveHeader = css`
     max-height: 600px;
   }
 `;
-
+// SiteHeaderBackground and ResponsiveHeaderBackground can probably be merged. 
+// only applied on the tags page. 
 export const SiteHeaderBackground = css`
   margin-top: 64px;
 `;
-
+// only applied on the tags page. 
 export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string }>`
   ${p =>
     p.backgroundImage &&

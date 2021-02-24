@@ -20,7 +20,6 @@ import {
   inner,
   outer,
   SiteArchiveHeader,
-  // SiteHeader, // doesn't exist. 
   SiteMain,
   SiteNavMain,
 } from '../styles/shared';
@@ -139,14 +138,7 @@ const About: React.FC<AboutProps> = props => {
                       flex-wrap: wrap;
                       align-items: center;
                       justify-content: space-evenly;
-                      /* padding: 0px; */
                       margin-bottom: 40px;
-
-                      /* & > p {
-                        margin: 0px;
-                        padding: 0px;
-                        min-width: 50%;
-                      } */
 
                       & > img {
                         margin: 0px;
@@ -159,11 +151,6 @@ const About: React.FC<AboutProps> = props => {
                       src={resized}
                       height="256"
                       width="256"
-                      css={css`
-                        /* margin: 0px;
-                        padding: 0px;
-                        border-radius: 50%; */
-                      `}
                     />
                     <AboutParagraph>
                       <PointHeading>Hey there!</PointHeading>

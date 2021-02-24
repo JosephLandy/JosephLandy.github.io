@@ -16,7 +16,7 @@ import { Facebook } from '../icons/facebook';
 // import { Twitter } from '../icons/twitter';
 import { IconContext } from 'react-icons';
 import { GoMarkGithub } from 'react-icons/go';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
 
 interface SiteNavProps {
@@ -110,6 +110,9 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                 <li role="menuitem">
                   <Link to="/about">About</Link>
                 </li>
+                <li role="menuitem">
+                  <Link to="/contact">Contact</Link>
+                </li>
                 {/* <li role="menuitem">
                   <Link to="/tags/getting-started/">Getting Started</Link>
                 </li> */}
@@ -147,9 +150,19 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                     href={config.linkedin}
                     title="LinkedIn"
                     target="_blank"
-                    // rel="noopener noreferrer"
+                    rel="noopener noreferrer"
                   >
                     <FaLinkedin />
+                  </a>
+                )}
+                {config.email && (
+                  <a
+                    css={SocialLink}
+                    href={`mailto:${config.email}`}
+                    title="Email"
+                    rel="noopener noreferrer"
+                  >
+                    <FaEnvelope />
                   </a>
                 )}
               </SocialLinks>
@@ -170,7 +183,6 @@ export const SiteNavMain = css`
   right: 0;
   left: 0;
   z-index: 1000;
-  /* background: color(var(--darkgrey) l(-5%)) */
   background: ${darken('0.05', colors.darkgrey)};
 
   @media (max-width: 700px) {

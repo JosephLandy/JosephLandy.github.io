@@ -22,7 +22,7 @@ export interface PostCardProps {
 }
 
 export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
-  const date = new Date(post.frontmatter.date);
+  // const date = new Date(post.frontmatter.date);
   // const datetime = format(date, 'yyyy-MM-dd');
   // const displayDatetime = format(date, 'dd LLL yyyy');
 

@@ -36,7 +36,7 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
             </div>
           </div>
         </header>
-        <main id="site-main" css={[outer, ErrorContent]} className="error-content">
+        <main css={[outer, ErrorContent]} className="error-content">
           <div css={[inner]}>
             <section style={{ textAlign: 'center' }}>
               <ErrorCode>404</ErrorCode>

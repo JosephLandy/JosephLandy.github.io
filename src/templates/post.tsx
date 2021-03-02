@@ -5,22 +5,19 @@ import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-
 import { Footer } from '../components/Footer';
-import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import PostContent from '../components/PostContent';
 import { ReadNext } from '../components/ReadNext';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
-import { inner, outer, SiteMain } from '../styles/shared';
+import { inner, SiteMain, PostTemplate } from '../styles/shared';
 import config from '../website-config';
 import PostCardLinks from '../components/PostCardLinks';
+import PageNav from '../components/header/PageNav';
 
-import { JLNav } from '../pages/about';
 
 interface PageTemplateProps {
   location: Location;
@@ -167,8 +164,8 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         {/* <div css={[outer, SiteNavMain]}>
               <SiteNav isPost post={post.frontmatter} />
           </div> */}
-        <JLNav isPost post={post.frontmatter} />
-        <main className="site-main" css={[SiteMain, outer]}>
+        <PageNav isPost post={post.frontmatter} />
+        <main className="site-main" css={SiteMain}>
           <div css={inner}>
             {/* TODO: no-image css tag? */}
             <article css={[PostFull, !post.frontmatter.image && NoImage]}>
@@ -236,20 +233,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
   );
 };
 
-export const PostTemplate = css`
-  .site-main {
-    margin-top: 64px;
-    padding-bottom: 4vw;
-  }
-
-  // supurfluous, duplicates setting in SiteMain in shared.ts
-  /* @media (prefers-color-scheme: dark) {
-    .site-main {
-      background: ${colors.darkmode};
-    }
-  } */
-`;
-
 export const PostFull = css`
   position: relative;
   z-index: 50;
@@ -259,7 +242,6 @@ export const NoImage = css`
   .post-full-content {
     padding-top: 0;
   }
-
   .post-full-content:before,
   .post-full-content:after {
     display: none;
@@ -310,10 +292,7 @@ const PostFullCustomExcerpt = styled.p`
     font-size: 1.9rem;
     line-height: 1.5em;
   }
-
-  /* @media (prefers-color-scheme: dark) { */
   color: ${lighten('0.1', colors.midgrey)};
-  /* } */
 `;
 
 const PostFullByline = styled.div`

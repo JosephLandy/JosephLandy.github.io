@@ -6,7 +6,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-import { SocialLink, SocialLinkFb } from '../../styles/shared';
+// import { SocialLink, SocialLinkFb } from '../../styles/shared';
 import config from '../../website-config';
 
 import { SubscribeModal } from '../subscribe/SubscribeModal';
@@ -17,6 +17,29 @@ import { IconContext } from 'react-icons';
 import { GoMarkGithub } from 'react-icons/go';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
+
+
+
+export const SocialLink = css`
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+  opacity: 0.8;
+  :hover {
+    opacity: 1;
+  }
+  svg {
+    height: 1.8rem;
+    fill: #fff;
+  }
+`;
+
+export const SocialLinkFb = css`
+  svg {
+    height: 1.6rem;
+  }
+`;
+
 
 export interface SiteNavProps {
   isHome?: boolean;

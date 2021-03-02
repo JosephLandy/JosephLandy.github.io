@@ -97,26 +97,23 @@ export const PostFullContent = styled.section`
   }
 
   a {
-
     // I feel like I should actually just make this a global link styling. 
     word-break: break-word;
     transition: all 0.2s ease-in-out;
     
     color: #fff;
-    box-shadow: inset 0 -1px 0 #fff;
+    // WHAT THE FUCK. WHY ARE THEY USING A BOX SHADOW TO REPLICATE TEXT-DECORATION THIS IS SO STUPID?
+    // I HATE THIS INSANE TEMPLATE
+    /* box-shadow: inset 0 -1px 0 #fff; */
+    text-decoration: underline;
   }
 
   a:hover {
     color: ${colors.blue};
-    text-decoration: none;
-    box-shadow: ${colors.blue} 0 -1px 0 inset;
+    /* text-decoration: none; */
+    /* box-shadow: ${colors.blue} 0 -1px 0 inset; */
   }
-
-  /* strong,
-  em {
-    color: ${lighten('-0.05', colors.darkgrey)};
-  } */
-
+  
   small {
     display: inline-block;
     line-height: 1.6em;
@@ -434,10 +431,6 @@ export const PostFullContent = styled.section`
     strong, em {
       color: #fff;
     }
-
-    /* em {
-      color: #fff;
-    } */
 
     code {
       color: #fff;

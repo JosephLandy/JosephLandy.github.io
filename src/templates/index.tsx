@@ -16,8 +16,6 @@ import {
   outer,
   PostFeed,
   Posts,
-  // SiteDescription,
-  // SiteHeader,
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
@@ -166,7 +164,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
-        <main css={[SiteMain, outer]}>
+        <main css={SiteMain}>
           <div css={[inner, Posts]}>
             <h3>Projects and Posts</h3>
             <div css={[PostFeed]}>

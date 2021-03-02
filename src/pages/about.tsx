@@ -16,9 +16,10 @@ import SiteNav, { SiteNavProps } from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import { inner, outer, SiteMain, SiteNavMain } from '../styles/shared';
-import { NoImage, PostFull, PostFullHeader, PostFullTitle, PostTemplate } from '../templates/post';
+import { inner, outer, SiteMain, SiteNavMain, PostTemplate } from '../styles/shared';
+import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
+import PageNav from '../components/header/PageNav';
 
 interface AboutProps {
   data: {
@@ -38,39 +39,6 @@ interface AboutProps {
   };
 }
 
-const LinkIcons: React.FC = () => {
-  return (
-    <IconContext.Provider value={{}}>
-      <div
-        css={css`
-          display: flex;
-          flex-direction: row;
-          justify-content: space-evenly;
-          font-size: 4em;
-
-          a {
-          }
-        `}
-      >
-        {config.github && (
-          <a href={config.github} title="Github" target="_blank" rel="noopener noreferrer">
-            <FaGithubSquare />
-          </a>
-        )}
-        {config.linkedin && (
-          <a href={config.linkedin} title="LinkedIn" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
-          </a>
-        )}
-        {config.email && (
-          <a href={`mailto:${config.email}`} title="Email">
-            <FaEnvelope />
-          </a>
-        )}
-      </div>
-    </IconContext.Provider>
-  );
-};
 const PointHeading = styled.h6`
   color: ${colors.blue} !important;
   font-family: Georgia, serif !important;
@@ -92,13 +60,7 @@ const AboutParagraph = styled.div`
   font-weight: bold;
 `;
 
-export const JLNav: React.FC<SiteNavProps> = props => {
-  return (
-    <div css={[outer, SiteNavMain]}>
-        <SiteNav {...props} />
-    </div>
-  );
-};
+
 
 const About: React.FC<AboutProps> = props => {
   const resized = props.data.file.childImageSharp.resize.src;
@@ -117,15 +79,15 @@ const About: React.FC<AboutProps> = props => {
             </div>
           </div>
         </header> */}
-        <JLNav isHome={false} />
-        <main className="site-main" css={[SiteMain, outer]}>
+        <PageNav isHome={false} />
+        <main className="site-main" css={SiteMain}>
           <div css={inner}>
             <article className="post page" css={[PostFull, NoImage]}>
               <PostFullHeader className="post-full-header">
                 <PostFullTitle className="post-full-title">About Me</PostFullTitle>
               </PostFullHeader>
 
-              <PostFullContent className="post-full-content">
+              <PostFullContent>
                 <div
                   className="post-content"
                   css={css`
@@ -194,7 +156,7 @@ const About: React.FC<AboutProps> = props => {
                       email.
                     </b>
                   </p>
-                  <LinkIcons />
+                  {/* <LinkIcons /> */}
                 </div>
               </PostFullContent>
             </article>

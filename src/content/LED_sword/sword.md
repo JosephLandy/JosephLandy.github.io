@@ -13,6 +13,12 @@ featured: true
 
 This is a sword I made to take to two large music festivals in the summer of 2019. The cross guard and housing for the electronics were 3d printed and the blade uses an animated LED strip controlled with a small arduino in a polycarbonate tube to diffuse the light. The sword is powered with a lithium ion battery and recharged via USB. I initially intended to use a much higher density LED strip, but I accidentally damaged it and had to substitute a less dense one I had on hand. The result was still impressive, but I'm planning on replacing it with the full density strip soon. 
 
+[I'm an inline-style link](https://www.google.com)
+
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+
 You can find a list of parts and the blender files on Github. 
 
 It was a great challenge to build something more physical and I'm quite proud of the result.

@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { FluidObject } from 'gatsby-image';
-
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
@@ -123,7 +122,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
             </SiteHeaderContent>
           </ResponsiveHeaderBackground>
         </header>
-        <main css={[SiteMain, outer]}>
+        <main css={SiteMain}>
           <div css={inner}>
             <div css={[PostFeed]}>
               {edges.map(({ node }) => (

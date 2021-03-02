@@ -1,22 +1,17 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-
-import { IconContext } from 'react-icons';
-import { FaLinkedin, FaInstagram, FaEnvelope, FaGithubSquare } from 'react-icons/fa';
-
-import config from '../website-config';
+// import { FaLinkedin, FaInstagram, FaEnvelope, FaGithubSquare } from 'react-icons/fa';
 
 import { Footer } from '../components/Footer';
-import SiteNav, { SiteNavProps } from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
-import { inner, outer, SiteMain, SiteNavMain, PostTemplate } from '../styles/shared';
+import { inner, SiteMain, PostTemplate } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
 import PageNav from '../components/header/PageNav';

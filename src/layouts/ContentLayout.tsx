@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import SiteNav from '../components/header/SiteNav';
 
 const ContentArea = styled.div`
   overflow: scroll;

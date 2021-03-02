@@ -2,9 +2,7 @@ import { graphql } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
 import { css } from '@emotion/core';
-
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import Pagination from '../components/Pagination';
@@ -22,7 +20,6 @@ import {
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext } from './post';
-
 import MonsterFooter from '../components/MonsterFooter';
 import { lighten } from 'polished';
 import { colors } from '../styles/colors';
@@ -146,7 +143,6 @@ const IndexPage: React.FC<IndexProps> = props => {
             {/* inner results in SiteNav combined to the inner area of the page. I think it looks better
             Spread out.  */}
             {/* <SiteNav isHome /> */}
-
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
                 {/* {props.data.logo ? (
@@ -211,7 +207,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
+      # filter: { frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip
     ) {

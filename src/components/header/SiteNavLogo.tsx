@@ -4,8 +4,6 @@ import { css } from '@emotion/core';
 import { FixedObject } from 'gatsby-image';
 import { SiteTitle } from '../../styles/shared';
 
-import config from '../../website-config';
-
 interface SiteNavLogoProps {
   logo?: {
     childImageSharp: {

@@ -1,8 +1,8 @@
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 import { graphql, Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import * as _ from 'lodash';
-import { lighten, setLightness } from 'polished';
+import { lighten } from 'polished';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { css } from '@emotion/core';

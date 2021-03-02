@@ -6,7 +6,6 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-// import { SocialLink, SocialLinkFb } from '../../styles/shared';
 import config from '../../website-config';
 
 import { SubscribeModal } from '../subscribe/SubscribeModal';

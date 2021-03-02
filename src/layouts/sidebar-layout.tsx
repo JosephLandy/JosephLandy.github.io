@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import Sidebar, { SidebarProps } from 'react-sidebar';
 

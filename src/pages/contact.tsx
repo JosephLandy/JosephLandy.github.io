@@ -18,6 +18,7 @@ import { inner, SiteMain, PostTemplate } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
 import PageNav from '../components/header/PageNav';
+import PageLayout from '../layouts/page-layout';
 
 // import email_image from '../email_image.png';
 
@@ -44,7 +45,6 @@ const MailForm = styled.form`
   input[type='text'],
   input[type='email'] {
   }
-
   button {
     margin-top: 10px;
     background-color: ${lighten('0.2', colors.darkgrey)};
@@ -68,22 +68,12 @@ const LinkIcons: React.FC = () => {
       `}
     >
       {config.github && (
-        <a
-          href={config.github}
-          title="Github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={config.github} title="Github" target="_blank" rel="noopener noreferrer">
           <FaGithubSquare />
         </a>
       )}
       {config.linkedin && (
-        <a
-          href={config.linkedin}
-          title="LinkedIn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={config.linkedin} title="LinkedIn" target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
         </a>
       )}
@@ -96,65 +86,56 @@ const LinkIcons: React.FC = () => {
   );
 };
 
-
 const Contact: React.FC<Props> = props => {
   return (
-    <IndexLayout>
-      <Wrapper css={PostTemplate}>
-        <PageNav />
-        <main className="site-main" css={SiteMain}>
-          <div css={inner}>
-            <article className="post page" css={[PostFull, NoImage]}>
-              <PostFullHeader className="post-full-header">
-                <PostFullTitle className="post-full-title">Contact</PostFullTitle>
-              </PostFullHeader>
-              <PostFullContent>
-                <p
-                // css={css`
-                //   img {
-                //     display: inline;
-                //     filter: invert(100%);
-                //   }
-                // `}
-                >
-                  Feel free to check out my github, connect with me on LinkedIn or send me an email
-                  using the form below.
-                  {/* <img
-                    src={email_image}
-                    width={256}
-                  /> */}
-                </p>
-                <LinkIcons />
-                {/* <MailForm
-                  method="post"
-                  action="https://getform.io/f/cc710c8d-d34e-4d75-ac2f-a5f0241d64c8"
-                > */}
-                <MailForm method="post" action="">
-                  <label>
-                    Name
-                    <input type="text" name="name" id="name" />
-                  </label>
-                  <label>
-                    Email
-                    <input type="email" name="email" id="email" />
-                  </label>
-                  <label>
-                    Subject
-                    <input type="text" name="subject" id="subject" />
-                  </label>
-                  <label>
-                    Message
-                    <textarea name="message" id="message" rows={5} />
-                  </label>
-                  <button type="submit">Submit</button>
-                </MailForm>
-              </PostFullContent>
-            </article>
-          </div>
-        </main>
-        <Footer />
-      </Wrapper>
-    </IndexLayout>
+    <PageLayout>
+      <article className="post page" css={[PostFull, NoImage]}>
+        <PostFullHeader className="post-full-header">
+          <PostFullTitle className="post-full-title">Contact</PostFullTitle>
+        </PostFullHeader>
+        <PostFullContent>
+          <p
+          // css={css`
+          //   img {
+          //     display: inline;
+          //     filter: invert(100%);
+          //   }
+          // `}
+          >
+            Feel free to check out my github, connect with me on LinkedIn or send me an email using
+            the form below.
+            {/* <img
+                      src={email_image}
+                      width={256}
+                    /> */}
+          </p>
+          <LinkIcons />
+          {/* <MailForm
+                    method="post"
+                    action="https://getform.io/f/cc710c8d-d34e-4d75-ac2f-a5f0241d64c8"
+                  > */}
+          <MailForm method="post" action="">
+            <label>
+              Name
+              <input type="text" name="name" id="name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" id="email" />
+            </label>
+            <label>
+              Subject
+              <input type="text" name="subject" id="subject" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" id="message" rows={5} />
+            </label>
+            <button type="submit">Submit</button>
+          </MailForm>
+        </PostFullContent>
+      </article>
+    </PageLayout>
   );
 };
 

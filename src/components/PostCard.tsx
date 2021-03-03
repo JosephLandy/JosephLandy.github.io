@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 // import _ from 'lodash';

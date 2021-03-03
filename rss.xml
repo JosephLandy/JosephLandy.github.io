@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Joseph Landy]]></title><description><![CDATA[My personal website made using Gatsby and typescript.]]></description><link>https://josephlandy.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 03 Mar 2021 00:19:27 GMT</lastBuildDate><item><title><![CDATA[BioMotion Lab Animation System]]></title><description><![CDATA[The BioMotion Lab is a psychology lab formerly based at Queen’s, now at York, that researches how we perceive human motion, developing…]]></description><link>https://josephlandy.github.io/biomotion_mosh/biomotion_mosh/</link><guid isPermaLink="false">https://josephlandy.github.io/biomotion_mosh/biomotion_mosh/</guid><pubDate>Sat, 24 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The BioMotion Lab is a psychology lab formerly based at Queen’s, now at York, that researches how we perceive human motion, developing experiments using motion capture and VR. I did my undergraduate final project with the lab as well as working on a number of projects as a volunteer and employee.&lt;/p&gt;
+&lt;p&gt;The BioMotion Lab was in the process of adopting a new motion capture algorithm called MoSh (Motion and Shape) developed at the Max Planck Institute in Tübingen that approximates the body shape of the subject using a parametric model of the human body and is compatible with standard marker based motion capture systems. The algorithm could be used with prior mocap data, and did not require a specific set of marker placements, which was useful for the lab as they had built up a large library of captures. I worked on and built a number of systems in Unity as part of this. &lt;/p&gt;
+&lt;h1&gt;Mocap Pipeline Tool - Vertex Selector&lt;/h1&gt;
+&lt;p&gt;The first tool I developed was a graphical utility to simplify the pipeline of applying the new algorithm to raw motion capture data. The algorithm required an input file associating the approximate location of motion capture markers with a vertex index on the mesh. I built a program with a GUI for selecting and labelling vertices and generating the file.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 2000px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6687ec16fffcf13d0ebd2b5b82c49ec5/d5be6/overview_screenshot.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.6%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC3klEQVQozyWS60+aZxjG3/9xydZVtApFDrbIQYvHASo6OwUPSGnaTZzUDdEqwgu8J+DloJ26Lqbb4pqmy/bB2X5r0qRbu+y3R/rhTu4813Nfue7ruqV7O6fcf/yUZO6UhXWDhWSWma/us7xhsPrdEUubjY/v3+gsruvEN0o8zFbIPd4hnd4gn8+jqmqndvcKSFNbLwhtnhPZeolnvog98CXX7Hfwz2YZfXDGUPIHhtaeEEgcElhuEErViW3o5Pd3KRZlZFmmXC6jKApFuYS0VnnFaukvluVLVnZ/ZSiyij+cILTwLXe3f2Pu+3Nmt34h+ugZM5kzIptnJLNt1EqZarWGqqhUKhVarSa6UUPaOv2bzPE7MicfWK+/JjidwD9xl9i6woP6G1L6a5LKBYnSnyTk31kqvCQt/0StanBwUBAqi2iqhq5pVBQN6fl7OP8Hnr2F5x8gs1/CfdtH4fgFT99A++I9R6/g8BJaF//SvvyP2s9/8OPJCQ2z0VFZNarUa3WOjo6Rio1j8vUnxL7Oknh0wGJqh9veOSbjGeLpfaLJTe5ty+T0FhnZEOGJvqxTKOxhmjU0XRH+qaI3qJkqksf/BbeGpnEF41gCK9g8K3hca/QML9HrX8I9EmMgMI3bLyowQ783THQuSS5rkts2Odg/pNlosJc7IRE7Qxq09zB4s4uR4Bi3wg9xTKTon0hiG15hMJxibHQcn6MXn9OKz2XDY7/B/HSEUskQCWti3aYIRnioNpELbSSXrYf+G9fweQMMTqX53BXG5o3zSWSSnugIww4HdoE7+yy4rN3YLJ8SFZhuaGJdlUbDxNANWk2TVruO5LZ14+y9jm/ASTC0gMM7LiyYwhte5M5khAGrBaf1iszC1d+b3Z8xKwg1Te/cXr1eFyoNQdwQPppC4dVAX5cY7GJ0Ykbc4CqBUIzA+DzB4TFcfdc7uEuU2/qRMNoh1Dr3V6tWUSpKJ2VTqP0fS5BzMra8vckAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;overview screenshot&quot;
+        title=&quot;overview screenshot&quot;
+        src=&quot;/static/6687ec16fffcf13d0ebd2b5b82c49ec5/f97d7/overview_screenshot.png&quot;
+        srcset=&quot;/static/6687ec16fffcf13d0ebd2b5b82c49ec5/0eb09/overview_screenshot.png 500w,
+/static/6687ec16fffcf13d0ebd2b5b82c49ec5/1263b/overview_screenshot.png 1000w,
+/static/6687ec16fffcf13d0ebd2b5b82c49ec5/f97d7/overview_screenshot.png 2000w,
+/static/6687ec16fffcf13d0ebd2b5b82c49ec5/d5be6/overview_screenshot.png 2242w&quot;
+        sizes=&quot;(max-width: 2000px) 100vw, 2000px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/6bed666787d2131c24e724d280c4d954/add-vertex.gif&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The functionality for vertex selection in the unity editor is not supported in unity and was somewhat difficult to implement, but it’s something I can see being readily useful for building editors for components in other projects. I made vertex selection entirely separate so it can be easily reused. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/e06ab2dcd96cdb9f8672aac53abff3c6/select-vertex.gif&quot;&gt;&lt;/p&gt;
+&lt;h1&gt;Animation System&lt;/h1&gt;
+&lt;p&gt;I then developed systems and an API for utilizing animations from the new system in Unity with a number of features requested for use in experiments such as support for playback at varying frame rates, displaying just the joint positions as unshaded points with the mesh hidden, and recording subject responses to an animation. &lt;/p&gt;
+&lt;p&gt;I also analysed the new motion capture results against joint positions previous motion capture methods.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 2000px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/36257dd8148afcc1dd64b54bb6b63b70/c2d10/mosh_compare.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACBUlEQVQoz5WOS28SURiGz2HhrRdo06TGlraY1KTpQk2MRhN1YYhpjKkhMVGTxq2mLFy0irRaWxgQKDDMDDBQYLjVXqhiE1f6B/xXr+c7A8hGrYsn37l874UxxvBPOANnHCfa/dPH2dPnMDd1WZ7v3/RhYNgpzycw5uC8H4f8cJ5x4dH8M4yPubHg9eHalTsYOjVom3L+/w0dDo7rV2/D512C/3kQTx4s4/zo5F+MuNCIMk7XKKY9s3BPX8TklAcT7hmMX5iAZ2YWL268wqW5efgeL+GudxEPbz2Fa2QMTtcIhp2ESzIwOPTbOFXYh9n8hlz9GNnaV5tqG7r1BWr5EMbOERJBC/FwFW31J/LFYxj1NnKdPZqZ0iH8Kxu4t7AIplufoYoHdYc4QJoo7tuUD6Cpe1j3RxBaywphS6KVW9ArRzBEKJnmRRmr9V3wA2w7vwsikWsKGohnu9TlWyhtYnVTQTCa7O1si0mapLmLVOGTYE9CJVjcqCNm1BDTa/ioV200wkLUEHPLRGKtiMh7076Lv5jYIQ1pKVyG5JsygEkhkSEqiHRRK1C0MiJbBWQ2mlCUAmLZmtyJdjSkpQL9AcwWl3soXdIlKJkSUrEG0m8aCLzTsByI4OWqgrdhzQ4nDQV0QiiA2eKOQR/hzqQGm8kCAsLk9Yc0goqO9WgWoWSxV6Df+Bd25PIFBDwJJAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;mosh compare&quot;
+        title=&quot;mosh compare&quot;
+        src=&quot;/static/36257dd8148afcc1dd64b54bb6b63b70/f97d7/mosh_compare.png&quot;
+        srcset=&quot;/static/36257dd8148afcc1dd64b54bb6b63b70/0eb09/mosh_compare.png 500w,
+/static/36257dd8148afcc1dd64b54bb6b63b70/1263b/mosh_compare.png 1000w,
+/static/36257dd8148afcc1dd64b54bb6b63b70/f97d7/mosh_compare.png 2000w,
+/static/36257dd8148afcc1dd64b54bb6b63b70/c2d10/mosh_compare.png 2562w&quot;
+        sizes=&quot;(max-width: 2000px) 100vw, 2000px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[3D Printed LED Sword]]></title><description><![CDATA[This is a sword I made to take to two large music festivals in the summer of 2019. The cross guard and housing for the electronics were 3d…]]></description><link>https://josephlandy.github.io/LED_sword/sword/</link><guid isPermaLink="false">https://josephlandy.github.io/LED_sword/sword/</guid><pubDate>Thu, 12 Dec 2019 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1600px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fe6f6f01ff6309fbfffd855a96f7067c/42cbc/sword_held_cropped.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 80.60000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD90lEQVQ4yzWUS28bVRiGvUEpSdqq11SBllLAJWnipLGT2PHdHl/Hd4/jS51MHDtOmgRiN73k0tCiQpVKINqmQqhsKK1YsEFdVEh0wYJdFwixYsGGJb/i4RunLF7NzDnzPfOe77xnTHvPnvP4p5c8/fVPXOEcSnqG4vInTC9ui7aYbm5RXtpCLbf45ofvefnbU8LlFaKNNeK5JuFUjUD8Er7wNO5gDtOt+99x+8ETbj76Ebs/QThfoyAwbWGDvKH6DbT6daICvLN7j79/30ObXaFSWyWhNYmk5ggawEhRgHlM7VtfStEm1fZdpgIqseIimjjTmvvAnMDy89dQqy2WWzv8++oh9YUVFiuXyRUWCBlA9TVQEWBr5x53n/xMffsrxl0K6qUVCksGcJNc40YHmBVgcraNNnedf37Z4+b6KqXMIqVcXYB6Z8leAboM4MbdB7x49RfzN3YZc/hI6S1xuCnL3gdm56+Tq62j1drES2v88eQhj29u4M9eJqhfxZuWHsbKeDpA6WFteZ16c5WsFFgdfpICzIorA5YxrvNXCdW2sBfXcWnLPLvzNS82P8OnX+Ns6iNc8Sp+AbrCBaaCWUzl2SbVUp5IoYbVGUKdWSMljjKyzHTtGpm5Kyj6JsciLfq8M5zObJL1FuizpzEHKgTUKi5x55Tl2v1pTNXmGlqlhjtexOaOEp9tkdCvkJpbJyF9i8+0SFbFibZKv1LndGSZfmcRjyeKNyn9S8zgjhRwiju7PyXA1qc0tu9jC6aY8CWI6W1i1bV9XfqYWGVVIrNCeHqRjDjemGuw4LKiTw5itjiwOFXGfDmsnjRWt4qpufMFt799jmUygEPJEBGAEdyIASktEy4udWD+3ALZUpNtvUZbsRMx99F1oJueI6foPTMqusjB0yOY1j5/hH51lwtjTuxKFqWwRFACqxT2ZdwH8w3Z1TqB7Dx6Kk/JPsLA2yd4o6ub3sNH6T32Fr0nztB9/CymfKMthQtcuOjAEcqJk3qn2J9rEBAZz77MvMRjDk9qFm+8zPCEl75TJzl46Ahdb/ZwoPsg3YdPdmTyx6WZAhqw2OSalSIdT1rvAP5XZywpzZcT4YhWODuhctRs4/i7w5w7b6H/HTNHjvfTc+goJqs3ykWJi3nAwrg/iUN2bCpawinZcsoJcL2WM14RlfHJ/dB4iO4xlZ73rIxI78clLiMOhUGrG9OoRGXI5uL980OyUzGZlN2Wv8ZkSHIV1nBIYA3ZDYU0fGqZD5OrnLKGGJxUGJ0KMyKy2BWGJ/2Yhu0BPhgY4Zx5UAYDjLoijHlUbL4kNvnyeCAtH8iIskwEMlh9KZlPMGa85451YMP2IEMTfnHo4T9Bim4bvO1+JQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;sword held cropped&quot;
+        title=&quot;sword held cropped&quot;
+        src=&quot;/static/fe6f6f01ff6309fbfffd855a96f7067c/42cbc/sword_held_cropped.png&quot;
+        srcset=&quot;/static/fe6f6f01ff6309fbfffd855a96f7067c/0eb09/sword_held_cropped.png 500w,
+/static/fe6f6f01ff6309fbfffd855a96f7067c/1263b/sword_held_cropped.png 1000w,
+/static/fe6f6f01ff6309fbfffd855a96f7067c/42cbc/sword_held_cropped.png 1600w&quot;
+        sizes=&quot;(max-width: 1600px) 100vw, 1600px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 2000px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9c7d8c03ab02330eaaebd3641e70087a/eaf97/sword_held.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 177.8%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;sword held&quot;
+        title=&quot;sword held&quot;
+        src=&quot;/static/9c7d8c03ab02330eaaebd3641e70087a/f97d7/sword_held.png&quot;
+        srcset=&quot;/static/9c7d8c03ab02330eaaebd3641e70087a/0eb09/sword_held.png 500w,
+/static/9c7d8c03ab02330eaaebd3641e70087a/1263b/sword_held.png 1000w,
+/static/9c7d8c03ab02330eaaebd3641e70087a/f97d7/sword_held.png 2000w,
+/static/9c7d8c03ab02330eaaebd3641e70087a/eaf97/sword_held.png 2592w&quot;
+        sizes=&quot;(max-width: 2000px) 100vw, 2000px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is a sword I made to take to two large music festivals in the summer of 2019. The cross guard and housing for the electronics were 3d printed and the blade uses an animated LED strip controlled with a small arduino in a polycarbonate tube to diffuse the light. The sword is powered with a lithium ion battery and recharged via USB. I initially intended to use a much higher density LED strip, but I accidentally damaged it and had to substitute a less dense one I had on hand. The result was still impressive, but I’m planning on replacing it with the full density strip soon. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.google.com&quot;&gt;I’m an inline-style link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.google.com&quot; title=&quot;Google&amp;#x27;s Homepage&quot;&gt;I’m an inline-style link with title&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[I’m a reference-style link][arbitrary case-insensitive reference text]&lt;/p&gt;
+&lt;p&gt;You can find a list of parts and the blender files on Github. &lt;/p&gt;
+&lt;p&gt;It was a great challenge to build something more physical and I’m quite proud of the result.&lt;/p&gt;
+&lt;p&gt;The design of the cross guard is based on the Master Sword from the Legend of Zelda games, as I have fond memories of them from childhood and I wanted a design that would be recognisable. All the components were modelled in blender, and 3d printed at the SparQ maker space at Queen’s University. The Arduino controlling the sword was programmed in C++ using the FastLED library. &lt;/p&gt;
+&lt;p&gt;By far the most difficult part of the project was designing the housing for the electronics. The requirement that made the project difficult was that the entire thing had to be completely indestructible. &lt;/p&gt;
+&lt;p&gt;It had to be in as small a form factor as possible, and I needed to be able to open and close it to access and install the electronic components. The duct tape you can see in the picture is not a repair job, it was actually part of the design, I intended quite early on to use it to reinforce the joints. I didn’t trust any mechanism I could easily 3d print to securely hold the casing in it’s closed position by itself and survive the rigours of camping.&lt;/p&gt;
+&lt;p&gt;The project survived two multi-day camping music festivals entirely unscathed. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 2000px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4d13a2b9fb5b584993417810a428f30f/d5499/electronics_open.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 68.60000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwAE/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAB/9oADAMBAAIQAxAAAAFcoOw9osv/xAAaEAACAwEBAAAAAAAAAAAAAAABAgAREgMT/9oACAEBAAEFAvVYz266yq6I4C5//8QAFxEAAwEAAAAAAAAAAAAAAAAAABIxYf/aAAgBAwEBPwG0TT//xAAYEQADAQEAAAAAAAAAAAAAAAAAASESYf/aAAgBAgEBPwGKo3w//8QAGxAAAQQDAAAAAAAAAAAAAAAAAAEQETEhMnH/2gAIAQEABj8CLXhguDZv/8QAGhABAAMAAwAAAAAAAAAAAAAAAQARITFRgf/aAAgBAQABPyFJRdgpxviKrQTswKwhi2gUT//aAAwDAQACAAMAAAAQED//xAAYEQEBAAMAAAAAAAAAAAAAAAABABFxkf/aAAgBAwEBPxBXIVu7f//EABgRAAIDAAAAAAAAAAAAAAAAAAABEXGR/9oACAECAQE/EEoEFWH/xAAZEAEAAwEBAAAAAAAAAAAAAAABABEhkUH/2gAIAQEAAT8QEGDw3IYtSZNHYYSEwKhnayFx1YYVRvQgUE//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;electronics open&quot;
+        title=&quot;electronics open&quot;
+        src=&quot;/static/4d13a2b9fb5b584993417810a428f30f/451a4/electronics_open.jpg&quot;
+        srcset=&quot;/static/4d13a2b9fb5b584993417810a428f30f/953fe/electronics_open.jpg 500w,
+/static/4d13a2b9fb5b584993417810a428f30f/0a251/electronics_open.jpg 1000w,
+/static/4d13a2b9fb5b584993417810a428f30f/451a4/electronics_open.jpg 2000w,
+/static/4d13a2b9fb5b584993417810a428f30f/c7e40/electronics_open.jpg 3000w,
+/static/4d13a2b9fb5b584993417810a428f30f/d5499/electronics_open.jpg 3052w&quot;
+        sizes=&quot;(max-width: 2000px) 100vw, 2000px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 2000px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/52ce5d124b3a9c1200072cf9d144f332/656ec/housing_closed.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 139.20000000000002%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAcABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIFAwT/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//aAAwDAQACEAMQAAABwWjzI8hUA2l1sWEHJv8A/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIAAxEQE//aAAgBAQABBQJG0NWGsNFmtiisj12MNjgrZwgc/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQIQESL/2gAIAQMBAT8BXoKY67X/xAAZEQEAAgMAAAAAAAAAAAAAAAABABECECL/2gAIAQIBAT8BDlZcMqK1/8QAHhAAAgIABwAAAAAAAAAAAAAAAAIBERASICExUXH/2gAIAQEABj8CpkzFQptVenA2MdTp/8QAHBAAAgIDAQEAAAAAAAAAAAAAAREAIRAxQWFx/9oACAEBAAE/IaEhyojcIOqjSjiCbZeQK3YCxS+RYBG3ACsNax//2gAMAwEAAgADAAAAEMvNAP/EABcRAQEBAQAAAAAAAAAAAAAAAAARASH/2gAIAQMBAT8Q5BGIV//EABkRAAEFAAAAAAAAAAAAAAAAAAABEBEhgf/aAAgBAgEBPxC4Y1UEH//EAB0QAQEBAQEAAgMAAAAAAAAAAAERACExQXFRYYH/2gAIAQEAAT8QAwb13P7jg8HbX6e4MNHBEM7aD4OtAsC+9XJ/GA2vVg+5yOcDrxj9Te04XAaAVr96b//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;housing closed&quot;
+        title=&quot;housing closed&quot;
+        src=&quot;/static/52ce5d124b3a9c1200072cf9d144f332/451a4/housing_closed.jpg&quot;
+        srcset=&quot;/static/52ce5d124b3a9c1200072cf9d144f332/953fe/housing_closed.jpg 500w,
+/static/52ce5d124b3a9c1200072cf9d144f332/0a251/housing_closed.jpg 1000w,
+/static/52ce5d124b3a9c1200072cf9d144f332/451a4/housing_closed.jpg 2000w,
+/static/52ce5d124b3a9c1200072cf9d144f332/656ec/housing_closed.jpg 2395w&quot;
+        sizes=&quot;(max-width: 2000px) 100vw, 2000px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Biomotion Motion Capture Marker Tool]]></title><description><![CDATA[The BioMotion  I built this tool for the BioMotion Lab in 2018 to generate input files for a new motion capture method they were adopting…]]></description><link>https://josephlandy.github.io/Biomotion_selector/biomotion_pipeline_tool/</link><guid isPermaLink="false">https://josephlandy.github.io/Biomotion_selector/biomotion_pipeline_tool/</guid><pubDate>Thu, 24 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The BioMotion &lt;/p&gt;
+&lt;p&gt;I built this tool for the BioMotion Lab in 2018 to generate input files for a new motion capture method they were adopting. Motion capture markers had to be labelled and mapped to a vertex index on a mesh. It would have been somewhat simpler to build the tool using a 3d program such as Blender, but since everyone was using Unity at the time, it made more sense to build it in Unity. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/biomotion_mosh/biomotion_mosh&quot;&gt;Biomotion MoSh Animation&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Source]]></title><description><![CDATA[A few things you should know Find the source of this blog on GitHub - scttcper/gatsby-casper Getting Started Use this repo to start your own…]]></description><link>https://josephlandy.github.io/github-link/</link><guid isPermaLink="false">https://josephlandy.github.io/github-link/</guid><pubDate>Sun, 10 Mar 2019 10:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;strong&gt;A few things you should know&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Find the source of this blog on GitHub - &lt;a href=&quot;https://github.com/scttcper/gatsby-casper&quot;&gt;scttcper/gatsby-casper&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Getting Started&lt;/h3&gt;
+&lt;p&gt;Use this repo to start your own blog with the same theme.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Clone this repo.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/scttcper/gatsby-casper.git --depth&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Remove .git folder and setup a new one&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; -rf .git &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now push to whatever repo you want!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Full and Comprehensive Style Test]]></title><description><![CDATA[Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs…]]></description><link>https://josephlandy.github.io/a-full-style-test/</link><guid isPermaLink="false">https://josephlandy.github.io/a-full-style-test/</guid><pubDate>Sun, 30 Sep 2018 07:03:47 GMT</pubDate><content:encoded>&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+&lt;hr&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;&quot;&gt;test link&lt;/a&gt; adipiscing elit. &lt;strong&gt;This is strong.&lt;/strong&gt; Nullam dignissim convallis est. Quisque aliquam. &lt;em&gt;This is emphasized.&lt;/em&gt; Donec faucibus. Nunc iaculis suscipit dui. 5&lt;sup&gt;3&lt;/sup&gt; = 125. Water is H&lt;sub&gt;2&lt;/sub&gt;O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. &lt;cite&gt;The New York Times&lt;/cite&gt; (That’s a citation). &lt;span style=&quot;text-decoration:underline;&quot;&gt;Underline&lt;/span&gt;. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
+&lt;p&gt;HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. To copy a file type &lt;code class=&quot;language-text&quot;&gt;COPY filename&lt;/code&gt;. &lt;del&gt;Dinner’s at 5:00.&lt;/del&gt; &lt;span style=&quot;text-decoration:underline;&quot;&gt;Let’s make that 7&lt;/span&gt;. This &lt;del&gt;text&lt;/del&gt; has been struck.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Media&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.&lt;/p&gt;
+&lt;h3&gt;Big Image&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1080px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.39999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBAX/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAH/2gAMAwEAAhADEAAAAdNuKx1yIr//xAAbEAADAAIDAAAAAAAAAAAAAAAAAQMCEQQSE//aAAgBAQABBQKVMVXkV6r1yENm9H//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPwFn/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAESMRARIv/aAAgBAQAGPwJ9KOhRLKKx/8QAGhABAQADAQEAAAAAAAAAAAAAAQARITFBUf/aAAgBAQABPyHgEOGIT27yS7UfFl8QuL//2gAMAwEAAgADAAAAEC/P/8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERIf/aAAgBAwEBPxCKY//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAgEBPxBO2t//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhMXFBUfH/2gAIAQEAAT8QcZQGAe5gVLLGBxGy2wIxZF3AkijZgRGhqf/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Test Image&quot;
+        title=&quot;Test Image&quot;
+        src=&quot;/static/8bafcea43f0bc141b01ef5b43dd2003b/b37e7/testimg1.jpg&quot;
+        srcset=&quot;/static/8bafcea43f0bc141b01ef5b43dd2003b/953fe/testimg1.jpg 500w,
+/static/8bafcea43f0bc141b01ef5b43dd2003b/0a251/testimg1.jpg 1000w,
+/static/8bafcea43f0bc141b01ef5b43dd2003b/b37e7/testimg1.jpg 1080w&quot;
+        sizes=&quot;(max-width: 1080px) 100vw, 1080px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
+&lt;h3&gt;Small Image&lt;/h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 300px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABhZNsvAoT/8QAGRABAAMBAQAAAAAAAAAAAAAAAgESMQAR/9oACAEBAAEFAhNSXdOfUMWd/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAgMBAAAAAAAAAAAAAAAAACEBAhEg/9oACAEBAAY/AosNI3j/xAAaEAEAAgMBAAAAAAAAAAAAAAABACERMUFh/9oACAEBAAE/IaD1TGXEBk+kJh2PXkSUYz//2gAMAwEAAgADAAAAEGc//8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQMBAT8Qh//EABYRAQEBAAAAAAAAAAAAAAAAAAARQf/aAAgBAgEBPxDUf//EABkQAQADAQEAAAAAAAAAAAAAAAEAESExQf/aAAgBAQABPxDqCqF9HjAJqYZ4bcegoXkRv1KJEYlGBeE6Z//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Small Test Image&quot;
+        title=&quot;Small Test Image&quot;
+        src=&quot;/static/b629d579b1c63df6750fc11d47141796/0cdb7/testimg2.jpg&quot;
+        srcset=&quot;/static/b629d579b1c63df6750fc11d47141796/0cdb7/testimg2.jpg 300w&quot;
+        sizes=&quot;(max-width: 300px) 100vw, 300px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Labore et dolore.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;List Types&lt;/h2&gt;
+&lt;h3&gt;Definition List&lt;/h3&gt;
+&lt;p&gt;Definition List Title
+: This is a definition list division.&lt;/p&gt;
+&lt;p&gt;Definition
+: An exact statement or description of the nature, scope, or meaning of something: &lt;em&gt;our definition of what constitutes poetry.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Ordered List&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;List Item 1&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;List Item 2&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Nested list item A&lt;/li&gt;
+&lt;li&gt;Nested list item B&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Unordered List&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;List Item 1&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;List Item 2&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nested list item A&lt;/li&gt;
+&lt;li&gt;Nested list item B&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Table&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;Table Header 1&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Table Header 2&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Table Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;Division 1&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Division 2&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;Division 1&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Division 2&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;Division 1&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Division 2&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;Preformatted Text&lt;/h2&gt;
+&lt;p&gt;Typographically, preformatted text is not the same thing as code. Sometimes, a faithful execution of the text requires preformatted text that may not have anything to do with code. Most browsers use Courier and that’s a good default — with one slight adjustment, Courier 10 Pitch over regular Courier for Linux users.&lt;/p&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
+&lt;p&gt;Code can be presented inline, like &lt;code class=&quot;language-text&quot;&gt;&amp;lt;?php bloginfo(&amp;#39;stylesheet_url&amp;#39;); ?&amp;gt;&lt;/code&gt;, or using &lt;a href=&quot;http://jekyllrb.com/docs/templates/#code-snippet-highlighting&quot;&gt;jekyll’s highlight
+filter&lt;/a&gt; to
+highlight a block of code. Because we have more specific typographic needs for code, we’ll specify Consolas and Monaco ahead of the browser-defined monospace font.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0 -240px 0 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 100%&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;Blockquotes&lt;/h2&gt;
+&lt;p&gt;Let’s keep it simple. Italics are good to help set it off from the body text. Be sure to style the citation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Good afternoon, gentlemen. I am a HAL 9000 computer. I became operational at the H.A.L. plant in Urbana, Illinois on the 12th of January 1992. My instructor was Mr. Langley, and he taught me to sing a song. If you’d like to hear it I can sing it for you. — &lt;a href=&quot;http://en.wikipedia.org/wiki/HAL_9000&quot;&gt;HAL 9000&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And here’s a bit of trailing text.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Text-level semantics&lt;/h2&gt;
+&lt;p&gt;HTML elements&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;#&quot;&gt;a element&lt;/a&gt; example &lt;br&gt;
+The &lt;abbr&gt;abbr element&lt;/abbr&gt; and &lt;abbr title=&quot;Title text&quot;&gt;abbr element with title&lt;/abbr&gt; examples &lt;br&gt;
+The &lt;b&gt;b element&lt;/b&gt; example &lt;br&gt;
+The &lt;cite&gt;cite element&lt;/cite&gt; example &lt;br&gt;
+The &lt;code&gt;code element&lt;/code&gt; example &lt;br&gt;
+The &lt;del&gt;del element&lt;/del&gt; example &lt;br&gt;
+The &lt;dfn&gt;dfn element&lt;/dfn&gt; and &lt;dfn title=&quot;Title text&quot;&gt;dfn element with title&lt;/dfn&gt; examples &lt;br&gt;
+The &lt;em&gt;em element&lt;/em&gt; example &lt;br&gt;
+The &lt;i&gt;i element&lt;/i&gt; example &lt;br&gt;
+The &lt;ins&gt;ins element&lt;/ins&gt; example &lt;br&gt;
+The &lt;kbd&gt;kbd element&lt;/kbd&gt; example &lt;br&gt;
+The &lt;mark&gt;mark element&lt;/mark&gt; example &lt;br&gt;
+The &lt;q&gt;q element &lt;q&gt;inside&lt;/q&gt; a q element&lt;/q&gt; example &lt;br&gt;
+The &lt;s&gt;s element&lt;/s&gt; example &lt;br&gt;
+The &lt;samp&gt;samp element&lt;/samp&gt; example &lt;br&gt;
+The &lt;small&gt;small element&lt;/small&gt; example &lt;br&gt;
+The &lt;span&gt;span element&lt;/span&gt; example &lt;br&gt;
+The &lt;strong&gt;strong element&lt;/strong&gt; example &lt;br&gt;
+The &lt;sub&gt;sub element&lt;/sub&gt; example &lt;br&gt;
+The &lt;sup&gt;sup element&lt;/sup&gt; example &lt;br&gt;
+The &lt;var&gt;var element&lt;/var&gt; example &lt;br&gt;
+The &lt;u&gt;u element&lt;/u&gt; example&lt;/p&gt;
+* * *
+&lt;h2&gt;Embeds&lt;/h2&gt;
+&lt;p&gt;Sometimes all you want to do is embed a little love from another location and set your post alive.&lt;/p&gt;
+&lt;h3&gt;Video&lt;/h3&gt;
+&lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+&lt;p&gt;Culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 56.166666666666664%; position: relative; height: 0; overflow: hidden; margin-bottom: 1rem&quot; &gt; &lt;iframe src=&quot;//player.vimeo.com/video/103224792&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen style=&quot; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot;&gt;&lt;/iframe&gt; &lt;/div&gt;
+&lt;h3&gt;Slides&lt;/h3&gt;
+&lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;585245d01ee1013238737e42b879906f&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;h3&gt;Audio&lt;/h3&gt;
+&lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;450&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/52891122&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;Culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/p&gt;
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;bcqhe&quot; data-default-tab=&quot;result&quot; data-user=&quot;rglazebrook&quot; class=&apos;codepen&apos;&gt;See the Pen &lt;a href=&apos;http://codepen.io/rglazebrook/pen/bcqhe/&apos;&gt;Simple Rotating Spinner&lt;/a&gt; by Rob Glazebrook (&lt;a href=&apos;http://codepen.io/rglazebrook&apos;&gt;@rglazebrook&lt;/a&gt;) on &lt;a href=&apos;http://codepen.io&apos;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Isn’t it beautiful.&lt;/p&gt;
+&lt;p&gt;_[HTML]: Hyper Text Markup Language
+_[CSS]: Cascading Style Sheets&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The Purpose of Education]]></title><description><![CDATA[As I engage in the so-called “bull sessions” around and about the school, I too often find that most college men have a misconception of the…]]></description><link>https://josephlandy.github.io/purpose-of-education/</link><guid isPermaLink="false">https://josephlandy.github.io/purpose-of-education/</guid><pubDate>Mon, 20 Aug 2012 15:11:55 GMT</pubDate><content:encoded>&lt;p&gt;As I engage in the so-called “bull sessions” around and about the school, I too often find that most college men have a misconception of the purpose of education. Most of the “brethren” think that education should equip them with the proper instruments of exploitation so that they can forever trample over the masses. Still others think that education should furnish them with noble ends rather than means to an end.&lt;/p&gt;
+&lt;p&gt;It seems to me that education has a two-fold function to perform in the life of man and in society: the one is utility and the other is culture. Education must enable a man to become more efficient, to achieve with increasing facility the ligitimate goals of his life.&lt;/p&gt;
+&lt;p&gt;Education must also train one for quick, resolute and effective thinking. To think incisively and to think for one’s self is very difficult. We are prone to let our mental life become invaded by legions of half truths, prejudices, and propaganda. At this point, I often wonder whether or not education is fulfilling its purpose. A great majority of the so-called educated people do not think logically and scientifically. Even the press, the classroom, the platform, and the pulpit in many instances do not give us objective and unbiased truths. To save man from the morass of propaganda, in my opinion, is one of the chief aims of education. Education must enable one to sift and weigh evidence, to discern the true from the false, the real from the unreal, and the facts from the fiction.&lt;/p&gt;
+&lt;p&gt;The function of education, therefore, is to teach one to think intensively and to think critically. But education which stops with efficiency may prove the greatest menace to society. The most dangerous criminal may be the man gifted with reason, but with no morals.&lt;/p&gt;
+&lt;p&gt;The late Eugene Talmadge, in my opinion, possessed one of the better minds of Georgia, or even America. Moreover, he wore the Phi Beta Kappa key. By all measuring rods, Mr. Talmadge could think critically and intensively; yet he contends that I am an inferior being. Are those the types of men we call educated?&lt;/p&gt;
+&lt;p&gt;We must remember that intelligence is not enough. Intelligence plus character—that is the goal of true education. The complete education gives one not only power of concentration, but worthy objectives upon which to concentrate. The broad education will, therefore, transmit to one not only the accumulated knowledge of the race but also the accumulated experience of social living.&lt;/p&gt;
+&lt;p&gt;If we are not careful, our colleges will produce a group of close-minded, unscientific, illogical propagandists, consumed with immoral acts. Be careful, “brethren!” Be careful, teachers!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Unity Animation Tool]]></title><description><![CDATA[Unity Animation Editor This project implements simplified keyframe animation on a timeline to edit animations in Unity’s .anim format at…]]></description><link>https://josephlandy.github.io/unity_animator/unity_animator/</link><guid isPermaLink="false">https://josephlandy.github.io/unity_animator/unity_animator/</guid><pubDate>Thu, 12 Dec 1929 10:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Unity Animation Editor&lt;/h1&gt;
+&lt;p&gt;This project implements simplified keyframe animation on a timeline to edit animations in Unity’s .anim format at runtime.
+I built it as a first step towards a system for posing and animating life size 3d characters in VR. I find VR development somewhat more tiring, so I’ve learned to avoid involving VR as much as possible before putting on the headset.&lt;/p&gt;
+&lt;p&gt;The simple GUI allows playing back animations on a timeline.
+&lt;img src=&quot;/2993d0943251054281e9cb30bf7a8247/playback.gif&quot; alt=&quot;Playback&quot;&gt;&lt;/p&gt;
+&lt;p&gt;And inserting keyframes (marked in red). &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/14f6d36613645fd33516eb76f4606270/insert_keyframe.gif&quot; alt=&quot;Keyframe&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I considered it important to support animating hierarchies, since that is critical for animating characters. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ee4531a9f604ac1b3960b6a6ddef24f5/hierarchy.gif&quot; alt=&quot;Hierarchy&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Todolist React App]]></title><description><![CDATA[This is the first project I made to learn ReactJS. It is fairly standard, but I added features to select and reorder items in the todo list…]]></description><link>https://josephlandy.github.io/todolist/todolist/</link><guid isPermaLink="false">https://josephlandy.github.io/todolist/todolist/</guid><pubDate>Wed, 12 Dec 1928 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is the first project I made to learn ReactJS. It is fairly standard, but I added features to select and reorder items in the todo list with drag and drop.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/3c690c15422f3d2ae6466bf900951602/reorder.gif&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sleep Tracking Web App]]></title><description><![CDATA[I built this application to record data about my sleep and track how different factors affect it, when I didn’t find an existing option I…]]></description><link>https://josephlandy.github.io/sleeptracker/sleeptracker/</link><guid isPermaLink="false">https://josephlandy.github.io/sleeptracker/sleeptracker/</guid><pubDate>Mon, 12 Dec 1927 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 2000px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/22e392d38b49bfb45c1120e6d7f291e8/20759/week-display-cropped.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABXElEQVQoz61QSU7DQBD0lU3imGMOyQMQKMTbjDPjeOx4i31AIouEQMoX+FuI31Z0jw2K4IY4lLqmprt6cU7bK3xsLnF8vsBpe33GB5207m2E7nWE4/4W3f7G6l/gXI7drq91slUOhheEyIsSJs3wOHdRrxvLPd9H27aUsyIeoKprqDhGKCTKqoaMFhZVvYaQERlmWV9AUQgBpZcIAiqsKjRNgzRNUZalzYnJSEhJOTEkRf5nKMWmCtFCwTFJQsUliYqSQpSZhE9T5XmOoigQRdHA875hFMIsJcJQ2EY8CPN0KazusBFPwesk2sf74Y4MPSTUyJjEmhtj6L2kU9Dk6Qy79h5zVyBLDbRWeJgFOGwe8PI0g8MFWmvqEg4rx9aEOes/uaQ76SGH1+aBmPO6dmV+9GJgTZl7rtubM/e870LX9X7pfBLmHBnOZDLBdDoFx7/wc7DujMdj/Cc+Aa3BOHWiFFrHAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;week display cropped&quot;
+        title=&quot;week display cropped&quot;
+        src=&quot;/static/22e392d38b49bfb45c1120e6d7f291e8/f97d7/week-display-cropped.png&quot;
+        srcset=&quot;/static/22e392d38b49bfb45c1120e6d7f291e8/0eb09/week-display-cropped.png 500w,
+/static/22e392d38b49bfb45c1120e6d7f291e8/1263b/week-display-cropped.png 1000w,
+/static/22e392d38b49bfb45c1120e6d7f291e8/f97d7/week-display-cropped.png 2000w,
+/static/22e392d38b49bfb45c1120e6d7f291e8/49142/week-display-cropped.png 3000w,
+/static/22e392d38b49bfb45c1120e6d7f291e8/20759/week-display-cropped.png 3360w&quot;
+        sizes=&quot;(max-width: 2000px) 100vw, 2000px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I built this application to record data about my sleep and track how different factors affect it, when I didn’t find an existing option I was satisfied with. I’ve struggled a lot with sleep issues since adolescence, and I’ve found that data collection is helpful for evaluating the effectiveness of different management strategies.&lt;/p&gt;
+&lt;p&gt;It was important to me to define the variables and and access and analyze the raw data myself, rather than trying to fit myself into someone else’s system.&lt;/p&gt;
+&lt;p&gt;The front end was written in Typescript using React and the Material-UI library, while the backend was also developed with Typescript and stores collected data in MongoDB. I considered using an SQL database, but ultimately decided that MongoDB had a lot of advantages, principally it’s commonalities with JavaScript.&lt;/p&gt;
+&lt;p&gt;In the course of this project, I learned a lot about some of the tooling available for developing web apps. In particular, I found &lt;a href=&quot;https://storybook.js.org/&quot;&gt;Storybook&lt;/a&gt;, an environment for developing the individual components of a UI in isolation invaluable as the application got past a certain level of complexity.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 2000px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c974bd6b98b1dd75fa71228f76929777/ad744/edit-night-record-cropped.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.8%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAACHklEQVQ4y41Sy47aQBB0ohyiHOACROJhG2Ok3exKeYOT8LA9M35hAiiHzW8sfEj2jyvdY4/DkpWSQ6lb3dPl6mpb9x8sMI6fnuH+o6Vx/PwcJ8bsBU7BS5y+vqrAOdeo9+g95UeOBOvGt/H2ysNGrfGjTLAvJJL1F6hVQKBIuaQoloGOXJPUy6Jv2GUx9rlEFi9w7Q3hj17DmvhTXF2/Qb4pUW53kEmKWEhEBBPTrKDedyjqRbGoelJBqkT3VJrBIx7HHcMajYbwxmMc9nvsdjvEUQQlJaQUhCpy7+fdHcqyhBBx3SfSOEaWZSg3G0wmHlzXhWXbNsaeD1E/YhRFgSRJaFho8NB2u9XR1AyUUhQlPOLQhMMReXjjIFER8rx4RBaRWgNDwKrO62yBFCvicGE7TDi08f7WpjVCUqeaIQarjaJYw9SY5Jw0pJ4iwne3NaFZOQwjrc4QcizyjL5OeVyR5HmuV2QizrmWpinW67Be2akIfd/Xj9h0VmVIi0whEXQkURFuyHy2g3NzIK7x7HRae9jv9+E4TnOxc6/YbKn+2MDDrMjkXGelYRhqssFgAKvVaqHb7ZLsdeOT8YjVPDz80hfmvvHv8jCr1Qq9Xg/M1RAa3y7NPxwOzcX/unBde5KQ1+WjmN+G1+CB5XLZ5Jcw9ScJWQX7w2T/C37PQviQDWG73Uan08FsNkMQBJjP5/+EebdYLLQ6jiyKCX8DpUH77GI6fsMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;edit night record cropped&quot;
+        title=&quot;edit night record cropped&quot;
+        src=&quot;/static/c974bd6b98b1dd75fa71228f76929777/f97d7/edit-night-record-cropped.png&quot;
+        srcset=&quot;/static/c974bd6b98b1dd75fa71228f76929777/0eb09/edit-night-record-cropped.png 500w,
+/static/c974bd6b98b1dd75fa71228f76929777/1263b/edit-night-record-cropped.png 1000w,
+/static/c974bd6b98b1dd75fa71228f76929777/f97d7/edit-night-record-cropped.png 2000w,
+/static/c974bd6b98b1dd75fa71228f76929777/ad744/edit-night-record-cropped.png 2376w&quot;
+        sizes=&quot;(max-width: 2000px) 100vw, 2000px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Web Audio Hackathon Project]]></title><description><![CDATA[QHacks 2019 Web Audio Project My team and I worked on this project for QHacks, Queen’s University’s annual hackathon in 2019.]]></description><link>https://josephlandy.github.io/QHacks_2019_webaudio/qhacks/</link><guid isPermaLink="false">https://josephlandy.github.io/QHacks_2019_webaudio/qhacks/</guid><pubDate>Sun, 12 Dec 1926 10:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;QHacks 2019 Web Audio Project&lt;/h1&gt;
+&lt;p&gt;My team and I worked on this project for &lt;a href=&quot;https://qhacks.io/&quot;&gt;QHacks&lt;/a&gt;, Queen’s University’s annual hackathon in 2019. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Building this Website]]></title><description><![CDATA[Personal Website  I built this website using Gatsby, a platform for developing static websites using React components. I hadn’t used Gatsby…]]></description><link>https://josephlandy.github.io/personal_website/this-website/</link><guid isPermaLink="false">https://josephlandy.github.io/personal_website/this-website/</guid><pubDate>Sat, 12 Dec 1925 10:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Personal Website&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1664px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/70ba8ed943af285c6f64eddb17ce8c71/7bd25/website_code_screenshot.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 82.60000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAAB0UlEQVQ4y51U2W6jQBDkM2IBczIXYGCwcQI+diOt9v//qLbBjh2tlNjOQ8PAaIqqrmqSuqlQVh7OexSFAmc5hJDgnCPPczDGnqrE12scTjsc3w8YDnus+x7auGXzR4DOW2w2FVxVQ7oSsrAQSp8Bs+wK/Ch40jQDdsMW/bZBG1uUcYtqGGHrBlwIsCdZJsZYOGfhfQHvFJw1MMTUlg10Ya4sH21BIn0Ns+7g4w6m7sAJfEVGpU2JPLinWSZhd0R3+oP28I5m+gUz7cH6CFEFqKK4svro471K1q97OOrXLE0oBSkoOhmBzFJ/4vJswMwuxAHNeIR2/syKcvgs2DmHbQ/b9BSZClKbS1y+kZXdkcwlIYscXHGSzMiE+U6lBbi8rKmua31797nm/QXQBwsb9AK2ANLGDM4X8MuHCPzjoCzE7fkzuL4AujYi78gUCrX0AXlK5nC2yBeKcsg4sjS9Sc2+kJ2dDUyYKfByegOnaWnHE+Lvv4jTEYF6W3YtQlVCUfjnHwZj37u+MBSzm5Q7Nr1ClzUZFMnpQHIlrFWYW1IEMkyqxyZF0EXEDnocl0PpaoUsS5fDGclIqQWL5P8C/vXo1RVW0xYv4wZ56e9KusfwHwCB2SbOCSE+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Code screenshot&quot;
+        title=&quot;Code screenshot&quot;
+        src=&quot;/static/70ba8ed943af285c6f64eddb17ce8c71/7bd25/website_code_screenshot.png&quot;
+        srcset=&quot;/static/70ba8ed943af285c6f64eddb17ce8c71/0eb09/website_code_screenshot.png 500w,
+/static/70ba8ed943af285c6f64eddb17ce8c71/1263b/website_code_screenshot.png 1000w,
+/static/70ba8ed943af285c6f64eddb17ce8c71/7bd25/website_code_screenshot.png 1664w&quot;
+        sizes=&quot;(max-width: 1664px) 100vw, 1664px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I built this website using Gatsby, a platform for developing static websites using React components. I hadn’t used Gatsby before and essentially chose it at random, but I quickly came to appreciate it. It is an absolute joy to work with and I would very happily use it in future.&lt;/p&gt;
+&lt;p&gt;I gained some experience in a few areas including CSS grid layout, and GraphQl.&lt;/p&gt;
+&lt;p&gt;Graphic design has never been my strong point, and I initially intended to find an attractive template and adapt it as little as possible with my own content. After spending time searching I didn’t feel satisfied entirely satisfied with any of the templates I found and ended up building my website largely from scratch, taking design cues from a variety of websites online.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[langsquid.com]]></title><description><![CDATA[Langsquid My old friend Fraser Fuite is an enthusiastic innovator in language education. After returning from a year teaching English in…]]></description><link>https://josephlandy.github.io/langsquid/langsquid/</link><guid isPermaLink="false">https://josephlandy.github.io/langsquid/langsquid/</guid><pubDate>Wed, 12 Dec 1923 10:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Langsquid&lt;/h1&gt;
+&lt;p&gt;My old friend Fraser Fuite is an enthusiastic innovator in language education. After returning from a year teaching English in Taiwan, he came back with many ideas to improve the experience of learning languages for both children and adults. Starting in December 2019, I did some work with him on a website (langsquid.com) for his idea to use engaging, crowd sourced stories aimed at older children and adults to teach chinese characters and vocabulary. Repeated words would be progressively replaced with their translations and the user could mouse over the new word for its translation, somewhat like DuoLingo. I recommended using WordPress to try and develop simple prototypes to test out and develop the concept itself before looking into a more complicated tech solution that would allow us to integrate more features. &lt;/p&gt;
+&lt;p&gt;Although the project stalled, and hasn’t really been developed extensively yet, I got some experience working with Wordpress, using PHP for the first time to develop simple plugins. I also administered the website, handling setup, hosting and configuration.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Assorted 3d Renders]]></title><description><![CDATA[Here are a few 3d renders I’ve made, largely going back quite a long time. I first became interested in 3d graphics in high school first…]]></description><link>https://josephlandy.github.io/3d_renders/3d_renders/</link><guid isPermaLink="false">https://josephlandy.github.io/3d_renders/3d_renders/</guid><pubDate>Tue, 12 Dec 1922 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Here are a few 3d renders I’ve made, largely going back quite a long time. I first became interested in 3d graphics in high school first using Blender and later Autodesk Maya. This interest eventually led to my studying areas of programming more generally which somewhat overtook it. It’s something I still have a great deal of interest in, however and I would love to do more in future. A lot of these projects I’ve largely forgotten about over the years often unfinished. Sometimes I find them in obscure corners of old hard drives and end up rather impressed by the WIP renders. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1920px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/87a03d212013ca169b59c8ccd5a8e212/aaf92/snowrender.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.199999999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQL/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABn6x3E8aK/8QAGRAAAwADAAAAAAAAAAAAAAAAAQIQABEi/9oACAEBAAEFAs1E5ZiZ/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Bp//EABUQAQEAAAAAAAAAAAAAAAAAABAh/9oACAEBAAY/AmP/xAAYEAEBAQEBAAAAAAAAAAAAAAABABEhQf/aAAgBAQABPyENeSg9g3u5ADISvYOF/9oADAMBAAIAAwAAABAvD//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EIj/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPxAr/8QAGRABAQEBAQEAAAAAAAAAAAAAAREAITGB/9oACAEBAAE/EGgFfea8QPsTR8K7JnhR48uAbXwxBQ4Tzf/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Snow scene render&quot;
+        title=&quot;Snow scene render&quot;
+        src=&quot;/static/87a03d212013ca169b59c8ccd5a8e212/aaf92/snowrender.jpg&quot;
+        srcset=&quot;/static/87a03d212013ca169b59c8ccd5a8e212/953fe/snowrender.jpg 500w,
+/static/87a03d212013ca169b59c8ccd5a8e212/0a251/snowrender.jpg 1000w,
+/static/87a03d212013ca169b59c8ccd5a8e212/aaf92/snowrender.jpg 1920w&quot;
+        sizes=&quot;(max-width: 1920px) 100vw, 1920px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1920px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/aacda5ea60f0b6db0bfe496f39a6a631/ac7a9/logoHephaestus.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.199999999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACI0lEQVQoz3WSS2/TQBSF7bEDJUmbxI7jZ+zxIy8rCX2kUREQ0qQplEhtqSALJKhQV4DYsIIlYsOWNWz5mz5cuw0KLSyOxvY597t3xiOIooilGJMgCAKa0SnevPqJ2eQ8OZy+S2aTz0kzmichfwLXHiHgR/DqU6iVBmRZhCzJWZ0oChBWgaLIMkNTYwy25pg8epEszj4m3fgxevECnvMQpr6FwJsReIxKiROQ4VYul9WntX8BL7tcQpeajk+wuz3Hdv81wTZxZ63wx2NMIKAMSZLA/gXMlAXTgICqYtK0BnxvCF6/D8ccYO12IQNIWYbh+kA3gelZLs3/iBEw3WaOppNlic5QWoXeLEintKsl9Fs+Rrs9HO/fw7PZCIujA5yfPkU74FmOtptIjCWMrRzT9clSM5WhrOPBZhPvn+/j+4cz/PpygW9vFxh0IijlUnZ2uRQoSSkU0lWdkM/nUSwWUdrYgFKpQKtWYRg6yYRa0xE3Qny9mOPHp5fYu9tGsaTA0HXUNA2qqqBSLme168QoFPIQVEUhkyB6DZZpwLZM1B2bZNFdc9DvNHEyHuJ4vIduI6Ar48JNfduCQ1nLMLJanRiaqkIwdQ22WUPdMiho0l2z6I/aBLMRujaGHR87LY5eYONwp41uxBG4dUTcRUjwkJ4DasypiUtNBG7rFDDJJAB3KEhh/0r0zOsWfFIKD2ht0rdO4CEOOeLIp9Wnd46Wz8nz8Bt3rBhOOvZGLwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Hephaestus 3d logo&quot;
+        title=&quot;Hephaestus 3d logo&quot;
+        src=&quot;/static/aacda5ea60f0b6db0bfe496f39a6a631/ac7a9/logoHephaestus.png&quot;
+        srcset=&quot;/static/aacda5ea60f0b6db0bfe496f39a6a631/0eb09/logoHephaestus.png 500w,
+/static/aacda5ea60f0b6db0bfe496f39a6a631/1263b/logoHephaestus.png 1000w,
+/static/aacda5ea60f0b6db0bfe496f39a6a631/ac7a9/logoHephaestus.png 1920w&quot;
+        sizes=&quot;(max-width: 1920px) 100vw, 1920px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Great Gatsby]]></title><description><![CDATA[In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel…]]></description><link>https://josephlandy.github.io/emancipation-proclamation/</link><guid isPermaLink="false">https://josephlandy.github.io/emancipation-proclamation/</guid><pubDate>Tue, 12 Dec 1922 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since.&lt;/p&gt;
+&lt;p&gt;“Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.”&lt;/p&gt;
+&lt;p&gt;He didn’t say any more, but we’ve always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence, I’m inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores. The abnormal mind is quick to detect and attach itself to this quality when it appears in a normal person, and so it came about that in college I was unjustly accused of being a politician, because I was privy to the secret griefs of wild, unknown men. Most of the confidences were unsought — frequently I have feigned sleep, preoccupation, or a hostile levity when I realized by some unmistakable sign that an intimate revelation was quivering on the horizon; for the intimate revelations of young men, or at least the terms in which they express them, are usually plagiaristic and marred by obvious suppressions. Reserving judgments is a matter of infinite hope. I am still a little afraid of missing something if I forget that, as my father snobbishly suggested, and I snobbishly repeat, a sense of the fundamental decencies is parcelled out unequally at birth.&lt;/p&gt;
+&lt;p&gt;And, after boasting this way of my tolerance, I come to the admission that it has a limit. Conduct may be founded on the hard rock or the wet marshes, but after a certain point I don’t care what it’s founded on. When I came back from the East last autumn I felt that I wanted the world to be in uniform and at a sort of moral attention forever; I wanted no more riotous excursions with privileged glimpses into the human heart. Only Gatsby, the man who gives his name to this book, was exempt from my reaction — Gatsby, who represented everything for which I have an unaffected scorn. If personality is an unbroken series of successful gestures, then there was something gorgeous about him, some heightened sensitivity to the promises of life, as if he were related to one of those intricate machines that register earthquakes ten thousand miles away. This responsiveness had nothing to do with that flabby impressionability which is dignified under the name of the “creative temperament.”— it was an extraordinary gift for hope, a romantic readiness such as I have never found in any other person and which it is not likely I shall ever find again. No — Gatsby turned out all right at the end; it is what preyed on Gatsby, what foul dust floated in the wake of his dreams that temporarily closed out my interest in the abortive sorrows and short-winded elations of men.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gettysburg Address]]></title><description><![CDATA[Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the…]]></description><link>https://josephlandy.github.io/gettysburg-address/</link><guid isPermaLink="false">https://josephlandy.github.io/gettysburg-address/</guid><pubDate>Thu, 19 Nov 1863 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.&lt;/p&gt;
+&lt;p&gt;Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.&lt;/p&gt;
+&lt;p&gt;But, in a larger sense, we can not dedicate-we can not consecrate-we can not hallow-this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us-that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion-that we here highly resolve that these dead shall not have died in vain-that this nation, under God, shall have a new birth of freedom-and that government of the people, by the people, for the people shall not perish from the earth.&lt;/p&gt;</content:encoded></item></channel></rss>

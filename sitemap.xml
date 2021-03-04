@@ -6,7 +6,6 @@
 <url> <loc>https://josephlandy.github.io/sleeptracker/sleeptracker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/todolist/todolist/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/unity_animator/unity_animator/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://josephlandy.github.io/Biomotion_selector/biomotion_pipeline_tool/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/LED_sword/sword/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/biomotion_mosh/biomotion_mosh/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -14,11 +13,12 @@
 <url> <loc>https://josephlandy.github.io/tags/frontend/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/web/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/unity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://josephlandy.github.io/tags/3-d/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/electronics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/3-d-printing/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://josephlandy.github.io/tags/3-d/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/animation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/gridpage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://josephlandy.github.io/opencvpage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>

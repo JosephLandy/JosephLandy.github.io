@@ -94,6 +94,8 @@ const IndexPage: React.FC<IndexProps> = props => {
     .filter(post => post.node.frontmatter.featured === true)
     .concat(edges.filter(post => post.node.frontmatter.featured !== true));
 
+  console.log(process.env.NODE_ENV)
+  
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>

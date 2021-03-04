@@ -45,6 +45,7 @@
     "gatsby-transformer-sharp": "2.5.13",
     "gatsby-transformer-yaml": "2.4.10",
     "lodash": "4.17.20",
+    "mirada": "^0.0.15",
     "opencv.js": "^1.2.1",
     "polished": "3.6.5",
     "prism-themes": "1.4.0",

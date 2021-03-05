@@ -10,7 +10,7 @@ import { mq } from '../styles/constants';
 interface Props {}
 
 
-const baselinePosition = 100;
+// const baselinePosition = 100;
 
 const bob = keyframes`
   0% {

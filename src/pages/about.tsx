@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import { Helmet } from 'react-helmet';
 
@@ -148,7 +148,7 @@ const About: React.FC<AboutProps> = props => {
                   <p>
                     <b>
                       Feel free to checkout my Github, connect with me on LinkedIn or send me an
-                      email.
+                      email on the <Link to="/Contact">contact page</Link>
                     </b>
                   </p>
                   {/* <LinkIcons /> */}

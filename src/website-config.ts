@@ -54,23 +54,21 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'Joseph Landy',
   description: 'Some kind of programmer',
-  coverImage: 'img/blog-cover.png',
+  // coverImage: 'img/blog-cover.png',
   // logo: 'img/ghost-logo.png',
   logo: 'img/logo_JosephLandy.png',
   lang: 'en',
   siteUrl: 'josephlandy.github.io',
-  // facebook: 'https://www.facebook.com/ghost',
-  // twitter: 'https://twitter.com/tryghost',
 
   github: 'https://github.com/JosephLandy',
-  linkedin: 'https://www.linkedin.com/in/joseph-landy-65813b15b/',
-  email: 'joseph.landy.email@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/joseph-landy/',
+  // email: 'joseph.landy.email@gmail.com',
   showSubscribe: false,
-  mailchimpAction:
-    'https://twitter.us19.list-manage.com/subscribe/post?u=a89b6987ac248c81b0b7f3a0f&amp;id=7d777b7d75',
-  mailchimpName: 'b_a89b6987ac248c81b0b7f3a0f_7d777b7d75',
-  mailchimpEmailFieldName: 'MERGE0',
-  googleSiteVerification: 'GoogleCode',
+  // mailchimpAction:
+    // 'https://twitter.us19.list-manage.com/subscribe/post?u=a89b6987ac248c81b0b7f3a0f&amp;id=7d777b7d75',
+  // mailchimpName: 'b_a89b6987ac248c81b0b7f3a0f_7d777b7d75',
+  // mailchimpEmailFieldName: 'MERGE0',
+  // googleSiteVerification: 'GoogleCode',
   footer: 'is based on Gatsby Casper',
 };
 

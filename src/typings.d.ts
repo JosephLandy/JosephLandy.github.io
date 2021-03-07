@@ -3,6 +3,7 @@ interface CSSModule {
 }
 
 declare module '*.png';
+declare module '*.jpg';
 
 // type shims for CSS modules
 

@@ -54,12 +54,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
+  
+  // I need to be able to work on draft pages, 
+  // but not show them to the user, so the draft filter
+  // needs to be commented out. 
   const result = await graphql(`
     {
       allMarkdownRemark(
         limit: 2000
         sort: { fields: [frontmatter___date], order: ASC }
-        filter: { frontmatter: { draft: { ne: true } } }
+        # filter: { frontmatter: { draft: { ne: true } } }
       ) {
         edges {
           node {
@@ -166,7 +170,6 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-
 };
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {

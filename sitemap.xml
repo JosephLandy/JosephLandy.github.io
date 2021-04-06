@@ -8,12 +8,14 @@
 <url> <loc>https://josephlandy.github.io/personal_website/this-website/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/QHacks_2019_webaudio/qhacks/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/sleeptracker/sleeptracker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://josephlandy.github.io/perspective_warper/perspective_warp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/todolist/todolist/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/unity_animator/unity_animator/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/purpose-of-education/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/a-full-style-test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/github-link/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/Biomotion_selector/biomotion_pipeline_tool/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://josephlandy.github.io/hack4heritage/hack4heritage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/LED_sword/sword/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/biomotion_mosh/biomotion_mosh/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/web/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -26,6 +28,7 @@
 <url> <loc>https://josephlandy.github.io/tags/meow/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/source/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/3-d/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://josephlandy.github.io/tags/vr/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/electronics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/3-d-printing/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/tags/animation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -33,4 +36,6 @@
 <url> <loc>https://josephlandy.github.io/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/gridpage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://josephlandy.github.io/opencvpage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://josephlandy.github.io/perspectivewarp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://josephlandy.github.io/perspectivewarptest/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>

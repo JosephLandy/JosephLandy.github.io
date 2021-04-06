@@ -19,6 +19,7 @@
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
     "@emotion/styled-base": "10.0.31",
+    "@types/mathjs": "^6.0.11",
     "date-fns": "2.15.0",
     "emotion": "10.0.27",
     "emotion-server": "10.0.27",
@@ -45,6 +46,7 @@
     "gatsby-transformer-sharp": "2.5.13",
     "gatsby-transformer-yaml": "2.4.10",
     "lodash": "4.17.20",
+    "mathjs": "^9.3.0",
     "polished": "3.6.5",
     "prism-themes": "1.4.0",
     "prismjs": "1.21.0",
@@ -54,7 +56,8 @@
     "react-helmet": "6.1.0",
     "react-icons": "^3.11.0",
     "react-sidebar": "^3.0.2",
-    "rehype-react": "6.1.0"
+    "rehype-react": "6.1.0",
+    "vectorious": "^6.0.2"
   },
   "devDependencies": {
     "@types/lodash": "4.14.159",

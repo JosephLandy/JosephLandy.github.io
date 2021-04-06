@@ -3,7 +3,7 @@ import { css, keyframes, SerializedStyles } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BsChevronCompactDown } from 'react-icons/bs';
 
-import useWindowSize from '../useWindowSize';
+import {useWindowSize} from '../utils';
 import MonsterImage from './MonsterImage';
 /*
 Ok, so the image width at max is 1000px, height is 562.5px

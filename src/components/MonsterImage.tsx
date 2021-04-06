@@ -1,9 +1,9 @@
 import { css } from '@emotion/core';
 import React, { useState, useEffect } from 'react';
 
-import forward from '../look_forward.png';
-import left from '../look_left.png';
-import right from '../look_right.png';
+import forward from '../images/look_forward.png';
+import left from '../images/look_left.png';
+import right from '../images/look_right.png';
 
 const images = [forward, left, forward, right];
 

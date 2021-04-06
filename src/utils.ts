@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
+// import math from 'mathjs';
+
 // https://usehooks.com/useWindowSize/
-export default function useWindowSize() {
+export function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState<{ width?: number; height?: number }>({
@@ -29,3 +31,24 @@ export default function useWindowSize() {
 
   return windowSize;
 }
+
+// lets use a tuple here?
+// type Point = [number, number]
+export interface Point {
+  x: number;
+  y: number;
+}
+
+
+export function getMousePos(canvas: Element, evt: React.MouseEvent): Point {
+  let rect = canvas.getBoundingClientRect();
+  return {
+    x: evt.clientX - rect.left,
+    y: evt.clientY - rect.top,
+  };
+}
+
+
+// export function pointToVector(p: Point): math.Matrix {
+//   // return math.matrix([p.x, p.y]);
+// }

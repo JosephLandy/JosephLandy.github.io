@@ -137,7 +137,8 @@ const PerspectiveWarp: React.FC<Props> = props => {
 
         <p>
           Click to select 4 points identifying a feature to display without perspective, in
-          clockwise direction from top left corner.
+          clockwise direction from top left corner. The feature should be a flat surface, viewed in
+          the image at an angle and/or rotated.
         </p>
         <CanvasPoints
           points={srcPoints}
@@ -149,7 +150,7 @@ const PerspectiveWarp: React.FC<Props> = props => {
           <>
             <p>
               Now select 4 coresponding points defining the rectangle the selected feature will
-              occupy without perspective. 
+              occupy without perspective.
             </p>
             <CanvasPoints
               points={targetPoints}
@@ -161,18 +162,26 @@ const PerspectiveWarp: React.FC<Props> = props => {
         )}
         {targetPoints.length === 4 && (
           <>
-          <p>Click to compute and display the warped image. (May take a few seconds, especially with large images)</p>
-          <button
-            onClick={() => {
-              setShowWarped(true);
-            }}
-          >
-            Generate warped
-          </button>
+            <p>
+              Click to compute and display the warped image. (May take a few seconds, especially
+              with large images)
+            </p>
+            <button
+              onClick={() => {
+                setShowWarped(true);
+              }}
+            >
+              Generate warped
+            </button>
           </>
         )}
         {targetPoints.length === 4 && image && showWarped && (
-          <CanvasWarped srcPoints={srcPoints} targPoints={targetPoints} image={image} style={targStyle}/>
+          <CanvasWarped
+            srcPoints={srcPoints}
+            targPoints={targetPoints}
+            image={image}
+            style={targStyle}
+          />
         )}
         {/* <button
           onClick={() => {

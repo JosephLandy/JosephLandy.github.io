@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Point } from '../utils';
 import { create, all } from 'mathjs';
 
-import {PointStyle} from './CanvasPoints';
+import { PointStyle } from './CanvasPoints';
 import PixelManipulator from '../pixelmanipulator';
 
 const math = create(all) as math.MathJsStatic;
@@ -21,8 +21,6 @@ function pointsToSystem(points: Point[]): [math.Matrix, math.Matrix] {
   // return [M, math.transpose(math.round(math.matrix(p4)))];
   return [M, math.transpose(math.matrix(p4))];
 }
-
-
 
 function buildTransform(points: Point[]): math.Matrix {
   // solve linear equation expressing 4th point as combination of first 3, in homogenous coordinates.
@@ -92,13 +90,19 @@ const CanvasWarped: React.FC<Props> = ({ srcPoints, targPoints, image, style }) 
           let srcph = math.multiply(M, destp_h).toArray() as number[];
           // now dehomogenize.
           let srcp = [srcph[0] / srcph[2], srcph[1] / srcph[2]];
-          let val = srcpix.pixel(Math.floor(srcp[0]), Math.floor(srcp[1]));
+          // let val = srcpix.pixel(Math.floor(srcp[0]), Math.floor(srcp[1]));
+          if (!srcp[0] || !srcp[1]) {
+            // since breakpoints/sourcemapping aren't working here for some reason. 
+            console.error('Error! at CanvasWarped line 97');
+          }
+          // let val = srcpix.interpolatedPixel(srcp[0], srcp[1]);
+          let val = srcpix.pixel(srcp[0], srcp[1])
           destpix.setPixel(x, y, val);
         }
       }
 
       ctx.putImageData(destdata, 0, 0);
-      // now draw the area. 
+      // now draw the area.
       ctx.strokeStyle = style.fill;
       ctx.font = style.font;
       targPoints.forEach((v, i, a) => {
@@ -121,18 +125,15 @@ const CanvasWarped: React.FC<Props> = ({ srcPoints, targPoints, image, style }) 
         ctx.fillStyle = style.fontFill;
         ctx.fillText(i.toString(), v.x + style.r + 3, v.y);
       });
-
     }
   });
 
   return (
     <canvas
       ref={srcRef}
-      style={
-        {
-          marginTop: 20,
-        }
-      }
+      style={{
+        marginTop: 20,
+      }}
     />
   );
 };

@@ -1,7 +1,7 @@
 ---
 title: Perspective Warp
 image: persp_screenshot.png
-# github: https://github.com/JosephLandy/sleep-frontend
+github: https://github.com/JosephLandy/josephlandy.github.io/blob/source/src/pages/perspectivewarp.tsx
 website: https://josephlandy.github.io/perspectivewarp/
 layout: post
 tags: [JS, React, Frontend, Web]

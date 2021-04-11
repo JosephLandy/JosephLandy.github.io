@@ -1,5 +1,5 @@
 ---
-title: Sleep Tracking Web App
+title: Sleep Tracker Web App
 image: week-display-cropped.png
 github: https://github.com/JosephLandy/sleep-frontend
 layout: post

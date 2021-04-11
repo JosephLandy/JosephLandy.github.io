@@ -1,28 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import PageLayout from '../layouts/page-layout';
-// import cardsImage from '../cardsOnGrid.png';
-import { getMousePos, Point } from '../utils';
-
-import CanvasPoints from '../components/CanvasPoints';
-
 import { css } from '@emotion/core';
 import { lighten } from 'polished';
 import { colors } from '../styles/colors';
+import PageLayout from '../layouts/page-layout';
+
+import { getMousePos, Point } from '../utils';
+
+import CanvasPoints from '../components/CanvasPoints';
 import CanvasWarped from '../components/CanvasWarped';
+
 import churchURL from '../images/church.jpeg';
-// import perspectiveURL from '../images/perspective.png';
 // import cardsURL from '../images/cardsOnGrid.png';
-
-// You can use this image for free without changing it as long you include the attribution below:
-// https://bryanmmathers.com/perspective/
-// https://bryanmmathers.com/wp-content/uploads/2016/10/perspective.png
-// Perspective
-// by @bryanMMathers
-// is licenced under CC-BY-ND
-
-// doing this in react is a huge pain in the ass.
-// const imgURL =
-//   'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cortes_del_Condado_de_Wabash%2C_Wabash%2C_Indiana%2C_Estados_Unidos%2C_2012-11-12%2C_DD_01.jpg/1280px-Cortes_del_Condado_de_Wabash%2C_Wabash%2C_Indiana%2C_Estados_Unidos%2C_2012-11-12%2C_DD_01.jpg';
 
 const imgURL = churchURL;
 
@@ -79,10 +67,9 @@ const PerspectiveWarp: React.FC<Props> = props => {
 
   const targetPointHandler: React.MouseEventHandler<HTMLCanvasElement> = e => {
     const mouseP = getMousePos(e.currentTarget, e);
-    // I think I need to choose the bigger possible square.
     setShowWarped(false);
     setTargetPoints(prev => {
-      // I need to build a square.
+      // Build a rectangle.
       switch (prev.length) {
         case 0:
           return [mouseP];
@@ -138,7 +125,9 @@ const PerspectiveWarp: React.FC<Props> = props => {
         <p>
           Click to select 4 points identifying a feature to display without perspective, in
           clockwise direction from top left corner. The feature should be a flat surface, viewed in
-          the image at an angle and/or rotated. For example, one of the window bays in the image of the buidling, or the face of one of the columns. Or whatever you want, try it and see what happens!
+          the image at an angle and/or rotated. For example, one of the window bays in the image of
+          the buidling, or the face of one of the columns. Or whatever you want, try it and see what
+          happens!
         </p>
         <CanvasPoints
           points={srcPoints}
@@ -149,7 +138,9 @@ const PerspectiveWarp: React.FC<Props> = props => {
         {srcPoints.length === 4 && (
           <>
             <p>
-              Now select 4 coresponding points defining a rectangle that the selected feature will be mapped to/occupy in the output image. A rectangle of approximately the same size as the feature will result in less distortion. 
+              Now select 4 coresponding points defining a rectangle that the selected feature will
+              be mapped to/occupy in the output image. A rectangle of approximately the same size as
+              the feature will result in less distortion.
             </p>
             <CanvasPoints
               points={targetPoints}
@@ -182,16 +173,6 @@ const PerspectiveWarp: React.FC<Props> = props => {
             style={targStyle}
           />
         )}
-        {/* <button
-          onClick={() => {
-            console.log('src points');
-            console.log(srcPoints);
-            console.log('target points');
-            console.log(targetPoints);
-          }}
-        >
-          print source plus target
-        </button> */}
       </div>
     </PageLayout>
   );

@@ -11,16 +11,6 @@ import { lighten } from 'polished';
 import { colors } from '../styles/colors';
 import CanvasWarped from '../components/CanvasWarped';
 
-// You can use this image for free without changing it as long you include the attribution below:
-// https://bryanmmathers.com/perspective/
-// https://bryanmmathers.com/wp-content/uploads/2016/10/perspective.png
-// Perspective
-// by @bryanMMathers
-// is licenced under CC-BY-ND
-
-// doing this in react is a huge pain in the ass.
-// const imgURL =
-//   'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cortes_del_Condado_de_Wabash%2C_Wabash%2C_Indiana%2C_Estados_Unidos%2C_2012-11-12%2C_DD_01.jpg/1280px-Cortes_del_Condado_de_Wabash%2C_Wabash%2C_Indiana%2C_Estados_Unidos%2C_2012-11-12%2C_DD_01.jpg';
 const imgURL = fileURL;
 
 interface Props {}
@@ -62,10 +52,9 @@ const targetPoints = [
   },
 ];
 
+
+// test the perspective warp with points already hardcoded. 
 const PerspectiveWarp: React.FC<Props> = props => {
-  // const [srcPoints, setSrcPoints] = useState<Point[]>([]);
-  // const [targetPoints, setTargetPoints] = useState<Point[]>([]);
-  // const [showWarped, setShowWarped] = useState(false);
 
   const [url, setUrl] = useState(imgURL);
   const [image, setImage] = useState<HTMLImageElement>();
@@ -134,7 +123,6 @@ const PerspectiveWarp: React.FC<Props> = props => {
         {srcPoints.length === 4 && (
           <CanvasPoints
             points={targetPoints}
-            // setPoints={setTargetPoints}
             clickHandler={targetPointHandler}
             image={image}
             style={targStyle}

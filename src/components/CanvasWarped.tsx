@@ -3,7 +3,7 @@ import { Point } from '../utils';
 import { create, all } from 'mathjs';
 
 import { PointStyle } from './CanvasPoints';
-import PixelManipulator from '../pixelmanipulator';
+import PixelManipulator, { Color } from '../pixelmanipulator';
 
 const math = create(all) as math.MathJsStatic;
 
@@ -42,7 +42,7 @@ interface Props {
 }
 
 const CanvasWarped: React.FC<Props> = ({ srcPoints, targPoints, image, style }) => {
-  // const destRef = useRef<HTMLCanvasElement>(null);
+  
   const srcRef = useRef<HTMLCanvasElement>(null);
 
   // maps basis vectors to the source points
@@ -62,9 +62,7 @@ const CanvasWarped: React.FC<Props> = ({ srcPoints, targPoints, image, style }) 
     if (srcRef.current && ctx) {
       if (image.width > 1000) {
         const ratio = image.height / image.width;
-        // image.width = 1000;
         w = 1000;
-        // image.height = image.width * ratio;
         h = 1000 * ratio;
 
         srcRef.current.width = w;
@@ -90,19 +88,14 @@ const CanvasWarped: React.FC<Props> = ({ srcPoints, targPoints, image, style }) 
           let srcph = math.multiply(M, destp_h).toArray() as number[];
           // now dehomogenize.
           let srcp = [srcph[0] / srcph[2], srcph[1] / srcph[2]];
-          // let val = srcpix.pixel(Math.floor(srcp[0]), Math.floor(srcp[1]));
-          if (!srcp[0] || !srcp[1]) {
-            // since breakpoints/sourcemapping aren't working here for some reason. 
-            console.error('Error! at CanvasWarped line 97');
-          }
-          // let val = srcpix.interpolatedPixel(srcp[0], srcp[1]);
-          let val = srcpix.pixel(srcp[0], srcp[1])
-          destpix.setPixel(x, y, val);
+          let val = srcpix.interpolatedPixel(srcp[0], srcp[1]);
+          // let val = srcpix.pixel(srcp[0], srcp[1])
+          destpix.setPixel(x, y, val as Color);
         }
       }
 
       ctx.putImageData(destdata, 0, 0);
-      // now draw the area.
+      // now draw the rectangle for the area.
       ctx.strokeStyle = style.fill;
       ctx.font = style.font;
       targPoints.forEach((v, i, a) => {
@@ -117,7 +110,6 @@ const CanvasWarped: React.FC<Props> = ({ srcPoints, targPoints, image, style }) 
           }
           ctx.stroke();
         }
-
         ctx.beginPath();
         ctx.arc(v.x, v.y, style.r, 0, 2 * Math.PI);
         ctx.fill();

@@ -128,7 +128,7 @@ const About: React.FC<AboutProps> = props => {
                     </PointHeading>{' '}
                     <p>
                       I first became interested in computer science in highschool experimenting with
-                      vfx software such as Autodesk Maya. These early experiences gave me an indepth
+                      vfx software such as Autodesk Maya. These early experiences gave me an in depth
                       understanding of the basic elements of the VFX pipeline, and a passion for
                       graphics that's stayed with me ever since.
                     </p>

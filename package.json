@@ -57,6 +57,7 @@
     "react-icons": "^3.11.0",
     "react-sidebar": "^3.0.2",
     "rehype-react": "6.1.0",
+    "usehooks-ts": "^2.9.1",
     "vectorious": "^6.0.2"
   },
   "devDependencies": {

@@ -3,11 +3,12 @@ import { css, keyframes, SerializedStyles } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BsChevronCompactDown } from 'react-icons/bs';
 
-import {useWindowSize} from '../utils';
+import { useWindowSize } from '../utils';
 import MonsterImage from './MonsterImage';
+import { useLocalStorage } from 'usehooks-ts';
 /*
 Ok, so the image width at max is 1000px, height is 562.5px
-when not max, the width of both Wrapper and the image = the container width. 
+when not max, the width of both Wrapper and the image = the container width.
 height of image is (1080/1920) * width
 Height of down button is always 112 by 112.
 */
@@ -72,8 +73,12 @@ const MonsterWrapper = styled.div`
 `;
 const DownButton: React.FC<{ isHidden: boolean; onClick: any }> = ({ isHidden, onClick }) => {
   let theta;
-  if (isHidden) theta = 180;
-  else theta = 0;
+  if (isHidden) {
+    theta = 180;
+  } else {
+    theta = 0;
+  }
+
   return (
     <BsChevronCompactDown
       css={css`
@@ -95,7 +100,9 @@ const transitionInDelay = 4;
 const transitionInDuration = 8;
 const bobDuration = 5;
 
-const MonsterFooter: React.FC<Props> = props => {
+const MonsterFooter: React.FC<Props> = () => {
+  const [enabled, setEnabled] = useLocalStorage('monsterEnabled', true);
+
   const [hidden, setHidden] = useState(true);
   const size = useWindowSize();
 
@@ -103,7 +110,7 @@ const MonsterFooter: React.FC<Props> = props => {
   // automatically unhide and play it.
   useEffect(() => {
     setTimeout(() => {
-      if (hidden) {
+      if (hidden && enabled) {
         setHidden(false);
       }
     }, transitionInDelay * 1000);
@@ -124,7 +131,7 @@ const MonsterFooter: React.FC<Props> = props => {
       animation-timing-function: linear;
       animation-iteration-count: infinite, 1;
       /* animation-delay: ${transitionInDelay + transitionInDuration}s, ${transitionInDelay}s; */
-      // animation delay is now handled in js 
+      // animation delay is now handled in js
       animation-delay: ${transitionInDuration}s, 0s;
     `;
   }
@@ -132,7 +139,7 @@ const MonsterFooter: React.FC<Props> = props => {
   return (
     <MonsterWrapper
       css={
-        hidden || !animationcss
+        (hidden || !enabled) || !animationcss
           ? css`
               img {
                 display: none;
@@ -145,6 +152,7 @@ const MonsterFooter: React.FC<Props> = props => {
         isHidden={hidden}
         onClick={() => {
           setHidden(!hidden);
+          setEnabled(!enabled);
         }}
       />
       <MonsterImage />

@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{Xwqx:function(n,w,t){"use strict";t.r(w);t("q1tI");var c=t("qKvR");w.default=n=>Object(c.d)("div",null)}}]);
-//# sourceMappingURL=component---src-pages-opencvpage-tsx-ef65d45ff915622a0ef9.js.map

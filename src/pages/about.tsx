@@ -49,13 +49,11 @@ const AboutParagraph = styled.div`
   margin: 0px;
   padding: 0px;
   width: 100%;
-  @media only screen and (min-width: 1041px) {
-    width: 50%;
-  }
+  //@media only screen and (min-width: 1041px) {
+  //  width: 50%;
+  //}
   font-weight: bold;
 `;
-
-
 
 const About: React.FC<AboutProps> = props => {
   const resized = props.data.file.childImageSharp.resize.src;
@@ -91,6 +89,14 @@ const About: React.FC<AboutProps> = props => {
                     }
                   `}
                 >
+                  <div>
+                    <img
+                      css={css`
+                        margin: 0px;
+                        padding: 0px;
+                        border-radius: 25%;
+                    `} src={resized}/>
+                  </div>
                   <div
                     css={css`
                       display: flex;
@@ -107,7 +113,7 @@ const About: React.FC<AboutProps> = props => {
                       }
                     `}
                   >
-                    <img src={resized} height="256" width="256" />
+                    {/*<img src={resized} height="256" width="256" />*/}
                     <AboutParagraph>
                       <PointHeading>Hey there!</PointHeading>
                       I'm a programmer with eclectic skills in computer graphics, visual effects,
@@ -120,17 +126,22 @@ const About: React.FC<AboutProps> = props => {
                       <i>Where I'm at</i>
                     </PointHeading>{' '}
                     <p>
-                      I graduated with a degree in computer science from Queen's University in 2019,
-                      and I'm currently looking to enter the workforce after a gap.{' '}
+                      I graduated with a degree in computer science from Queen's University in 2019, and
+                      I've been working in the animation industry for several years now, as a pipeline
+                      technical director and web developer. I'm currently looking for a new role, and I'm particularely
+                      interested in branching out to new areas.
+                    </p>
+                    <p>
+
                     </p>
                     <PointHeading>
                       <i>I love graphics, VFX, and game dev</i>
                     </PointHeading>{' '}
                     <p>
-                      I first became interested in computer science in highschool experimenting with
+                      I first became interested in computer science in high school experimenting with
                       vfx software such as Autodesk Maya. These early experiences gave me an in depth
                       understanding of the basic elements of the VFX pipeline, and a passion for
-                      graphics that's stayed with me ever since.
+                      all things graphical that's stayed with me ever since.
                     </p>
                     <p>
                       I've studied graphics and game development extensively in school and backed it
@@ -139,10 +150,10 @@ const About: React.FC<AboutProps> = props => {
                       tracking and other technologies.
                     </p>
                     <PointHeading>
-                      <i>...And I also do web stuff</i>
+                      <i>...And I also love web development</i>
                     </PointHeading>
                     <p>
-                      I'm also proficient with frontend web development, primarily using ReactJS.
+                      I'm also highly proficient with fullstack web development, primarily using React.js on the frontend.
                     </p>
                   </div>
                   <p>
@@ -170,7 +181,7 @@ export const aboutQuery = graphql`
         description
       }
     }
-    file(relativePath: { eq: "img/portrait_current_reduced.jpg" }) {
+    file(relativePath: { eq: "img/sideburn_title.jpg" }) {
       dir
       childImageSharp {
         resize(height: 512, width: 512, quality: 100) {

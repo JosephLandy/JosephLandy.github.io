@@ -48,8 +48,10 @@ export const ReadNext = ({ relatedPosts, currentPageSlug, tags, pageContext }: R
             />
           )}
 
-          {pageContext.prev && <PostCard post={pageContext.prev} />}
-          {pageContext.next && <PostCard post={pageContext.next} />}
+          {/*{pageContext.prev && <PostCard post={pageContext.prev} />}*/}
+          {/*{pageContext.next && <PostCard post={pageContext.next} />}*/}
+          {pageContext.prev && pageContext.prev.frontmatter.draft !== true && <PostCard post={pageContext.prev} />}
+          {pageContext.next && pageContext.next.frontmatter.draft !== true && <PostCard post={pageContext.next} />}
         </ReadNextFeed>
       </div>
     </ReadNextAside>

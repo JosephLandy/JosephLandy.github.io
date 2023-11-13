@@ -13,8 +13,6 @@ height of image is (1080/1920) * width
 Height of down button is always 112 by 112.
 */
 
-interface Props {}
-
 const ratio = 1080 / 1920;
 // transition in keyframe actually starts a little too far down. I think I'm not accounting for the size of the
 // button. It also jerks a little bit.
@@ -23,6 +21,7 @@ function transitionKeyframes(width: number) {
   if (width >= 1000) {
     w = 1000;
   }
+
   return keyframes`
     0% {
       transform: translateY(${ratio * w}px);
@@ -42,6 +41,7 @@ function bobKeyframes(width: number) {
   if (width >= 1000) {
     w = 1000;
   }
+
   return keyframes`
     0% {
       transform: translateY(${0.1 * w}px);
@@ -100,7 +100,7 @@ const transitionInDelay = 4;
 const transitionInDuration = 8;
 const bobDuration = 5;
 
-const MonsterFooter: React.FC<Props> = () => {
+const MonsterFooter: React.FC = () => {
   const [enabled, setEnabled] = useLocalStorage('monsterEnabled', true);
 
   const [hidden, setHidden] = useState(true);
@@ -110,11 +110,11 @@ const MonsterFooter: React.FC<Props> = () => {
   // automatically unhide and play it.
   useEffect(() => {
     setTimeout(() => {
-      if (hidden && enabled) {
+      if (enabled) {
         setHidden(false);
       }
     }, transitionInDelay * 1000);
-  }, []);
+  }, [enabled]);
 
   // construct the css with keyframes as a function of window width.
   let animationcss: SerializedStyles | undefined;
@@ -139,13 +139,13 @@ const MonsterFooter: React.FC<Props> = () => {
   return (
     <MonsterWrapper
       css={
-        (hidden || !enabled) || !animationcss
-          ? css`
+        (hidden || !enabled) || !animationcss ?
+          css`
               img {
                 display: none;
               }
-            `
-          : animationcss
+            ` :
+          animationcss
       }
     >
       <DownButton

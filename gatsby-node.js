@@ -12,7 +12,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout, primaryTag, featured } = node.frontmatter;
+      const { permalink, layout, primaryTag, featured, draft } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
       let slug = permalink;
@@ -47,6 +47,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         name: 'featured',
         value: featured || false,
       });
+
+      // make sure draft field exists:
+      createNodeField({
+        node,
+        name: 'draft',
+        value: draft || false,
+      });
     }
   }
 };
@@ -54,10 +61,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  
-  // I need to be able to work on draft pages, 
+
+  // I need to be able to work on draft pages,
   // but not show them to the user, so the draft filter
-  // needs to be commented out. 
+  // needs to be commented out.
   const result = await graphql(`
     {
       allMarkdownRemark(

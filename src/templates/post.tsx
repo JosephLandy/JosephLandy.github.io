@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import { graphql, Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import * as _ from 'lodash';
@@ -17,7 +16,6 @@ import { inner, SiteMain, PostTemplate } from '../styles/shared';
 import config from '../website-config';
 import PostCardLinks from '../components/PostCardLinks';
 import PageNav from '../components/header/PageNav';
-
 
 interface PageTemplateProps {
   location: Location;

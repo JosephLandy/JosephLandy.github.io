@@ -18,18 +18,21 @@ Contents:
 
 This post will go over some the work I did developing an animation pipeline as a technical director and web developer at Elliott Animation. I can't cover everything I worked on, but I'll try and give an overview focusing on some of the highlights that I think most illustrate my skills and experience.
 
+For those unfamiliar with the term, in the context of animation and vfx production,
+
+Personally, my favourite analogy is to think of the pipeline as an assembly line in a factory producing the show shot by shot. The artists are the workers, my work was developing the assembly line - the automation and machinery that reliably moves the work from one stage to the next, and provides tools for the artists to efficiently interact with the automation. 
+
 I should be clear that I take the confidentiality of employers seriously, and the studio was kind enough to allow me to discuss my work and some details of the pipeline. They also gave me permission to include watermarked images of various tools and UIs. 
 
 I joined Elliott during production of the first few episodes of Lucas the Spider before we entered full production and began cranking out episodes on a schedule. Lucas was the first 3d project the studio had worked on in a number of years, and an entirely new pipeline was developed, along with a production tracking web application built with Angular. When I started many of the basic elements of the pipeline were in place, but there were many kinks to work out and features to add as production ramped up.
 
-
-Some of the work I'll mention here were relatively minor changes, but small changes were often the most impactful, and illustrate my ability to identify the low-hanging fruit and make improvements that have an outsize impact on the efficiency of the pipeline.
+Some of the work I'll mention here involved relatively minor changes, but small changes were often the most impactful, and illustrate my ability to identify the low-hanging fruit and make improvements that had an outsize impact on the efficiency of the pipeline.
 
 <h2 id="collaboration-and-team">Collaboration and team</h2>
 
 At the start of my time at Elliott, much of my work was focused on support tasks, which was a great way to learn the pipeline and codebase. I also built solid working relationships, and a reputation for communicating effectively and solving problems quickly and reliably.
 
-Acting as a point of contact for various departments at the studio to coordinate responses to issues and feature requests remained an important element of my responsiblities throughout my time at Elliott. Communication and collaboration is something that is highly important to me, and I think this will probably be reflected throughout my career. I enjoy working with people and doing what I can to make their lives easier, through technical and non-technical solutions. 
+Acting as a point of contact for various departments at the studio to coordinate responses to issues and feature requests remained an important element of my responsibilities throughout my time at Elliott. Communication and collaboration is something that is highly important to me, and I think this will probably be reflected throughout my career. I enjoy working with people and doing what I can to make their lives easier, through technical and non-technical solutions. 
 
 Over time, I was given the opportunity to take a lot of initiative and ownership of projects. I was able to identify areas for improvement and propose solutions, and was given the freedom to implement them. Eventually, at the end of my time, I was solely responsible for all tech at the studio, and worked on R&D for future projects, responding to the requirements of artists, and the studio leadership.
 
